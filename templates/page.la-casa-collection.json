@@ -1,0 +1,231 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": true
+      }
+    },
+    "ca82d70e-061e-45cf-bafa-f20c89bf887e": {
+      "type": "hero",
+      "settings": {
+        "top-offeset": "none",
+        "section_width": true,
+        "ds_height": 500,
+        "tb_height": 520,
+        "mb_height": 670,
+        "parallax_scroll": false,
+        "image": "shopify://shop_images/Banner_Image.jpg",
+        "alignment": "center",
+        "pretext": "",
+        "pcl": "#333333",
+        "pfs": 15,
+        "pfsm": 13,
+        "pff": "ft1",
+        "pfw": "400",
+        "plh": 1.3,
+        "pmb": 10,
+        "pmbm": 5,
+        "title": "Private Residence",
+        "tcl": "#000000",
+        "tfs": 30,
+        "tfsm": 20,
+        "tff": "ft2",
+        "tfw": "700",
+        "tlh": 1.3,
+        "tmb": 10,
+        "tmbm": 5,
+        "text": "",
+        "cl": "#000000",
+        "fs": 16,
+        "fsm": 14,
+        "fw": "400",
+        "lh": 1.6,
+        "mb": 30,
+        "mbm": 20,
+        "button_label": "",
+        "button_link": "/",
+        "link_image": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm",
+        "isbox": true,
+        "bg": "#ffffff",
+        "opt": 0.9,
+        "bdr": 0,
+        "textalign": "tc",
+        "bxalign": "f-jcc f-aic",
+        "wd": 1200,
+        "snow_effect": false,
+        "snow_style": "style1",
+        "hero_dealtimer": false,
+        "cnt_date": "12/20/2023",
+        "cntbg": "#000000",
+        "cntcl": "#eeeeee",
+        "cntbd": "#000000"
+      }
+    },
+    "01774038-c922-4de4-a896-2d122ad72754": {
+      "type": "photo-gallery",
+      "blocks": {
+        "6a4d1f7e-cc87-445b-a086-be7b929c3f38": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF4.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "56a07c28-4c42-412b-a7a6-46739337de74": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF96.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_HCYhcL": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF128.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_3dTfGa": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF233.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_c9WGFD": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF238.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_aY7MxH": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF243.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_iqnb3Y": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF244.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_FzaEzn": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/MEHLUMSELECTCHF245.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        },
+        "photo_VQqwYH": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/OFFCIAL_CHF34.jpg",
+            "title": "",
+            "title2": "",
+            "url": "",
+            "width": "wd50-md"
+          }
+        }
+      },
+      "block_order": [
+        "6a4d1f7e-cc87-445b-a086-be7b929c3f38",
+        "56a07c28-4c42-412b-a7a6-46739337de74",
+        "photo_HCYhcL",
+        "photo_3dTfGa",
+        "photo_c9WGFD",
+        "photo_aY7MxH",
+        "photo_iqnb3Y",
+        "photo_FzaEzn",
+        "photo_VQqwYH"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "top-offeset": "default",
+        "fullwidth": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid-spacing-col": 2,
+        "tcl": "#000000",
+        "tfs": 16,
+        "tfsm": 15,
+        "tff": "ft1",
+        "tfw": "600",
+        "tlh": 1.2,
+        "cl": "#000000",
+        "fs": 15,
+        "fsm": 13,
+        "fw": "400",
+        "lh": 1.2,
+        "bg": "#ffffff",
+        "opt": 0.9,
+        "zoom_bg": "#ffffff",
+        "zoom_text": "#111111"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "ca82d70e-061e-45cf-bafa-f20c89bf887e",
+    "01774038-c922-4de4-a896-2d122ad72754"
+  ]
+}

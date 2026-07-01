@@ -1,0 +1,47 @@
+{{  'track-order.css' | asset_url | stylesheet_tag }}
+
+<div class="track-order-container">
+  <div class="track-order-content">
+    <h2>Track Your Order with Ease</h2>
+    <p>We ensure a seamless shopping experience from the moment you place your order to the time it arrives at your doorstep. Stay updated on your order status with our easy tracking system.</p>
+  </div>
+  <div class="track-order-wrapper">
+    <form class="track-order-form">
+      <div class="track-order-result">
+
+      </div>
+      <div class="track-order-error">**Please Add Your Order No / Phone No.</div>
+      <div class="track-order-field">
+        <label for="order_no">Enter Your Order No:</label>
+        <input type="text"
+          name="order_no"
+          id="order_no"
+          placeholder="CHF-00000"
+          autocomplete="off"
+          oninput="this.value = this.value.toUpperCase()"
+        >
+      </div>
+      {% comment %} <div class="track-order-divider">OR</div>
+      <div class="track-order-field">
+        <label for="phone_no">Enter Your Phone No:</label>
+        <input type="tel" name="phone_no" id="phone_no" placeholder="03000000000" autocomplete="off">
+      </div> {% endcomment %}
+      <div class="track-order-field">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{{ 'track-order.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Track Order",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Track Order"
+    }
+  ]
+}
+{% endschema %}

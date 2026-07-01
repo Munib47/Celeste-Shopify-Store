@@ -1,0 +1,696 @@
+{%- liquid
+    assign isRtl = false
+    assign lisRtl = 'ar,dv,ha,he,ku,fa,ur,ug' | split: ','
+    if lisRtl contains request.locale.iso_code or settings.rtl
+        assign isRtl = true
+    endif
+   assign secSt = section.settings
+-%}
+{%- capture collectionTabs -%}
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+  <div class="{% unless secSt.section_width %}page-width{% else %}fullwidth{% endunless %} collection-tabs-wrapper" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
+    
+    {% render 'sec-title' %}
+
+    <div class="tabs-listing wow fadeIn">
+      <ul class="cl-tabs hide-sm {{ settings.title_align}} {{secSt.ff}}" style="--fs:{{secSt.fs}}px;--fw:{{secSt.fw}};--cl:{{secSt.cl}};--bg:{{secSt.bg}};--bd:{{secSt.bd}};--bdr:{{secSt.bdr}}px;--cla:{{secSt.cla}};--bga:{{secSt.bga}};--bda:{{secSt.bda}};">
+        {%- for block in section.blocks limit: section.blocks.size -%}
+			{%- if block.settings.title != blank -%}
+				<li class="st{{ secSt.tab-style}}{% if forloop.first %} active{% endif %}"><a class="tablink" href="#collection-{{ block.id }}">{{ block.settings.title }}</a></li>
+			{%- endif -%}
+        {%- endfor -%}
+      </ul>
+      <div class="tab-container" style="--acfs:{{secSt.fsm}}px;--acfw:{{secSt.fw}};--accl:{{secSt.clm}};--acbg:{{secSt.bgm}};--accla:{{secSt.clma}};--acbga:{{secSt.bgma}};">
+        {% for block in section.blocks limit: section.blocks.size %}
+        {%- assign collection = collections[block.settings.collection] -%}
+        <h3 class="acor-ttl hide-md hide-lg {{secSt.ff}} {{ settings.title_align}} {{ secSt.tab-style}}{% if forloop.first %} active{% endif %}"><a class="tablink" href="#collection-{{ block.id }}">{{ block.settings.title }}<i class="at at-angle-down-r" aria-hidden="true"></i></a></h3>
+        <div id="collection-{{ block.id }}" class="tab-content"{% if forloop.first %} style="display:block"{% endif %}>
+          <div id="productSlider-{{ block.id }}" class="grid rwcols-{{secSt.mobile-grid}} rwcols-md-{{secSt.tablet-grid}} rwcols-lg-{{secSt.grid}} custom-tabs grid-products carousel arwOut" data-flickity='{"cellAlign":"left","groupCells":true,"wrapAround":true,"pageDots":false,"draggable":true{%- if secSt.autoplay -%},"autoPlay":{{secSt.speed | times: 1000}}{% endif %}{%- if isRtl -%},"rightToLeft": false{%- endif -%} }'>
+            
+            	
+                    {%- if block.settings.show_color_list_1 -%}
+                      <div class="grid-colum">
+                        <a href="{{ block.settings.url_1 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_1 != blank -%}
+                          <img src="{{ block.settings.collection_image_1 | img_url: 'large' }}" 
+                           alt="{{ block.settings.collection_image_1.alt |  default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_1.width }}"
+                           height="{{ block.settings.collection_image_1.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_1 != blank -%}
+                          {{ block.settings.collection_video_1 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_1 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_1 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                        </a>
+                      </div>
+                    {%- endif -%}
+                     {%- if block.settings.show_color_list_2 -%}
+                       <div class="grid-colum">
+                           <a href="{{ block.settings.url_2 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_2 != blank -%}
+                          <img src="{{ block.settings.collection_image_2 | img_url: 'large' }}" 
+                           alt=" {{ block.settings.collection_image_2.alt | default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_2.width }}"
+                           height="{{ block.settings.collection_image_2.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_2 != blank -%}
+                          {{ block.settings.collection_video_2 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_2 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_2 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                           </a>
+                        </div>
+                    {%- endif -%}
+          {%- if block.settings.show_color_list_3 -%}
+                        <div class="grid-colum">
+                           <a href="{{ block.settings.url_3 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_3 != blank -%}
+                          <img src="{{ block.settings.collection_image_3 | img_url: 'large' }}" 
+                           alt="{{ block.settings.collection_image_3.alt |  default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_3.width }}"
+                           height="{{ block.settings.collection_image_3.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_3 != blank -%}
+                          {{ block.settings.collection_video_3 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_3 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_3 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                           </a>
+                        </div>
+                    {%- endif -%}
+          {%- if block.settings.show_color_list_4 -%}
+                        <div class="grid-colum">
+                           <a href="{{ block.settings.url_4 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_4 != blank -%}
+                          <img src="{{ block.settings.collection_image_4 | img_url: 'large' }}" 
+                           alt="{{ block.settings.collection_image_4.alt |  default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_4.width }}"
+                           height="{{ block.settings.collection_image_4.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_4 != blank -%}
+                          {{ block.settings.collection_video_4 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_4 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_4 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                           </a>
+                        </div>
+                    {%- endif -%}
+          {%- if block.settings.show_color_list_5 -%}
+                       <div class="grid-colum">
+                           <a href="{{ block.settings.url_5 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_5 != blank -%}
+                          <img src="{{ block.settings.collection_image_5 | img_url: 'large' }}"
+                           alt="{{ block.settings.collection_image_5.alt |  default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_5.width }}"
+                           height="{{ block.settings.collection_image_5.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_5 != blank -%}
+                          {{ block.settings.collection_video_5 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_2 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_5 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                           </a>
+                        </div>
+                    {%- endif -%}
+          {%- if block.settings.show_color_list_6 -%}
+                       <div class="grid-colum">
+                           <a href="{{ block.settings.url_6 }}">
+                      <div class="item">
+                        {%- if block.settings.collection_image_6 != blank -%}
+                          <img src="{{ block.settings.collection_image_6 | img_url: 'large' }}"
+                           alt="{{ block.settings.collection_image_6.alt |  default : shop.name }}"
+                           loading="lazy"
+                           width="{{ block.settings.collection_image_6.width }}"
+                           height="{{ block.settings.collection_image_6.height }}"
+                          >
+                        {%- elsif block.settings.collection_video_6 != blank -%}
+                          {{ block.settings.collection_video_6 | video_tag: image_size: '450x', autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'none' }}
+                        {%- endif -%}
+                        {%- if block.settings.title-tab_6 != blank -%}
+                          <div class="overlay top-overlay">
+                            <div class="text">{{ block.settings.title-tab_6 }}</div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                           </a>
+                        </div>
+                    {%- endif -%}
+                </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>   
+  </div>
+</div>
+{%- endcapture -%}
+{{collectionTabs | strip_newlines | remove: "  " | remove: "	" }}
+
+{% schema %}
+  {
+    "name": "Tabs + Collection overlay",
+    "class": "index-section",
+    "max_blocks": 8,
+    "settings": [	  
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "Our Collection"		
+      },	  
+ 
+      {
+        "type": "paragraph",      
+        "content": "Section==="
+      },	 
+	  {
+            "type": "select",
+            "id": "top-offeset",
+            "label": "Top OffSet",
+            "default": "default",
+            "options": [
+              {
+                "value": "default",
+                "label": "Default"
+              },
+              {
+                "value": "small",
+                "label": "Small"
+              },
+			  {
+                "value": "none",
+                "label": "None"
+              }
+			]
+        }, 
+         {
+		"type":"checkbox",
+		"id":"section_width",
+		"label":"Fullwidth?",
+		"default": false
+	   },
+	 {
+        "type": "checkbox",
+        "id": "section_cov",
+        "label": "Add Background?",
+        "default": false
+      },
+	  {
+        "type": "color",
+        "id": "sec_bg_clr",
+        "label": "Background",
+		"default":"#fafafa",
+		"info":"select light color"
+	  },	   
+	  {
+        "type": "paragraph",
+        "content": "Grid ==="
+      },
+	  {
+        "type": "select",
+        "id": "prbox_style",
+        "label": "Select Style",
+        "default": "style1",
+        "options": [
+          {
+            "value": "style1",
+            "label": "Style 1 - Default Info Center"
+          },
+          {
+            "value": "style2",
+            "label": "Style 2 - Info Hover Image"
+          },
+          {
+            "value": "style3",
+            "label": "Style 3 - Info Below Image"
+          },
+          {
+            "value": "style4",
+            "label": "Style 4 - Default Info Left"
+          },
+ 		  {
+            "value": "style5",
+            "label": "Style 5 - Display Text Button"
+          }
+        ],
+		"info":"[chekout grid style](https://avon-demo.myshopify.com/pages/grid-style)"      
+      },
+      {
+        "type": "paragraph",
+        "content": "Products Per Row ==="
+      },
+      {
+        "type": "range",
+        "id": "grid",
+        "label": "Desktop",
+        "default": 4,
+        "min": 2,
+        "max": 7,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "tablet-grid",
+        "label": "Tablet",
+        "default": 3,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "mobile-grid",
+        "label": "Mobile",
+        "default": 2,
+        "min": 1,
+        "max": 3,
+        "step": 1
+      },
+            
+	 {
+        "type": "header", 
+        "content": "Appearance Tab"
+      },
+	  {
+        "type": "select",
+        "id": "tab-style",
+        "label": "Tab Style",
+        "default": "1",
+		"info":"[tab style](https://www.adornthemes.com/different-tab-styles/)",
+        "options": [
+              {
+                "value": "1",
+                "label": "Simple Text"
+              },
+		      {
+                "value": "2",
+                "label": "Solid"
+              }
+		 ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Tabs ====="
+      },
+      {
+        "type": "range",
+        "id": "fs",
+        "label": "Font Size",
+        "default": 14,
+        "min": 10,
+        "max": 25,
+        "step": 1,
+        "unit": "px"
+      },
+    {
+        "type": "select",
+        "id": "ff",
+        "label": "Font Family",
+        "default": "ft1",
+        "options": [
+            {
+                "value": "ft1",
+                "label": "Font 1"
+            },
+            {
+                "value": "ft2",
+                "label": "Font 2"
+            },
+            {
+                "value": "ft3",
+                "label": "Font 3"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "id": "fw",
+        "label": "Font Weight",
+        "default": "400",
+        "options": [
+            {
+                "value": "300",
+                "label": "Light"
+            },
+            {
+                "value": "400",
+                "label": "Regular"
+            },
+            {
+                "value": "500",
+                "label": "Medium"
+            },
+            {
+                "value": "600",
+                "label": "Semi Bold"
+            },
+            {
+                "value": "700",
+                "label": "Bold"
+            }
+        ]
+    },
+      {
+        "type": "color",
+        "id": "cl",
+        "label": "Text",
+        "default": "#666"
+      },
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "Background",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bd",
+        "label": "Border",
+        "default": "#eee"
+      },
+      {
+        "type": "range",
+        "id": "bdr",
+        "label": "Border Radius",
+        "default": 7,
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "paragraph",
+        "content": "Active Tab ====="
+      },
+      {
+        "type": "color",
+        "id": "cla",
+        "label": "Text",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "bga",
+        "label": "Background",
+        "default": "#fafafa",
+        "info": "Use only for solid style tabs"
+      },
+      {
+        "type": "color",
+        "id": "bda",
+        "label": "Border",
+        "default": "#000"
+      },
+      {
+        "type": "paragraph",
+        "content": "Tabs On Mobile ====="
+      },
+      {
+        "type": "range",
+        "id": "fsm",
+        "label": "Font Size",
+        "default": 14,
+        "min": 10,
+        "max": 25,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "clm",
+        "label": "Text",
+        "default": "#111"
+      },
+      {
+        "type": "color",
+        "id": "bgm",
+        "label": "Background",
+        "default": "#eee"
+      },
+      {
+        "type": "color",
+        "id": "clma",
+        "label": "Active Text",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bgma",
+        "label": "Active Background",
+        "default": "#111"
+      }	
+	 ],
+	"blocks": [
+      {
+        "type": "cltabs",
+        "name": "Collection",
+        "settings": [
+ 		{
+          "type": "text",
+          "id": "title",
+          "label": "Collection Tab Name",
+          "default": "Tab Name"		  
+        },
+        {
+        "type": "header",
+        "content": "Add list 1 ===="
+      },
+        {
+        "type": "checkbox",
+        "id": "show_color_list_1",
+        "label": "Show list 1",
+        "default": false
+      },
+        {
+          "type": "text",
+          "id": "title-tab_1",
+          "label": "Collection Name 1",
+          "default": "Name"		  
+        }, 
+		{
+			"type":"image_picker",
+			"id":"collection_image_1",
+			"label":"Upload Image"			
+		},
+    {
+			"type":"video",
+			"id":"collection_video_1",
+			"label":"Upload Video"			
+		},
+        {
+          "type": "url",
+          "id": "url_1",
+          "label": "Link (optional)",
+          "info": "Keep empty to use 'collection url'."
+          },
+          {
+        "type": "header",
+        "content": "Add list 2 ===="
+      },
+        {
+        "type": "checkbox",
+        "id": "show_color_list_2",
+        "label": "Show list 2",
+        "default": false
+      },
+        {
+          "type": "text",
+          "id": "title-tab_2",
+          "label": "Collection Name 2",
+          "default": "Name"		  
+        }, 
+		{
+			"type":"image_picker",
+			"id":"collection_image_2",
+			"label":"Upload Image"			
+		},
+    {
+			"type":"video",
+			"id":"collection_video_2",
+			"label":"Upload Video"			
+		},
+        {
+          "type": "url",
+          "id": "url_2",
+          "label": "Link (optional)",
+          "info": "Keep empty to use 'collection url'."
+          },
+          {
+              "type": "header",
+              "content": "Add list 3 ===="
+          },
+          {
+              "type": "checkbox",
+              "id": "show_color_list_3",
+              "label": "Show list 3",
+              "default": false
+          },
+          {
+              "type": "text",
+              "id": "title-tab_3",
+              "label": "Collection Name 3",
+              "default": "Name"
+          },
+          {
+              "type": "image_picker",
+              "id": "collection_image_3",
+              "label": "Upload Image"
+          },
+          {
+			"type":"video",
+			"id":"collection_video_3",
+			"label":"Upload Video"			
+		},
+          {
+              "type": "url",
+              "id": "url_3",
+              "label": "Link (optional)",
+              "info": "Keep empty to use 'collection url'."
+          },
+          {
+              "type": "header",
+              "content": "Add list 4 ===="
+          },
+          {
+              "type": "checkbox",
+              "id": "show_color_list_4",
+              "label": "Show list 4",
+              "default": false
+          },
+          {
+              "type": "text",
+              "id": "title-tab_4",
+              "label": "Collection Name 4",
+              "default": "Name"
+          },
+          {
+              "type": "image_picker",
+              "id": "collection_image_4",
+              "label": "Upload Image"
+          },
+          {
+			"type":"video",
+			"id":"collection_video_4",
+			"label":"Upload Video"			
+		},
+          {
+              "type": "url",
+              "id": "url_4",
+              "label": "Link (optional)",
+              "info": "Keep empty to use 'collection url'."
+          },
+          {
+              "type": "header",
+              "content": "Add list 5 ===="
+          },
+          {
+              "type": "checkbox",
+              "id": "show_color_list_5",
+              "label": "Show list 5",
+              "default": false
+          },
+          {
+              "type": "text",
+              "id": "title-tab_5",
+              "label": "Collection Name 5",
+              "default": "Name"
+          },
+          {
+              "type": "image_picker",
+              "id": "collection_image_5",
+              "label": "Upload Image"
+          },
+          {
+			"type":"video",
+			"id":"collection_video_5",
+			"label":"Upload Video"			
+		},
+          {
+              "type": "url",
+              "id": "url_5",
+              "label": "Link (optional)",
+              "info": "Keep empty to use 'collection url'."
+          },
+          {
+              "type": "header",
+              "content": "Add list 6 ===="
+          },
+          {
+              "type": "checkbox",
+              "id": "show_color_list_6",
+              "label": "Show list 6",
+              "default": false
+          },
+          {
+              "type": "text",
+              "id": "title-tab_6",
+              "label": "Collection Name 6",
+              "default": "Name"
+          },
+          {
+              "type": "image_picker",
+              "id": "collection_image_6",
+              "label": "Upload Image"
+          },
+          {
+			"type":"video",
+			"id":"collection_video_6",
+			"label":"Upload Video"			
+		},
+          {
+              "type": "url",
+              "id": "url_6",
+              "label": "Link (optional)",
+              "info": "Keep empty to use 'collection url'."
+          }
+      	]
+     }
+	],
+    "presets": [
+      {
+        "name": "Tabs + Collection overlay",       
+        "blocks": [
+          {
+            "type": "cltabs"
+          },
+          {
+            "type": "cltabs"
+          },
+          {
+            "type": "cltabs"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %} 

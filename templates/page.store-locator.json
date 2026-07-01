@@ -1,0 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": false
+      }
+    },
+    "c810ea8a-a122-4c5e-b56d-729e6a04a0a4": {
+      "type": "map",
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Karachi",
+        "address": "<p>26th street, Tauheed Commercial, DHA Phase V, Karachi</p>",
+        "map_address": "26th street, Tauheed Commercial, DHA Phase V, Karachi",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": true
+      }
+    },
+    "486557b7-a152-495f-ad86-55f65a3e2c4d": {
+      "type": "map",
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Lahore",
+        "address": "<p>22 L , Gulberg II , College Road Lahore</p>",
+        "map_address": "31°31'16.57\"N 74°21'10.88\"E",
+        "api_key": "31°31'16.57\"N 74°21'10.88\"E",
+        "show_button": true
+      }
+    }
+  },
+  "order": [
+    "page",
+    "c810ea8a-a122-4c5e-b56d-729e6a04a0a4",
+    "486557b7-a152-495f-ad86-55f65a3e2c4d"
+  ]
+}

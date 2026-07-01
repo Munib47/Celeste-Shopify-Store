@@ -1,0 +1,315 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "image_7CUWwQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Muse_Banner.jpg",
+            "imagem": "shopify://shop_images/Muse_Mobile_Banner.jpg",
+            "ialign": "left_top",
+            "hd1": "",
+            "pcl": "#472815",
+            "divider": true,
+            "dividercl": "#472815",
+            "dividerw": 40,
+            "title": "Live Beautifully",
+            "tcl": "#472815",
+            "hd3": "At Celeste, we believe your home should be a reflection of who you are—effortless, timeless, and uniquely yours.",
+            "hideh3": false,
+            "cl": "#472815",
+            "btn": "Explore Collection",
+            "link": "shopify://collections/new-arrivals-26",
+            "btn1window": false,
+            "btn-style": "btn",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1300,
+            "text-left": true,
+            "txtpos": "f-aic-md f-jcs-md",
+            "txtposm": "f-jcc f-aic"
+          }
+        },
+        "ee82a7dc-6138-4b2c-933a-a7f288d89614": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Eclipse_Banner_12e499c2-9760-45e3-a664-5754d0e7350b.jpg",
+            "imagem": "shopify://shop_images/Eclipse_Mobile_Banner.jpg",
+            "ialign": "center_center",
+            "hd1": "",
+            "pcl": "#000000",
+            "divider": false,
+            "dividercl": "#000000",
+            "dividerw": 50,
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://products/windsor-cloud-sectional-sofa",
+            "btn1window": false,
+            "btn-style": "btn1",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1200,
+            "text-left": true,
+            "txtpos": "f-aic-md f-jcs-md",
+            "txtposm": "f-aic f-jcs"
+          }
+        },
+        "1561726660568-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Exclusive--price-drop.jpg",
+            "imagem": "shopify://shop_images/Exclusive--price-drop-1080x1080.jpg",
+            "ialign": "left_top",
+            "hd1": "",
+            "pcl": "#000000",
+            "divider": false,
+            "dividercl": "#000000",
+            "dividerw": 50,
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://collections/ageing-stock",
+            "btn1window": false,
+            "btn-style": "btn",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1300,
+            "text-left": true,
+            "txtpos": "f-jce-md f-aic-md",
+            "txtposm": "f-jcc f-aie"
+          }
+        }
+      },
+      "block_order": [
+        "image_7CUWwQ",
+        "ee82a7dc-6138-4b2c-933a-a7f288d89614",
+        "1561726660568-1"
+      ],
+      "settings": {
+        "top-offeset": "none",
+        "ht": "1",
+        "htd": 550,
+        "htt": 500,
+        "htm": 600,
+        "section_width": false,
+        "box-width": 1500,
+        "isovr": false,
+        "obg": "#3d4246",
+        "oopt": 1,
+        "pfs": 16,
+        "pfsm": 13,
+        "pff": "ft1",
+        "pfw": "400",
+        "plh": 1.2,
+        "pmb": 0,
+        "pmbm": 0,
+        "bfs": 47,
+        "bfsm": 28,
+        "bff": "ft2",
+        "bfw": "700",
+        "blh": 1.1,
+        "bmb": 20,
+        "bmbm": 10,
+        "dfs": 16,
+        "dfsm": 14,
+        "dff": "ft1",
+        "dfw": "400",
+        "dlh": 1.2,
+        "dmb": 25,
+        "dmbm": 15,
+        "txtanimation": true,
+        "anim": "st1",
+        "btn-size": "btn-md",
+        "btn-sizem": "mob-btn-sm",
+        "isbox": false,
+        "isboxm": false,
+        "tbg": "#ffffff",
+        "opt": 0.9,
+        "brad": 0,
+        "autoplay": false,
+        "speed": 7,
+        "arrow": true,
+        "arrowc": "#472815",
+        "dot": false,
+        "dots": "#ffffff",
+        "bar": true,
+        "barc": "#ffffff",
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "richtext_LGKHrU": {
+      "type": "richtext",
+      "name": "Rich Text Block",
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "max-width": 700,
+        "title": "Celeste Home Fashion is more than a furniture store — it is a lifestyle destination for those who value beauty, quality, and thoughtful living.",
+        "tcl": "#472815",
+        "tfs": 26,
+        "tfsm": 20,
+        "tff": "ft1",
+        "tfw": "700",
+        "tlh": 1.2,
+        "richtxt": "<p>From timeless furniture and elegant décor to refined lighting and accessories, our collections are chosen to inspire, comfort, and elevate everyday living.</p>",
+        "cl": "#472815",
+        "fs": 14,
+        "fsm": 13,
+        "lh": 1.6,
+        "btntxt": "",
+        "btnurl": "",
+        "btn-style": "btn",
+        "btntxt1": "",
+        "btnurl1": "",
+        "btn-style2": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm",
+        "txt_align": "tc",
+        "text_clr": "#111"
+      }
+    },
+    "collection_list_3PmNHt": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_3nknKn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "living",
+            "url": "",
+            "collection_image": "shopify://shop_images/CPT-07248.jpg",
+            "collection_name": "Living",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_J9M9HM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_8NyKb3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_BgdLRT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_9GRkke": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_fhpUxd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_3nknKn",
+        "featured_collection_J9M9HM",
+        "featured_collection_8NyKb3",
+        "featured_collection_BgdLRT",
+        "featured_collection_9GRkke",
+        "featured_collection_fhpUxd"
+      ],
+      "name": "Collections List",
+      "settings": {
+        "title": "Collection list",
+        "subtitle": "Describe your products, collection, content etc...",
+        "top-offeset": "default",
+        "section_width": true,
+        "npd": false,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "hide_mobile": false,
+        "enable_carousel": true,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid": 6,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "style": "st1",
+        "textalign": "tc",
+        "leftpadzero": false,
+        "product_count": false,
+        "show_buttons": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "tfs": 18,
+        "tfsm": 16,
+        "tff": "ft1",
+        "tfw": "400",
+        "tlh": 1.2,
+        "cl": "#fff",
+        "bg": "#000",
+        "opt": 0.9,
+        "bdr": 0,
+        "disable_zoom": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "richtext_LGKHrU",
+    "collection_list_3PmNHt"
+  ]
+}

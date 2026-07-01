@@ -1,0 +1,104 @@
+.track-order-container {
+  max-width: 58rem;
+  margin: 5rem auto 0;
+}
+
+.track-order-content h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+.track-order-content p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.track-order-wrapper {
+  max-width: 37rem;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.track-order-field {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.track-order-field input {
+  width: 100%;
+  height: 3rem;
+}
+
+.track-order-field input::placeholder {
+  font-weight: bold;
+}
+
+.track-order-field label {
+  font-size: 14px;
+}
+
+.track-order-field button {
+  width: 50%;
+  color: #ffffff;
+  background-color: #000000;
+  border: 0;
+  border-radius: 6px;
+  height: 2.8rem;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+
+.track-order-divider {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.track-order-error {
+  color: #000000;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+  display: none;
+}
+
+.track-order-form.active  .track-order-error {
+  display: block;
+}
+
+.track-order-form.active  .track-order-field label {
+  color: #000000;
+}
+
+.track-order-form.active  .track-order-field input {
+  border-color: #000000;
+}
+
+.track-order-result {
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .track-order-content  {
+    padding: 0 20px;
+  }
+
+  .track-order-content h2 {
+    font-size: 16px;
+  }
+
+  .track-order-content p {
+    font-size: 16px;
+  }
+}

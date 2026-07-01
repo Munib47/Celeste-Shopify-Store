@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": false
+      }
+    },
+    "f699e2ca-a497-4418-a39c-7519c7e156d3": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>26th street, Tauheed Commercial, DHA Phase V, Karachi</p>",
+        "map_address": "26th street, Tauheed Commercial, DHA Phase V, Karachi",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    },
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>Y block, DHA Phase III, Lahore</p>",
+        "map_address": "Y block, DHA Phase III, Lahore",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    },
+    "1597af1d-477f-443c-a8e5-985302914d92": {
+      "type": "collection-list",
+      "blocks": {
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://cdn.shopify.com/s/files/1/0249/2406/1792/files/CHF_Catalouge_1.pdf?v=1736492488",
+            "collection_image": "shopify://shop_images/Mock-Up-Catalog1.jpg",
+            "collection_name": "CHF Catalogue",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://cdn.shopify.com/s/files/1/0249/2406/1792/files/Catalogue_16.5_x_9_inches.pdf?v=1695189815",
+            "collection_image": "shopify://shop_images/651x491.jpg",
+            "collection_name": "Sleeplab By CHF",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-4": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-1",
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-2",
+        "template--16164137959585__1597af1d-477f-443c-a8e5-985302914d92-featured_collection-4"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "top-offeset": "default",
+        "section_width": false,
+        "npd": false,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "hide_mobile": false,
+        "enable_carousel": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid": 2,
+        "tablet-grid": 1,
+        "mobile-grid": 1,
+        "style": "st2",
+        "textalign": "tc",
+        "leftpadzero": false,
+        "product_count": false,
+        "show_buttons": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "tfs": 18,
+        "tfsm": 16,
+        "tff": "ft1",
+        "tfw": "400",
+        "tlh": 1.2,
+        "cl": "#ffffff",
+        "bg": "#000000",
+        "opt": 0.9,
+        "bdr": 0,
+        "disable_zoom": false
+      }
+    }
+  },
+  "order": [
+    "page",
+    "f699e2ca-a497-4418-a39c-7519c7e156d3",
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb",
+    "1597af1d-477f-443c-a8e5-985302914d92"
+  ]
+}

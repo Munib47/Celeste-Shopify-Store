@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact": {
+      "type": "contact-template",
+      "settings": {
+        "width": 1200,
+        "hide_ttl": true,
+        "breadcrumb": false,
+        "layout": "style1",
+        "map_address": "",
+        "contact_title": "Contact Us",
+        "contact_text_desc": "Get in touch and let us know how we can help. Have a question but aren’t sure who to contact? Get in touch and a member of our team will reach out to you.",
+        "show_phone": false,
+        "show_subject": false,
+        "store_opening_time": "<p><b>OPENING HOURS</b></p>\nLahore :  Mon - Sun : 11am - 10pm<br> Karachi: Mon - Sat : 10am - 8pm",
+        "cnt_title": "",
+        "store_address": "",
+        "store_phone": "PHONE: 042-35751182 + 04232303633",
+        "store_email": "EMAIL: info@celestehomefashion.com",
+        "show_socials": true,
+        "socials_ttl": "STAY CONNECTED",
+        "form_bg": "#f8f8f8",
+        "form_text": "#111111"
+      }
+    }
+  },
+  "order": [
+    "contact"
+  ]
+}

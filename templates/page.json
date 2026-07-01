@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": false
+      }
+    },
+    "f699e2ca-a497-4418-a39c-7519c7e156d3": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>26th street, Tauheed Commercial, DHA Phase V, Karachi</p>",
+        "map_address": "26th street, Tauheed Commercial, DHA Phase V, Karachi",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    },
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>Y block, DHA Phase III, Lahore</p>",
+        "map_address": "Y block, DHA Phase III, Lahore",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    }
+  },
+  "order": [
+    "page",
+    "f699e2ca-a497-4418-a39c-7519c7e156d3",
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb"
+  ]
+}

@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": false
+      }
+    },
+    "f699e2ca-a497-4418-a39c-7519c7e156d3": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>26th street, Tauheed Commercial, DHA Phase V, Karachi</p>",
+        "map_address": "26th street, Tauheed Commercial, DHA Phase V, Karachi",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    },
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "map_title": "Our store",
+        "address": "<p>Y block, DHA Phase III, Lahore</p>",
+        "map_address": "Y block, DHA Phase III, Lahore",
+        "api_key": "AIzaSyAV6mfMColFFkRMacWmgFw5q4v4akKDiKw",
+        "show_button": false
+      }
+    },
+    "b18c19c0-ba8a-4e1b-b4e5-09bbbad2f8a1": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".set {width: 300px; margin: 0 auto;}",
+        "textarea,input {width: 100%;}"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "custom_liquid": "<div class=\"set\">\n{% form 'contact' %}\n    {{ form.errors | default_errors }}\n  <input type=\"hidden\" name=\"contact[title]\" id=\"title\" value=\"Request for price\" />\n    <div class=\"first-name\">\n      <label for=\"first-name\">First name</label>\n      <input type=\"text\" name=\"contact[first_name]\" id=\"first-name\" />\n    </div>\n  \n    <div class=\"last-name\">\n      <label for=\"last-name\">Last name</label>\n      <input type=\"text\" name=\"contact[last_name]\" id=\"last-name\" />\n    </div>\n  \n    <div class=\"phone\">\n      <label for=\"phone\">Phone</label>\n      <input type=\"tel\" name=\"contact[phone]\" id=\"phone\" />\n    </div>\n  \n    <div class=\"email\">\n      <label for=\"email\">Email</label>\n      <input type=\"email\" name=\"contact[email]\" id=\"email\" />\n    </div>\n  \n    <div class=\"message\">\n      <label for=\"message\">Message</label>\n      <textarea name=\"contact[body]\" id=\"message\"></textarea>\n    </div>\n  \n    <div class=\"submit\">\n      <input type=\"submit\" value=\"Create\" class=\"btn\" />\n    </div>\n\n  {% endform %}\n  </div>",
+        "top-offeset": "default",
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "f699e2ca-a497-4418-a39c-7519c7e156d3",
+    "00c46b61-48a1-4651-9ad3-b9fbe3494ddb",
+    "b18c19c0-ba8a-4e1b-b4e5-09bbbad2f8a1"
+  ]
+}

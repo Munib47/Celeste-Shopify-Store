@@ -1,0 +1,216 @@
+<style>
+
+.grid-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 0px;
+}
+
+.grid-wrapper {
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: repeat(5, minmax(250px, 1fr));
+	grid-auto-rows: 300px;
+	grid-auto-flow: dense;
+    padding: 30px 0;
+}
+.grid-wrapper .wide {
+  grid-column: span 2;
+  height: auto;
+}
+.grid-wrapper .tall {
+  grid-row: span 2;
+  height: auto;
+}
+.grid-wrapper .big {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: auto;
+}
+ .grid-wrapper a{
+    display: inline-block;
+    width: 100%;
+   height:100%;
+   position: relative;
+ } 
+  .overlay_Mas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+/*         background: #00000063; */
+    padding: 5px 0;
+}
+.overlay_Mas h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+  margin-bottom: 0;
+}
+  .overlay_Mas p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+  .align-right-bottom {
+    text-align: right;
+    bottom: 9px;
+    top: inherit;
+    right: 21px;
+}
+
+  @media only screen and (max-width: 769px) {
+
+   .grid-wrapper .tall, .grid-wrapper .wide {
+	grid-column: span 1;
+}
+    .grid-wrapper .tall {
+	grid-row: span 1;
+}
+    .grid-wrapper{
+          grid-template-columns: auto;
+    }
+  }
+</style>
+<div class="page-width">
+  {% if section.settings.title != blank %}
+<div class="sec-ttl tc"><h2 class="h3 ft2">{{ section.settings.title }}</h2></div>
+{% endif %}
+<div class="grid-wrapper">
+   {% for block in section.blocks %}
+	<div class="{{ block.settings.img-size}}">
+      <a href="{{ block.settings.link_url }}">
+        <img src="{{ block.settings.image | img_url: 'master' }}"
+         alt="{{ block.settings.image.alt | default: shop.name }}"
+         loading="lazy"
+         width="{{ block.settings.image.width }}"
+         height="{{ block.settings.image.height }}"
+        >
+      <div class="overlay_Mas {{ block.settings.text_postion }}">
+        <h3 style="color: {{ block.settings.font_color }}">{{ block.settings.title }}</h3>
+     <p style="color: {{ block.settings.font_color }}">{{ block.settings.description }}</p>
+      </div>
+
+        
+      </a>
+		
+	</div>
+	 {% endfor %}
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Masonry Grid",
+    "class": "index-section",
+    "settings": [		
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "Heading",
+		"info":"Use <strong>text here</strong> to make headings bold"
+      },
+ 	  {
+        "type": "textarea",
+        "id": "subtitle",
+        "label": "Sub Heading",
+        "default": "Describe your products, collection, content etc..."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text / Image",
+        "settings": [
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "img-size",
+            "label": "Image Design",
+            "default": "normal",
+            "options": [
+              {
+                "value": "normal",
+                "label": "Normal"
+              },
+			   {
+                "value": "tall",
+                "label": "Tall"
+              },
+			   {
+                "value": "big",
+                "label": "Big"
+              },
+ 			  {
+                "value": "wide",
+                "label": "Wide"
+              }
+			]	
+		  },
+
+          
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading", 
+			"default":"Title"
+          },
+          {
+            "type": "select",
+            "id": "text_postion",
+            "label": "Text design",
+            "default": "normal",
+            "options": [
+              {
+                "value": "normal",
+                "label": "Normal"
+              },
+			   {
+                "value": "align-right-bottom",
+                "label": "Right Bottom"
+              }
+			]	
+		  },
+          {
+        "type": "color",
+        "id": "font_color",
+        "label": "Text color",
+        "default": "#fff"
+      },	
+         {
+            "type": "text",
+            "id": "description",
+            "label": "Heading"
+          },
+          
+          
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Add link"
+          }
+        ]
+      }
+    ],
+     "presets": [
+      {
+        "name": "Masonry Block"
+      }
+     ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

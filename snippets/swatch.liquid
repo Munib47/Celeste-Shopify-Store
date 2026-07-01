@@ -1,0 +1,49 @@
+{% capture colorSwatches %}
+{%- liquid
+	assign optg = optindex | plus: 1
+	assign downcased_option = swatch.name | downcase
+	assign is_color = false
+
+	assign colorOptions = settings.colorOpt | downcase | replace:", ","," | replace:" , ","," | replace:" ,","," | split: ","
+	if colorOptions contains downcased_option
+		assign is_color = true 
+	endif
+-%}
+
+<div class="swatch pvOpt{{optindex}} fl f-wrap option{{optg}} mb15 w_100" data-option-index="{{ optindex }}">
+	<label class="header w_100 fl">
+        {{ swatch.name }}: <span class="slVariant ml5">{{swatch.selected_value}}</span>
+        {%- if sizechart -%}
+            <a href="#sizechart" class="mfp sizelink ml_auto" data-effect="mfp-zoom-in"><i class="at at-ruler"></i> {{ 'products.product.size_chart' | t}}</a>
+        {%- endif -%}
+    </label>
+  
+	{% assign values = '' %}
+	{% for variant in product.variants %}
+		{% assign value = variant.options[optindex] %}
+		{% unless values contains value %}
+			{% assign values = values | join: ',' %}
+			{% assign values = values | append: ',' | append: value %} 
+			{% assign values = values | split: ',' %}
+			{% assign colorname = value | handleize %}
+			<div data-value="{{ value | escape }}" class="swatch-element">
+			<input class="swatchInput dn single-option-selector-{{secId}}{% if is_color %} colorsw{% endif %}" id="{{product.id}}-{{ optg }}-{{ value | handle }}" data-index="option{{optg}}" data-var="{{ value | handle }}" type="radio" name="{{ swatch.name | handle }}" value="{{ value | escape }}"{% if swatch.selected_value == value %} checked{% endif %} />
+			{% if is_color %}
+                {% if settings.sw_type == "color" %}
+                    <label class="swatchLbl ff color {{settings.sw_size}} swt{{value | handle}}" for="{{product.id}}-{{ optg }}-{{ value | handle }}" style="background-color:url({{ value | handle | asset_url | join:'.png'}});"></label>
+                {% else %}
+                    <label class="swatchLbl dd color {{settings.sw_size}} lazyload" for="{{product.id}}-{{ optg }}-{{ value | handle }}" data-bgset="{{ value | handle | upcase | replace: "-", "_" | append:'.png' | file_img_url }}" data-sizes="auto" data-parent-fit="contain"></label>
+                <div style="display: none;">
+                  https://cdn.shopify.com/s/files/1/0249/2406/1792/files/{{ value | handle | upcase | replace: "-", "_" | append:'.png' }}
+                </div>
+                  {% endif %}
+                <span class="tooltip-label top">{{ value }}</span>
+			{% else %}
+			    <label class="swatchLbl" for="{{product.id}}-{{ optg }}-{{ value | handle }}">{{ value }}</label>            	
+			{% endif %}
+			</div>
+		{% endunless %}
+	{% endfor %}
+</div>
+{% endcapture %}
+{{ colorSwatches | strip_newlines | remove: '  ' | remove: '	' }}

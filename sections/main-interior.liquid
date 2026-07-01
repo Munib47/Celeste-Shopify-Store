@@ -1,0 +1,611 @@
+<style>
+    @font-face {
+    font-family: 'Didot';
+    src: url('https://cdn.shopify.com/s/files/1/0249/2406/1792/files/Didot.woff2?v=1629101736') format('woff2'),
+         url('https://cdn.shopify.com/s/files/1/0249/2406/1792/files/Didot.woff?v=1629101736') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+	}
+
+    .main-banner .background-image {
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+    }
+
+    .main-banner .caption {
+        z-index: 10;
+    }
+
+    .main-banner .caption img {
+      width: 70px;
+      margin: 0 auto 10px;
+      opacity: 1;
+    }
+
+    .main-banner:after {
+        content: '';
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+	
+  .main-banner .caption h5 {
+    font-size: 25px;
+    line-height: 25px;
+    }
+  	
+  
+    .main-banner .caption h2 {
+      font-family: 'Didot';
+      padding-top: 50px;
+      display: block;
+      font-size: 40px;
+      line-height: 40px;
+	  letter-spacing: 0.8px;
+    }
+  	
+  
+   .main-banner .caption p {
+     font-size: 14px !important;
+     line-height: 15px;
+     text-transform: uppercase;
+     font-family: 'Didot';
+    }
+
+    .main-banner .caption h5,
+    .main-banner .caption p,
+    .main-banner:hover .caption p,
+    .main-banner .caption h2 {
+        color: #fff;
+        margin: 0;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        z-index: 2;
+    }
+
+    #pageInterior .row {
+        max-width: 875px;
+        margin: auto;
+        text-align: center;
+        padding: 80px 0;
+    }
+  
+    #pageInterior .row .text {
+      font-size: 20px;
+      line-height: 24px;
+      color: #6d6e71;
+    }
+
+    #pageInterior .content h3 {
+      font-weight: 500;
+      color: #6d6e71;
+      font-size: 25px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+  
+
+    #threeBlocks .row {
+        max-width: 65%;
+        margin: auto;
+        text-align: center;
+        padding: 0px 0 60px;
+    }
+
+    #threeBlocks .top-heading {
+        font-size: 25px;
+        line-height: 28px;
+        color: #6d6e71;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+
+
+    #threeBlocks .interior-grid {
+        display: flex;
+        justify-content: center;
+    }
+
+    #threeBlocks .interior-grid .blocks {
+        flex: 1;
+        border: 2px solid #ccc;
+        padding: 20px;
+     	max-width: 33%;
+    	color: #6d6e71;
+    }
+  
+     #threeBlocks .interior-grid .blocks h3 {
+       font-weight: 500;
+       font-size: 15px;
+       line-height: 20px;
+       color: #2c2e35;
+       margin: 15px 0 20px;
+    }
+  
+	#threeBlocks .interior-grid .blocks p {}
+
+    #threeBlocks .interior-grid .blocks:nth-child(1),
+    #threeBlocks .interior-grid .blocks:nth-child(2) {
+        border-right: none;
+    }
+
+    .page-interior-services #shopify-section-footer {
+        display: block !important;
+    }
+
+    #interiorBlock {
+        margin-bottom: 50px;
+    }
+
+    #interiorBlock .carousel {
+        position: relative;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #interiorBlock .contentSection {
+        padding: 40px 0;
+        text-align: center;
+        background: #f3f3f3;
+    }
+
+    #interiorBlock .contentSection h5 {
+      font-size: 14px;
+      line-height: 15px;
+      margin-bottom: 15px;
+    }
+
+    #interiorBlock .contentSection h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    #interiorBlock .interiorList .blocks {
+        margin: 0;
+        height: 475px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    #interiorBlock .interiorList .blocks {
+        position: relative;
+    }
+
+    #interiorBlock .interiorList .blocks a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 13;
+    }
+
+    #interiorBlock .interiorList .blocks a:hover:before {
+        content: '';
+        background-color: rgba(0, 0, 0, 0.35);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    #interiorBlock .interiorList .blocks img {
+        height: 100%;
+    }
+
+    #interiorBlock .interiorList .blocks .slide-content {
+      width: 200px;
+      height: 90px;
+      text-align: center;
+      padding: 20px 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 4;
+    }
+
+    #interiorBlock .interiorList .blocks .slide-content h3 {
+        margin: 0 0 10px;
+        color: #636364;
+        font-size: 18px;
+        line-height: 20px;
+    	font-style: italic;
+    }
+
+    #interiorBlock .interiorList .slick-prev {
+        left: 25px;
+    }
+
+    #interiorBlock .interiorList .slick-next {
+        right: 25px;
+    }
+
+    #interiorBlock .interiorList .blocks .slide-content p {
+      margin: 0;
+      font-size: 12px !important;
+      line-height: 16px;
+      font-weight: 600;
+    }
+	
+  .interiorBlockIcons {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px 0 20px;
+  }
+  
+  .interiorBlockIcons .block {
+  	text-align: center;
+    align-self: center;
+  }
+  
+  .interiorBlockIcons .block:last-child {
+    padding-top: 10px;
+  }
+  
+  .interiorBlockIcons .content h4 {
+    margin: 0 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .interiorBlockIcons .content .call-number {
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+  
+  .interiorBlockIcons .block img {
+  	width: 40px;
+    margin: 0 0 20px;
+  }
+  .homepage-promo {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.homepage-promo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: 1280px;
+}
+
+.homepage-promo .caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -60%);
+  -ms-transform: translate(-50%, -60%);
+  -moz-transform: translate(-50%, -60%);
+  -o-transform: translate(-50%, -60%);
+}
+
+.homepage-promo .caption::before,
+.homepage-promo .caption::after {
+  pointer-events: none;
+}
+
+.homepage-promo .caption h3,
+.homepage-promo .caption p {
+  margin: 0;
+}
+
+.homepage-promo .caption img {
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+.homepage-promo:hover img {
+  opacity: 0.7;
+}
+
+.homepage-promo .caption::before {
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.homepage-promo .caption::after {
+  -webkit-transform: scale(1,0);
+  transform: scale(1,0);
+}
+
+.homepage-promo h3 {
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0,-20px,0);
+  transform: translate3d(0,-20px,0);
+}
+
+.homepage-promo p {
+  padding: 10px 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,20px,0);
+  transform: translate3d(0,20px,0);
+}
+
+.homepage-promo:hover .caption::before,
+.homepage-promo:hover .caption::after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.homepage-promo:hover h3,
+.homepage-promo:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+  
+    @media screen and (max-width: 768px) {
+      
+      #threeBlocks .row {
+          max-width: 100%;
+      }
+      
+      	#interiorBlock .interiorList .blocks {
+          height: 300px;
+    	}
+      	#interiorBlock .interiorList .blocks img {
+          height: 100%;
+          width: 100%;
+    	}
+      	#interiorBlock .carousel {
+          grid-template-columns: 1fr;
+          grid-gap: 10px;
+    	}
+      
+        #threeBlocks {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .main-banner .caption h2 {
+            font-size: 28px;
+            line-height: 30px;
+        }
+
+        .main-banner .caption img {
+            width: 70px;
+            margin: 0 auto 20px;
+        }
+
+        .main-banner .caption p {
+            margin: 0 !important;
+            line-height: 16px;
+        }
+
+        #pageInterior .row {
+            width: 100%;
+            padding: 40px 0;
+        }
+		
+        #threeBlocks .interior-grid {
+            flex-direction: column !important;
+            padding: 0 40px;
+        }
+
+        #threeBlocks .interior-grid .blocks {
+            max-width: 100% !important;
+        }
+ 
+        #threeBlocks .interior-grid .blocks:nth-child(1),
+        #threeBlocks .interior-grid .blocks:nth-child(2) {
+            border-right: 2px solid #ccc !important;
+            border-bottom: none;
+        }
+
+        #threeBlocks .top-heading {
+            font-size: 20px;
+        }
+    }
+	
+  	@media screen and (max-width: 480px) {
+      .interiorBlockIcons {
+      	display: block;
+      }
+      
+      .interiorBlockIcons .block {
+        margin-bottom: 40px;
+      }
+      
+      .interiorBlockIcons .block:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+  .interior-grid .blocks img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .section-promo .caption img {
+    height: auto;
+    max-width: 100%;
+  }
+
+
+</style>
+
+<section id="page-section-{{ block.id }}" class="main-banner homepage-promo" data-section-id="{{ block.id }}">
+
+    {% if block.settings.io_full_width %}
+    <div class="gridlock-fluid">
+        <div class="row">
+            {% endif %}
+            <div class="row no-fouc">
+                {% if block.settings.io_link != blank %}<a class="section-promo-link"
+                    href="{{ block.settings.io_link }}">{% endif %}
+                    <div class="section-promo centered contained desktop-12 tablet-6 mobile-3">
+                        {% if block.settings.banner-image %}
+                        <div class="onboard">
+                            <img src="{{ settings.banner-image | img_url }}" 
+                             alt="{{ settings.banner-imag.alt | default: shop.name }}"
+                             loading="lazy"
+                             width="{{ settings.banner-imag.width }}"
+                             height="{{ settings.banner-imag.height }}"
+                            >
+                        </div>
+                        {% else %}
+
+                        <div class="background-image lazyload"
+                            data-bgset="{% include 'bgset', image: settings.banner-image %}" data-sizes="auto"></div>
+                        <noscript>
+                            <div class="background-image"
+                                style="background-image: url({{ settings.banner-image | img_url }});"></div>
+                        </noscript>
+                        {% endif %}
+
+                        <div class="caption">
+                            {% if settings.io_image_icon != blank %}
+                            <img src="{{ settings.io_image_icon | img_url }}" 
+                             alt="{{ settings.io_image_icon.alt | default : shop.name }}"
+                             loading="lazy"
+                             width="{{ settings.io_image_icon.width }}"
+                             height="{{ settings.io_image_icon.height }}"
+                            >
+                            {% endif %}
+
+                            {% if settings.io_heading != blank %}
+                            <h5>{{ settings.io_heading }}</h5>
+                            {% endif %}
+                            {% if settings.io_heading_small != blank %}
+                            <p>{{ settings.io_heading_small }}</p>
+                            {% endif %}
+
+                            {% if settings.io_hidden_text != blank %}
+                            <h2>{{ settings.io_hidden_text }}</h2>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    {% if block.settings.io_link != blank %}
+                </a>{% endif %}
+            </div>
+            {% if block.settings.io_full_width %}
+        </div>
+    </div>{% endif %}
+
+</section>
+
+<section id="pageInterior" class="content-section">
+    <div class="row content">
+        <div class="desktop-12 tablet-6 mobile-3">
+            {% if settings.content_heading != blank %}
+            <h3>{{ settings.content_heading }}</h3>
+            {% endif %}
+            {% if settings.content_text != blank %}
+            <span class="text">{{ settings.content_text }}</span>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section id="threeBlocks" class="content-section">
+    <div class="row content">
+
+        {% if settings.content_top_heading != blank %}
+        <h2 class="top-heading">{{ settings.content_top_heading }}</h2>
+        {% endif %}
+
+        <div class="interior-grid">
+            <div class="blocks">
+                {% if settings.Block1_icon != blank %}
+                <img src="{{ settings.Block1_icon | img_url }}" 
+                 alt="{{ settings.Block1_icon.alt | default: shop.name }}"
+                 loading="lazy"
+                 width="{{ settings.Block1_icon.width }}"
+                 height="{{ settings.Block1_icon.height }}"
+                >
+                {% endif %}
+
+                {% if settings.block1_heading != blank %}
+                <h3>{{ settings.block1_heading }}</h3>
+                {% endif %}
+                {% if settings.block1_Content != blank %}
+                <p>{{ settings.block1_Content }}</p>
+                {% endif %}
+            </div>
+
+            <div class="blocks">
+                {% if settings.Block2_icon_image != blank %}
+                <img src="{{ settings.Block2_icon_image | img_url }}" 
+                 alt="{{ settings.Block2_icon_image.alt | default: shop.name }}"
+                 loading="lazy"
+                 width="{{ settings.Block2_icon_image.width }}"
+                 height="{{ settings.Block2_icon_image.height }}"
+                >
+                {% endif %}
+
+                {% if settings.Block2_heading != blank %}
+                <h3>{{ settings.Block2_heading }}</h3>
+                {% endif %}
+                {% if settings.block2_Content != blank %}
+                <p>{{ settings.block2_Content }}</p>
+                {% endif %}
+            </div>
+
+            <div class="blocks">
+                {% if settings.Block3_icon_image != blank %}
+                <img src="{{ settings.Block3_icon_image | img_url }}"
+                 alt="{{ settings.Block3_icon_image.alt | default: shop.name }}"
+                 loading="lazy"
+                 width="{{ settings.Block3_icon_image.width }}"
+                 height="{{ settings.Block3_icon_image.height }}"
+                >
+                {% endif %}
+
+                {% if settings.Block3_heading != blank %}
+                <h3>{{ settings.Block3_heading }}</h3>
+                {% endif %}
+                {% if settings.block3_Content != blank %}
+                <p>{{ settings.block3_Content }}</p>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Interior Design",
+    "settings": [],
+        "presets": [
+      {
+        "name": "Interior Design"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

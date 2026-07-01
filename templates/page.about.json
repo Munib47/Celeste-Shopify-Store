@@ -1,0 +1,458 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": false,
+        "bnr": false,
+        "bheight": 240,
+        "bheightipad": 180,
+        "bheightmob": 150,
+        "bnr-wd": 600,
+        "show_collection_name": true,
+        "ftTtl": 28,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-600",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 970,
+        "hide_ttl": false
+      }
+    },
+    "slideshow_RMciCG": {
+      "type": "slideshow",
+      "blocks": {
+        "image_aYjeXn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Muse_Banner.jpg",
+            "imagem": "shopify://shop_images/Muse_Mobile_Banner.jpg",
+            "ialign": "left_top",
+            "hd1": "",
+            "pcl": "#000000",
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://collections/new-arrivals-26",
+            "btn1window": false,
+            "btn-style": "btn",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1300,
+            "text-left": false,
+            "txtpos": "f-jce-md f-aic-md",
+            "txtposm": "f-jcc f-aie"
+          }
+        },
+        "image_L9ta3g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Eclipse_Banner_12e499c2-9760-45e3-a664-5754d0e7350b.jpg",
+            "imagem": "shopify://shop_images/Eclipse_Mobile_Banner.jpg",
+            "ialign": "center_center",
+            "hd1": "",
+            "pcl": "#000000",
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://products/windsor-cloud-sectional-sofa",
+            "btn1window": false,
+            "btn-style": "btn1",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1200,
+            "text-left": true,
+            "txtpos": "f-aic-md f-jcs-md",
+            "txtposm": "f-aic f-jcs"
+          }
+        },
+        "image_7zLXEz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Alara_3.jpg",
+            "imagem": "shopify://shop_images/Alara_3_Mobile_Banner.jpg",
+            "ialign": "center_center",
+            "hd1": "",
+            "pcl": "#000000",
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": false,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://collections/new-arrivals-26",
+            "btn1window": false,
+            "btn-style": "btn",
+            "display_btn": false,
+            "btn2": "Shop Now",
+            "link2": "shopify://collections",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1300,
+            "text-left": false,
+            "txtpos": "f-aic-md f-jcs-md",
+            "txtposm": "f-jcc f-aie"
+          }
+        },
+        "image_JJmk6P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Exclusive--price-drop.jpg",
+            "imagem": "shopify://shop_images/Exclusive--price-drop-1080x1080.jpg",
+            "ialign": "left_top",
+            "hd1": "",
+            "pcl": "#000000",
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "shopify://collections/ageing-stock",
+            "btn1window": false,
+            "btn-style": "btn",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn2window": false,
+            "btn-style1": "btn1",
+            "contwd": 1300,
+            "text-left": false,
+            "txtpos": "f-jce-md f-aic-md",
+            "txtposm": "f-jcc f-aie"
+          }
+        },
+        "video_pAq8xh": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video_url": "https://youtu.be/cVzt0WZIhAk",
+            "mp4url": "",
+            "mobmp4url": "https://youtu.be/cVzt0WZIhAk",
+            "ovr": "#3d4246",
+            "ovropt": 0,
+            "hd1": "",
+            "pcl": "#000000",
+            "title": "",
+            "tcl": "#000000",
+            "hd3": "",
+            "hideh3": true,
+            "cl": "#000000",
+            "btn": "",
+            "link": "",
+            "display_btn": false,
+            "btn2": "Shop now",
+            "link2": "",
+            "btn-style": "btn1",
+            "btn-size": "btn-md",
+            "contwd": 1200,
+            "text-left": true,
+            "txtpos": "f-aic-md f-jcs-md",
+            "txtposm": "f-aic f-jcs"
+          }
+        }
+      },
+      "block_order": [
+        "image_aYjeXn",
+        "image_L9ta3g",
+        "image_7zLXEz",
+        "image_JJmk6P",
+        "video_pAq8xh"
+      ],
+      "settings": {
+        "top-offeset": "none",
+        "ht": "1",
+        "htd": 550,
+        "htt": 500,
+        "htm": 600,
+        "section_width": false,
+        "box-width": 1500,
+        "isovr": false,
+        "obg": "#3d4246",
+        "oopt": 1,
+        "pfs": 16,
+        "pfsm": 13,
+        "pff": "ft1",
+        "pfw": "400",
+        "plh": 1.2,
+        "pmb": 0,
+        "pmbm": 0,
+        "bfs": 47,
+        "bfsm": 28,
+        "bff": "ft2",
+        "bfw": "700",
+        "blh": 1.1,
+        "bmb": 20,
+        "bmbm": 10,
+        "dfs": 16,
+        "dfsm": 14,
+        "dff": "ft1",
+        "dfw": "400",
+        "dlh": 1.2,
+        "dmb": 25,
+        "dmbm": 15,
+        "txtanimation": true,
+        "anim": "st1",
+        "btn-size": "btn-md",
+        "btn-sizem": "mob-btn-sm",
+        "isbox": false,
+        "isboxm": false,
+        "tbg": "#ffffff",
+        "opt": 0.9,
+        "brad": 0,
+        "autoplay": true,
+        "speed": 7,
+        "arrow": false,
+        "arrowc": "#444444",
+        "dot": true,
+        "dots": "#000000",
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "richtext_rCBVpk": {
+      "type": "richtext",
+      "name": "Rich Text Block",
+      "settings": {
+        "top-offeset": "default",
+        "fullwidth": true,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "max-width": 700,
+        "title": "I AM RICH TEXT BLOCK",
+        "tcl": "#000",
+        "tfs": 26,
+        "tfsm": 20,
+        "tff": "ft1",
+        "tfw": "700",
+        "tlh": 1.2,
+        "richtxt": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "cl": "#000",
+        "fs": 14,
+        "fsm": 13,
+        "lh": 1.6,
+        "btntxt": "",
+        "btnurl": "",
+        "btn-style": "btn",
+        "btntxt1": "",
+        "btnurl1": "",
+        "btn-style2": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm",
+        "txt_align": "tc",
+        "text_clr": "#111"
+      }
+    },
+    "collection_list_KAcJcz": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_jbrDEN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "decor-accessories",
+            "url": "#",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_JN9tjk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_R7et7e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_ThWFHn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_WDcBCA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_FtD8Qh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "",
+            "collection_name": "",
+            "collection_description": "",
+            "collection_btn": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_jbrDEN",
+        "featured_collection_JN9tjk",
+        "featured_collection_R7et7e",
+        "featured_collection_ThWFHn",
+        "featured_collection_WDcBCA",
+        "featured_collection_FtD8Qh"
+      ],
+      "name": "Collections List",
+      "settings": {
+        "title": "Collection list",
+        "subtitle": "Describe your products, collection, content etc...",
+        "top-offeset": "default",
+        "section_width": true,
+        "npd": false,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "hide_mobile": false,
+        "enable_carousel": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid": 6,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "style": "st1",
+        "textalign": "tc",
+        "leftpadzero": false,
+        "product_count": false,
+        "show_buttons": true,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "tfs": 18,
+        "tfsm": 16,
+        "tff": "ft1",
+        "tfw": "400",
+        "tlh": 1.2,
+        "cl": "#fff",
+        "bg": "#000",
+        "opt": 0.9,
+        "bdr": 0,
+        "disable_zoom": false
+      }
+    },
+    "store_features_nfyfYz": {
+      "type": "store-features",
+      "blocks": {
+        "text_block_V9VGcr": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-truck-l",
+            "title": "FREE SHIPPING",
+            "text": "<p>When you spend $100+</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_VEjfhW": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-undo-r",
+            "title": "FREE RETURNS",
+            "text": "<p>30-days free return policy.</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_GjX3iq": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-lock-al",
+            "title": "SECURED PAYMENTS",
+            "text": "<p>We accept all major credit cards.</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_x7NxyT": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-chat",
+            "title": "24/7 HELP CENTER",
+            "text": "<p>Dedicated 24/7 support</p>",
+            "texturl": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_V9VGcr",
+        "text_block_VEjfhW",
+        "text_block_GjX3iq",
+        "text_block_x7NxyT"
+      ],
+      "name": "Store Features",
+      "settings": {
+        "top-offeset": "default",
+        "section_width": false,
+        "section_cov": true,
+        "sec_bg_clr": "#fafafa",
+        "hide_mobile": false,
+        "title": "",
+        "subtitle": "",
+        "style": "style1",
+        "icon-type": "image",
+        "icons_clr": "#333",
+        "isz": 30,
+        "tcl": "#111",
+        "tfs": 14,
+        "tfsm": 12,
+        "tfw": "600",
+        "tlh": 1.2,
+        "cl": "#333",
+        "border_sep": "#eee"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "slideshow_RMciCG",
+    "richtext_rCBVpk",
+    "collection_list_KAcJcz",
+    "store_features_nfyfYz"
+  ]
+}

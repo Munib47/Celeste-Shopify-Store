@@ -1,0 +1,343 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product": {
+      "type": "product-template",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "cl": "#000000",
+            "fs": 40,
+            "fsm": 30,
+            "ff": "ft2",
+            "fw": "600",
+            "transform": "tt-c",
+            "bm": 15
+          }
+        },
+        "3794d304-5ede-42ea-872e-bc1da0adbb2c": {
+          "type": "ras",
+          "disabled": true,
+          "settings": {
+            "availability": true,
+            "sku": false,
+            "bm": 20
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "pcl": "#000000",
+            "pcls": "#e95144",
+            "fs": 18,
+            "fsm": 16,
+            "pfw": "600",
+            "saved": true,
+            "taxship": false,
+            "bm": 20
+          }
+        },
+        "shortdes_MjLMye": {
+          "type": "shortdes",
+          "settings": {
+            "type": "fulld",
+            "lmt": 40,
+            "bm": 20
+          }
+        },
+        "a2aade4c-547b-4aba-aacc-5d7c2f763857": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "lbl": "Hurry up! Sales End In",
+            "lcl": "#000000",
+            "cl": "#060101",
+            "bg": "#f5f5f5",
+            "bd": "#dddddd",
+            "bdr": 33,
+            "bm": 20
+          }
+        },
+        "680b2e1a-82d6-4aad-9a5b-3344aae6a5aa": {
+          "type": "qty",
+          "disabled": true,
+          "settings": {
+            "maxqty": 20,
+            "cl": "#ffffff",
+            "bg": "#f67280",
+            "bm": 20
+          }
+        },
+        "43d9e0cf-f5b3-4270-bd73-3845bf580da3": {
+          "type": "more-color",
+          "settings": {
+            "title": "More colors",
+            "cl": "#000000",
+            "fs": 16,
+            "fsm": 16,
+            "fw": "600",
+            "wd": 100,
+            "bd": "#000000",
+            "bm": 15
+          }
+        },
+        "product-form": {
+          "type": "cta",
+          "settings": {
+            "qty_sel": true,
+            "bm": 30
+          }
+        },
+        "d33de9c7-9498-4084-8045-ea7cb7cec34e": {
+          "type": "freeship",
+          "disabled": true,
+          "settings": {
+            "bm": 15
+          }
+        },
+        "7da62210-79f5-40cd-88d9-008adfa782ab": {
+          "type": "shiptime",
+          "disabled": true,
+          "settings": {
+            "estimate": "4/10",
+            "msg": "<i class=\"at at-clock-r\"></i> Estimated delivery between [startdate] - [enddate].",
+            "bm": 25
+          }
+        },
+        "quoli_reviews_ugc_quoli_nuggets_slider_Y4ceim": {
+          "type": "shopify://apps/quoli-reviews-ugc/blocks/quoli-nuggets-slider/baf7b241-e443-4879-b3d4-360440b03895",
+          "settings": {
+            "auto_scroll": true,
+            "auto_speed": 5,
+            "text_color": "#000000",
+            "background_color": "#f9f9f9",
+            "border_color": "#121212"
+          }
+        },
+        "coltabs_dQRkpT": {
+          "type": "coltabs",
+          "settings": {
+            "title": "PRODUCT DETAILS",
+            "opt": "txt",
+            "richtxt": "{{ product.description }}",
+            "open": false,
+            "bm": 0
+          }
+        },
+        "coltabs_zLRyQr": {
+          "type": "coltabs",
+          "settings": {
+            "title": "SHIPPING & RETURNS",
+            "opt": "txt",
+            "richtxt": "<h4>Returns Policy</h4><p><br/>\tAt Celeste Home Fashion we try to provide you with the highest quality of product and service, but if you are not satisfied then the products purchased from Celeste Home Fashion can be exchanged within 7 working days of purchase/delivery under certain conditions as follows. Return and exchange is not applicable on made to order furniture items. Items bought on sale are non-exchangeable/non-refundable.<br/><br/><br/><br/>You are eligible for return if the product received by you at time of delivery is faulty, damaged, does not match the original specifications or is not the same as had been ordered by you.The Company must be notified immediately so that the correct product is delivered in case of error. If the product is defective then a replacement will be delivered. Fabrics and accessories should be thoroughly checked at the time of purchase/delivery for their condition and quality. Claims of any nature will not be entertained later.<br/><br/><br/><br/>To return/exchange, the product must be unused and in the same condition that you received in, and you should be in possession of the original proof of purchase. Any requests received after 7 working days of purchase/delivery, or if product is not in original condition, has been used or damaged not due to our handling will not be eligible for return or exchange.<br/></p><h4>Refunds</h4><p><br/>\tCeleste Home Fashion has a ‘no refund’ policy. However refund may only be done in exceptional cases wherein the product received on delivery does not match the original specifications or is not the same as had been ordered and there is no replacement available.Or if the customer cancels the order immediately after booking, prior to order processing and manufacturing.<br/><br/><br/><br/>Refund amount is issued in the form of a cross-check. Any shipping or handling costs are non-refundable. Please allow up to 15 working days for the refund amount to be processed.<br/></p><h4>Shipping</h4><p><br/>\tThe standard delivery time for SleepLab mattresses and Accessories is 5-7 working days.<br/>For furniture items, the standard delivery time is 22-25 working days.<br/></p>",
+            "open": false,
+            "bm": 0
+          }
+        },
+        "3e5ff436-8638-45b7-a3ce-b36263b34395": {
+          "type": "img",
+          "settings": {
+            "pimg_url": "",
+            "img_align": false,
+            "bm": 20
+          }
+        },
+        "9cbdef45-9088-401c-90c8-c807e38f6cd5": {
+          "type": "complementary",
+          "settings": {
+            "title": "COMPLETE THE LOOK",
+            "cl": "#000000",
+            "fs": 15,
+            "fsm": 14,
+            "fw": "600",
+            "limit": 10,
+            "grid": 4,
+            "gridtb": 3,
+            "gridmb": 2,
+            "bm": 15
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "3794d304-5ede-42ea-872e-bc1da0adbb2c",
+        "price",
+        "shortdes_MjLMye",
+        "a2aade4c-547b-4aba-aacc-5d7c2f763857",
+        "680b2e1a-82d6-4aad-9a5b-3344aae6a5aa",
+        "43d9e0cf-f5b3-4270-bd73-3845bf580da3",
+        "product-form",
+        "d33de9c7-9498-4084-8045-ea7cb7cec34e",
+        "7da62210-79f5-40cd-88d9-008adfa782ab",
+        "quoli_reviews_ugc_quoli_nuggets_slider_Y4ceim",
+        "coltabs_dQRkpT",
+        "coltabs_zLRyQr",
+        "3e5ff436-8638-45b7-a3ce-b36263b34395",
+        "9cbdef45-9088-401c-90c8-c807e38f6cd5"
+      ],
+      "settings": {
+        "section_width": false
+      }
+    },
+    "upsell": {
+      "type": "upsell-bundle",
+      "settings": {
+        "title": "Frequently Bought Together",
+        "subtitle": "",
+        "collection": "",
+        "top-offeset": "default",
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "hidem": false
+      }
+    },
+    "tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "descriptions": {
+          "type": "desc",
+          "settings": {
+            "title": "PRODUCT DETAILS"
+          }
+        },
+        "review": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "title": "REVIEWS",
+            "otherapp": "<!-- Start of Judge.me code --> \n  <div style='clear:both'></div> \n  <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}'> \n    {{ product.metafields.judgeme.widget }} \n  </div> \n<!-- End of Judge.me code -->"
+          }
+        },
+        "0ffa6649-39c4-4d0d-a030-0b83e8ea10b2": {
+          "type": "schart",
+          "disabled": true,
+          "settings": {
+            "title": "SIZE & FIT"
+          }
+        },
+        "ca4b9cc3-1de5-4957-9152-20d832cd0b41": {
+          "type": "custom",
+          "settings": {
+            "title": "SHIPPING & RETURNS",
+            "content": "<h4>Returns Policy</h4>\n\n<p>\n\tAt Celeste Home Fashion we try to provide you with the highest quality of product and service, but if you are not satisfied then the products purchased from Celeste Home Fashion can be exchanged within 7 working days of purchase/delivery under certain conditions as follows. Return and exchange is not applicable on made to order furniture items. Items bought on sale are non-exchangeable/non-refundable.<br/><br/>\n\nYou are eligible for return if the product received by you at time of delivery is faulty, damaged, does not match the original specifications or is not the same as had been ordered by you.The Company must be notified immediately so that the correct product is delivered in case of error. If the product is defective then a replacement will be delivered. Fabrics and accessories should be thoroughly checked at the time of purchase/delivery for their condition and quality. Claims of any nature will not be entertained later.<br/><br/>\n\nTo return/exchange, the product must be unused and in the same condition that you received in, and you should be in possession of the original proof of purchase. Any requests received after 7 working days of purchase/delivery, or if product is not in original condition, has been used or damaged not due to our handling will not be eligible for return or exchange.\n</p>\n\n<h4>Refunds</h4>\n<p>\n\tCeleste Home Fashion has a ‘no refund’ policy. However refund may only be done in exceptional cases wherein the product received on delivery does not match the original specifications or is not the same as had been ordered and there is no replacement available.Or if the customer cancels the order immediately after booking, prior to order processing and manufacturing.<br/><br/>\n\nRefund amount is issued in the form of a cross-check. Any shipping or handling costs are non-refundable. Please allow up to 15 working days for the refund amount to be processed.\n</p>\n\n<h4>Shipping</h4>\n<p>\n\tThe standard delivery time for SleepLab mattresses and Accessories is 5-7 working days.\nFor furniture items, the standard delivery time is 22-25 working days.\n</p>"
+          }
+        },
+        "9946dcbc-20e7-49f8-b126-4356456b2dab": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "title": "CUSTOM TAB",
+            "content": "Set different tabs for each products."
+          }
+        }
+      },
+      "block_order": [
+        "descriptions",
+        "review",
+        "0ffa6649-39c4-4d0d-a030-0b83e8ea10b2",
+        "ca4b9cc3-1de5-4957-9152-20d832cd0b41",
+        "9946dcbc-20e7-49f8-b126-4356456b2dab"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "tab_style": "1",
+        "tab_align": "left",
+        "tfs": 13,
+        "tff": "ft2",
+        "tfw": "500",
+        "cl": "#111111",
+        "tbg": "#f5f5f5",
+        "cla": "#111111",
+        "tbga": "#ffffff",
+        "bdr": "#dddddd",
+        "bdra": "#ffffff",
+        "bbrd": 0,
+        "clm": "#000000",
+        "tbgm": "#eeeeee",
+        "clam": "#eeeeee",
+        "tbgam": "#000000",
+        "bdrm": "#ffffff",
+        "bdram": "#eeeeee"
+      }
+    },
+    "171643631327da67b2": {
+      "type": "apps",
+      "blocks": {
+        "quoli_reviews_ugc_quoli_pdp_mGA6AC": {
+          "type": "shopify://apps/quoli-reviews-ugc/blocks/quoli-pdp/baf7b241-e443-4879-b3d4-360440b03895",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "quoli_reviews_ugc_quoli_pdp_mGA6AC"
+      ],
+      "custom_css": [
+        ".shopify-app-block {padding-left: 15px; padding-right: 15px;}"
+      ],
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "title": "Related Products",
+        "subtitle": "",
+        "type": "1",
+        "grid": 4,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "row": "5",
+        "autoplay": true,
+        "speed": 5
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "section_width": false,
+        "title": "Recommended Products",
+        "subtitle": "",
+        "grid": 4,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "limit": "5",
+        "autoplay": false,
+        "speed": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "section_width": false,
+        "title": "Recently Viewed Products",
+        "subtitle": "",
+        "grid": 4,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "recently_pr_limit": "5",
+        "autoplay": false,
+        "speed": 5
+      }
+    }
+  },
+  "order": [
+    "product",
+    "upsell",
+    "tabs",
+    "171643631327da67b2",
+    "related-products",
+    "recommendations",
+    "recently-viewed"
+  ]
+}

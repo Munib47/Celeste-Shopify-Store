@@ -1,0 +1,217 @@
+{% if settings.sale_timer != blank %}
+
+  {% if template.name == 'index' %}
+    <style>
+
+      .sale-timer-container:hover {
+       
+      }
+
+      .sale-timer-container {
+        padding: 20px;
+        position: absolute;
+        z-index: 2;
+        top: 18%;
+        left: 95%;
+        transform: translate(-95%, -18%);
+        margin-top: 25px;
+      }
+      .sale-timer-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .sale-timer-title {
+        margin-bottom: 20px;
+      }
+      .sale-timer-title h3 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000000;
+      }
+      .sale-timer-time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        background-color: rgba(0,0,0, 0.1);
+      }
+      .sale-timer-day,
+      .sale-timer-hour,
+      .sale-timer-min,
+      .sale-timer-sec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .sale-timer-day-num,
+      .sale-timer-hour-num,
+      .sale-timer-min-num,
+      .sale-timer-sec-num,
+      .sale-timer-day-txt,
+      .sale-timer-hour-txt,
+      .sale-timer-min-txt,
+      .sale-timer-sec-txt {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        color: #000000;
+        padding: 4px;
+      }
+      @media screen and (max-width: 767px) {
+        .sale-timer-container {
+          margin-top: 15px;
+          padding: 15px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .sale-timer-title {
+          margin-bottom: 15px;
+        }
+        .sale-timer-title h3 {
+          font-size: 18px;
+        }
+        .sale-timer-day-num,
+        .sale-timer-hour-num,
+        .sale-timer-min-num,
+        .sale-timer-sec-num,
+        .sale-timer-day-txt,
+        .sale-timer-hour-txt,
+        .sale-timer-min-txt,
+        .sale-timer-sec-txt {
+          font-size: 15px;
+        }
+      }
+    </style>
+  {% else %}
+    <style>
+      .sale-timer-container {
+        padding: 10px 10px;
+      }
+
+      .sale-timer-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .sale-timer-title {
+        margin-bottom: 20px;
+      }
+
+      .sale-timer-title h3 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .sale-timer-time {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .sale-timer-day,
+      .sale-timer-hour,
+      .sale-timer-min,
+      .sale-timer-sec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .sale-timer-day-num,
+      .sale-timer-hour-num,
+      .sale-timer-min-num,
+      .sale-timer-sec-num,
+      .sale-timer-day-txt,
+      .sale-timer-hour-txt,
+      .sale-timer-min-txt,
+      .sale-timer-sec-txt {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      @media screen and (max-width: 767px) {
+        .sale-timer-container {
+          margin-top: 15px;
+          padding: 15px;
+        }
+
+        .sale-timer-title {
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  {% endif %}
+
+  <div class="sale-timer-container">
+    <div class="sale-timer-wrapper">
+      {% if settings.sale_timer_txt != blank %}
+        <div class="sale-timer-title">
+          <h3>{{ settings.sale_timer_txt }}</h3>
+        </div>
+      {% endif %}
+      <div class="sale-timer-time">
+        <div class="sale-timer-day">
+          <div class="sale-timer-day-num">00</div>
+          <div class="sale-timer-day-txt">Days</div>
+        </div>
+        <div class="sale-timer-hour">
+          <div class="sale-timer-hour-num">00</div>
+          <div class="sale-timer-hour-txt">Hours</div>
+        </div>
+        <div class="sale-timer-min">
+          <div class="sale-timer-min-num">00</div>
+          <div class="sale-timer-min-txt">Minutes</div>
+        </div>
+        <div class="sale-timer-sec">
+          <div class="sale-timer-sec-num">00</div>
+          <div class="sale-timer-sec-txt">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer="defer">
+    const countDownDate = new Date('{{ settings.sale_timer }}').getTime();
+    const padNum = (n) => {
+      return n > 9 ? '' + n : '0' + n;
+    };
+    
+    let x = setInterval(() => {
+      let now = new Date().getTime();
+      let distance = countDownDate - now;
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      $('.sale-timer-day-num').text(padNum(days));
+      $('.sale-timer-hour-num').text(padNum(hours));
+      $('.sale-timer-min-num').text(padNum(minutes));
+      $('.sale-timer-sec-num').text(padNum(seconds));
+
+      if (distance < 0) {
+        clearInterval(x);
+        $('.sale-timer-day-num').text('00');
+        $('.sale-timer-hour-num').text('00');
+        $('.sale-timer-min-num').text('00');
+        $('.sale-timer-sec-num').text('00');
+      }
+    }, 1000);
+    
+  </script>
+{% endif %}

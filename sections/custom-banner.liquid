@@ -1,0 +1,36 @@
+<style>
+  .custom-banner-media img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<div class="custom-banner-container">
+  <div class="custom-banner-wrapper">
+    <div class="custom-banner-media">
+      <img src="{{ section.settings.dk_img | image_url: width: 2048 }}"
+        alt="{{ section.settings.dk_img.alt | default: shop.name }}"
+        width="{{ section.settings.dk_img.width }}"
+        height="{{ section.settings.dk_img.height }}"
+      >
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "dk_img",
+      "label": "Desktop Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}

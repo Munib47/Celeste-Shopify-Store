@@ -1,0 +1,451 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+        "section_width": false,
+        "hide_hdft": false,
+        "breadcrumb": true,
+        "bnr": false,
+        "bheight": 300,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "bnr-wd": 600,
+        "show_collection_name": false,
+        "ftTtl": 42,
+        "ftTtlm": 20,
+        "ttlft": "font2",
+        "ttlwt": "fw-700",
+        "ttlcase": "tt-u",
+        "ftTxt": 15,
+        "ttlclr": "#000000",
+        "clr_bg": "#f5f5f5",
+        "width": 1200,
+        "hide_ttl": false
+      }
+    },
+    "4966ed82-9b61-40a1-aa14-c702ca5d9672": {
+      "type": "hero",
+      "settings": {
+        "top-offeset": "none",
+        "section_width": true,
+        "ds_height": 600,
+        "tb_height": 350,
+        "mb_height": 250,
+        "parallax_scroll": false,
+        "image": "shopify://shop_images/Avalon.jpg",
+        "alignment": "center",
+        "pretext": "",
+        "pcl": "#333333",
+        "pfs": 15,
+        "pfsm": 13,
+        "pff": "ft1",
+        "pfw": "400",
+        "plh": 1.3,
+        "pmb": 10,
+        "pmbm": 5,
+        "title": "",
+        "tcl": "#000000",
+        "tfs": 30,
+        "tfsm": 20,
+        "tff": "ft2",
+        "tfw": "700",
+        "tlh": 1.3,
+        "tmb": 10,
+        "tmbm": 5,
+        "text": "",
+        "cl": "#000000",
+        "fs": 16,
+        "fsm": 14,
+        "fw": "400",
+        "lh": 1.6,
+        "mb": 30,
+        "mbm": 20,
+        "button_label": "SHOP COLLECTION",
+        "button_link": "/",
+        "link_image": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm",
+        "isbox": false,
+        "bg": "#ffffff",
+        "opt": 0.9,
+        "bdr": 0,
+        "textalign": "tc",
+        "bxalign": "f-jcc f-aic",
+        "wd": 1200,
+        "snow_effect": false,
+        "snow_style": "style1",
+        "hero_dealtimer": false,
+        "cnt_date": "12/20/2023",
+        "cntbg": "#000000",
+        "cntcl": "#eeeeee",
+        "cntbd": "#000000"
+      }
+    },
+    "d50fea9f-817c-4471-b410-394efd06f20a": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_b9HWka": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/celine",
+            "collection_image": "shopify://shop_images/Celine.jpg",
+            "collection_name": "Celine",
+            "collection_description": "Discover the effortless charm of the Celine Collection, featuring sleek, contemporary styles for your home.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_tFqFhN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/freya",
+            "collection_image": "shopify://shop_images/Freya.jpg",
+            "collection_name": "Freya",
+            "collection_description": "Embrace timeless elegance with the Freya Collection, where classic designs meet modern sophistication.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_hewEUa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/aurora",
+            "collection_image": "shopify://shop_images/Aurora.jpg",
+            "collection_name": "Aurora",
+            "collection_description": "Dine in style with the Aurora Collection, a beautifully crafted dining set that brings vibrant elegance to every meal.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_mmpdic": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/aria",
+            "collection_image": "shopify://shop_images/Aria_976bf64e-ef01-4607-9c7a-a54bdf211868.jpg",
+            "collection_name": "Aria",
+            "collection_description": "Elevate your space with the Aria Collection, where airy, graceful pieces create an ambiance of tranquillity.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_3kFypR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/avalon",
+            "collection_image": "shopify://shop_images/Avalon.jpg",
+            "collection_name": "Avalon",
+            "collection_description": "Add a touch of vintage charm to your space with the Avalon Collection, where classic elegance meets timeless design.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_QBpJw8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=Lara&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/2_b44352c0-8392-4df4-8c5c-9157f43370b0.jpg",
+            "collection_name": "Lara",
+            "collection_description": "Redefine your seating experience with Lara collection.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_c6mgM6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=clara&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/3_ce59820e-c2b6-4b61-9db7-d75162466ffe.jpg",
+            "collection_name": "Clara",
+            "collection_description": "Elevate your bedroom to a realm of comfort and sophistication with Clara collection",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_V4QYPC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=harvey&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/6_e4a450f2-14cf-4625-bf20-3929dd7767f1.jpg",
+            "collection_name": "Harvey",
+            "collection_description": "Each element of the Harvey collection enhances the room's cozy yet elegant aura.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_aa4Ehy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=ivy&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/7_06125e0f-2afc-49f4-9f3c-a5136a86957f.jpg",
+            "collection_name": "Ivy",
+            "collection_description": "A masterpiece in design, Ivy collection is perfect for adding sophistication to any dining room",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_bedGHg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=Rio&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/5_ca2443a3-bc0f-4711-9da1-cf05ade44faf.jpg",
+            "collection_name": "Rio",
+            "collection_description": "Bring an airy feel to your bedroom with Rio Collection.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_gHPN7k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/search?type=product&options%5Bunavailable_products%5D=last&options%5Bprefix%5D=last&q=dossey&options%5Bprefix%5D=last",
+            "collection_image": "shopify://shop_images/4_f69781e3-95d3-469a-84d2-c36f5c432795.jpg",
+            "collection_name": "Dossey",
+            "collection_description": "The Dossey Collection showcases refined craftsmanship and is a visual treat in your dining room.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "featured_collection_RrLg7e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/products/clayton-saddle-sofa?_pos=1&_psq=clayto&_ss=e&_v=1.0",
+            "collection_image": "shopify://shop_images/1_5ffaa536-4b6c-4de8-8c58-0ce6df1da779.jpg",
+            "collection_name": "Clayton",
+            "collection_description": "Experience the epitome of edgy design with Clayton collection",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/aurai",
+            "collection_image": "shopify://shop_images/Aurai-Collection-Banner_62063275-903e-4e5c-9d29-9f99be4cc74a.jpg",
+            "collection_name": "Aurai",
+            "collection_description": "The fiercely individualistic Aurai collection is charismatic and encompasses boldly crafted pieces.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/helios",
+            "collection_image": "shopify://shop_images/Helios-Collection-Banner_10d2d1db-fc9d-48a5-b1ff-121abc3a28de.jpg",
+            "collection_name": "Helios",
+            "collection_description": "For those who love the grandeur of royalty, nothing matches the Helios collection.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-2": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/oracle",
+            "collection_image": "shopify://shop_images/Oracle_4ea0239c-d2bc-45d7-954b-904e81f94ee1.png",
+            "collection_name": "Oracle",
+            "collection_description": "The Oracle collection is a modern take on the old world charm of a classic design.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-3": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/nero",
+            "collection_image": "shopify://shop_images/SB-CCL-4_bb3aa1ae-eb50-475f-8049-2b3b683c1825.png",
+            "collection_name": "Nero",
+            "collection_description": "Suave yet subtle, this Nero Collection is a paragon of modern minimalism.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "4991d574-1e26-4de7-be66-358c7308ca72": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/aphrodite",
+            "collection_image": "shopify://shop_images/Aphrodite_7db4cb1a-8b37-4a02-b5b3-d2761cc0a511.png",
+            "collection_name": "Aphrodite",
+            "collection_description": "Behold the beauty of Aphrodite in the unique curves of its exclusive pieces.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "57b21820-bc4c-49a5-9140-315d1f4ec84c": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/apollo",
+            "collection_image": "shopify://shop_images/Apollo_186ed5d6-2c2a-4c9e-86ba-54ffdae9ff42.png",
+            "collection_name": "Apollo",
+            "collection_description": "Modern, clean and simple. The Apollo collection is a striking combination of luxe and minimalism.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "c09c0bd7-5cb8-437f-aee4-d0888687169b": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/brizo",
+            "collection_image": "shopify://shop_images/Brizo_7c29eff5-af79-4810-b937-2339a705f535.png",
+            "collection_name": "Brizo",
+            "collection_description": "Envelop yourself with the old Hollywood glam of our art deco inspired Brizo collection.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "fc5564bd-29e0-4bec-8a7b-6056057d9a3a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/delphi",
+            "collection_image": "shopify://shop_images/chf_e461d521-c746-4947-9e97-9a1db808fd19.jpg",
+            "collection_name": "Delphi",
+            "collection_description": "Rendition of a classic Fairytale, our stunning French-Inspired Delphi collection exudes the aura of purity and romance.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "c5b6d1e0-7ad9-40cc-a8f3-66892da82cfa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/titan",
+            "collection_image": "shopify://shop_images/1637324579336_67b5ed78-49d5-461a-8fb3-161e8b737ba1.jpg",
+            "collection_name": "Titan",
+            "collection_description": "Reminisce the beauty of live edge furniture with the wondrous Titan collection.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "d93c2e3d-e366-4fa2-ba91-e6b5dc888571": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/iris",
+            "collection_image": "shopify://shop_images/Iris-Ads_3520586d-7b05-43f7-9edc-0821b028b3d6.jpg",
+            "collection_name": "Iris",
+            "collection_description": "A deceptively simple design accented with gold leaf accents, the Iris collection is a paradigm of classy minimalism.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "a96be494-6a60-4cab-a7ba-a3fedd91d50b": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/selene",
+            "collection_image": "shopify://shop_images/SB-Selene-Collection_2893161d-37eb-4c2a-a24e-37d42aa1535e.png",
+            "collection_name": "Selene",
+            "collection_description": "The Selene Collection is a rendition of an oriental substance that exudes luxury from every fraction.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "5d05a154-f898-40a2-bfe3-12548404adef": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/olympia",
+            "collection_image": "shopify://shop_images/SB-Olympia-sofa_5ce752bb-a683-40a9-a976-54c2292d9f56.png",
+            "collection_name": "Olympia",
+            "collection_description": "The Olympia Collection exhibits a harmonious blend of luxury and comfort entwined in a contemporary setup.",
+            "collection_btn": "Shop Now"
+          }
+        },
+        "6fb5a1fb-d2a7-4be8-83ec-9b9bc479bc84": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "shopify://collections/clio",
+            "collection_image": "shopify://shop_images/Web-Banner-1512x840_2a251e58-cb3e-46c8-ac87-a535a8f5ada8.jpg",
+            "collection_name": "Clio",
+            "collection_description": "Rich and Sophisticated, the Clio collection is quintessential for high-end residential spaces.",
+            "collection_btn": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_b9HWka",
+        "featured_collection_tFqFhN",
+        "featured_collection_hewEUa",
+        "featured_collection_mmpdic",
+        "featured_collection_3kFypR",
+        "featured_collection_QBpJw8",
+        "featured_collection_c6mgM6",
+        "featured_collection_V4QYPC",
+        "featured_collection_aa4Ehy",
+        "featured_collection_bedGHg",
+        "featured_collection_gHPN7k",
+        "featured_collection_RrLg7e",
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-0",
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-1",
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-2",
+        "template--16120459198625__d50fea9f-817c-4471-b410-394efd06f20a-16891385747d3aecaf-3",
+        "4991d574-1e26-4de7-be66-358c7308ca72",
+        "57b21820-bc4c-49a5-9140-315d1f4ec84c",
+        "c09c0bd7-5cb8-437f-aee4-d0888687169b",
+        "fc5564bd-29e0-4bec-8a7b-6056057d9a3a",
+        "c5b6d1e0-7ad9-40cc-a8f3-66892da82cfa",
+        "d93c2e3d-e366-4fa2-ba91-e6b5dc888571",
+        "a96be494-6a60-4cab-a7ba-a3fedd91d50b",
+        "5d05a154-f898-40a2-bfe3-12548404adef",
+        "6fb5a1fb-d2a7-4be8-83ec-9b9bc479bc84"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "top-offeset": "small",
+        "section_width": false,
+        "npd": false,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "hide_mobile": false,
+        "enable_carousel": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid": 3,
+        "tablet-grid": 1,
+        "mobile-grid": 1,
+        "style": "st3",
+        "textalign": "tl",
+        "leftpadzero": false,
+        "product_count": false,
+        "show_buttons": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "tfs": 18,
+        "tfsm": 16,
+        "tff": "ft1",
+        "tfw": "400",
+        "tlh": 1.2,
+        "cl": "#000000",
+        "bg": "#ffffff",
+        "opt": 0.9,
+        "bdr": 0,
+        "disable_zoom": false
+      }
+    }
+  },
+  "order": [
+    "page",
+    "4966ed82-9b61-40a1-aa14-c702ca5d9672",
+    "d50fea9f-817c-4471-b410-394efd06f20a"
+  ]
+}
