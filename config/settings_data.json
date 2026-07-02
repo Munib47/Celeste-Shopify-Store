@@ -50,7 +50,7 @@
     "type_header_base_size_5": 36,
     "type_header_base_size_6": 38,
     "type_header_letter_space": 2,
-    "color_text": "#000",
+    "color_text": "#472815",
     "color_text_field": "#fff",
     "field_bd": "#dddddd",
     "btnwt": "400",
@@ -97,13 +97,15 @@
     "sidebar_title": 15,
     "h_weight": "600",
     "sidebar_links_hv": "#f77575",
-    "footer_top_bg": "#000",
-    "footer_title": "#fff",
-    "top_footer_text": "#f9f9f9",
-    "icon_colors": "#828282",
-    "footer_bottom_bg": "#111111",
-    "footer_bottom_text": "#ffffff",
-    "footer_border": "#eeeeee",
+    "foo_text_size": 13,
+    "foot_social_size": 14,
+    "footer_top_bg": "#E7D8CB",
+    "footer_title": "#472815",
+    "top_footer_text": "#472815",
+    "icon_colors": "#472815",
+    "footer_bottom_bg": "#E7D8CB",
+    "footer_bottom_text": "#472815",
+    "footer_border": "#FFFFFF",
     "newsletter_input": "#fff",
     "newsletter_btn": "#fff",
     "font-style": "600",
@@ -393,23 +395,14 @@
         "blocks": {
           "1561010286273": {
             "type": "custom",
-            "disabled": true,
             "settings": {
               "title": "",
-              "logo-width": 100,
-              "custom-text": "<p>55 Gallaxy Enque,<br>\n2568 steet, 23568 NY</p>\n<p><b>Phone:</b> (440) 000 000 0000</p>\n<p><b>Email:</b> <a href=\"mailto:sales@yousite.com\">sales@yousite.com</a></p><p></p>",
-              "show_socials": true,
+              "logo": "shopify://shop_images/Cleste_Logo-removebg-preview.png",
+              "logo-width": 150,
+              "custom-text": "",
+              "show_socials": false,
               "socials_ttl": "",
               "txt_align": false,
-              "width": "wd20-md"
-            }
-          },
-          "1558678570770": {
-            "type": "menu",
-            "disabled": true,
-            "settings": {
-              "title": "INFORMATION",
-              "menulinks": "",
               "width": "wd20-md"
             }
           },
@@ -418,7 +411,7 @@
             "settings": {
               "title": "ABOUT US",
               "menulinks": "footer-menu-1",
-              "width": "wd33-md"
+              "width": "wd20-md"
             }
           },
           "1561010652330": {
@@ -426,33 +419,37 @@
             "settings": {
               "title": "CUSTOMER SERVICES",
               "menulinks": "footer-menu-2",
-              "width": "wd33-md"
+              "width": "wd20-md"
             }
           },
-          "1561010492149": {
-            "type": "newsletter",
+          "menu_RkRr4U": {
+            "type": "menu",
             "settings": {
-              "newltr_align": false,
-              "title": "NEWSLETTER",
-              "sub_title": "<p><a href=\"/blogs/news\">Blogs</a></p>Enter your email to receive daily news and get 20% off coupon for all items.",
-              "show_socials": true,
-              "socials_ttl": "",
-              "width": "wd33-md"
+              "title": "ABOUT US",
+              "menulinks": "footer-menu-1",
+              "width": "wd20-md"
+            }
+          },
+          "socialicons_PUeeMG": {
+            "type": "socialicons",
+            "settings": {
+              "title": "FOLLOW US",
+              "width": "wd20-md"
             }
           }
         },
         "block_order": [
           "1561010286273",
-          "1558678570770",
           "1558678581777",
           "1561010652330",
-          "1561010492149"
+          "menu_RkRr4U",
+          "socialicons_PUeeMG"
         ],
         "settings": {
           "section_width": false,
           "snow_effect": false,
           "snow_style": "style1",
-          "copyright_text": "© 2026 CHF. All Rights Reserved.",
+          "copyright_text": "© 2026 Celeste Home Fashion, All Rights Reserved.",
           "show_designby": false,
           "show_payment": false,
           "payment_img_width": "350"

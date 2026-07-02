@@ -1,0 +1,704 @@
+{% comment %}
+  ------------------------------------------------------------
+  Section: Instagram Showcase
+  File: sections/instagram-showcase.liquid
+
+  - Left column: icon, heading, description, CTA (section settings)
+  - Right column: square image slides (blocks), Swiper carousel
+  - Desktop: 1.15fr / 3.85fr split, exactly 4 slides visible
+  - Mobile: stacked, text on top, exactly 2 slides visible
+  - Swiper only initializes on viewports where its checkbox is on,
+    otherwise falls back to a static CSS grid (4 cols / 2 cols)
+  - No pagination dots. Arrows only render + init if enabled.
+  ------------------------------------------------------------
+{% endcomment %}
+
+{%- assign carousel_enabled = false -%}
+{%- if section.settings.desktop_carousel or section.settings.mobile_carousel -%}
+  {%- assign carousel_enabled = true -%}
+{%- endif -%}
+
+{%- if carousel_enabled -%}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+{%- endif -%}
+
+<div class="cstm-insta" id="InstaShowcase-{{ section.id }}">
+  <div class="cstm-insta__grid">
+
+    {% comment %} ---------- Text / CTA column ---------- {% endcomment %}
+    <div class="cstm-insta__content">
+
+      {% if section.settings.custom_icon and section.settings.instagram_icon != blank %}
+        <img
+          class="cstm-insta__icon"
+          src="{{ section.settings.instagram_icon | image_url: width: 100 }}"
+          alt="{{ section.settings.instagram_icon.alt | default: 'Instagram' | escape }}"
+          width="{{ section.settings.icon_width }}"
+          height="{{ section.settings.icon_height }}"
+          loading="lazy"
+        >
+      {% else %}
+        <svg
+          class="cstm-insta__icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="{{ section.settings.icon_color }}"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      {% endif %}
+
+      {% if section.settings.insta_heading != blank %}
+        <h2 class="cstm-insta__heading">{{ section.settings.insta_heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="cstm-insta__description">{{ section.settings.description }}</div>
+      {% endif %}
+
+      {% comment %} Button only renders when BOTH text and URL are set {% endcomment %}
+      {% if section.settings.insta_button != blank and section.settings.button_url != blank %}
+        <a
+          class="cstm-insta__button"
+          href="{{ section.settings.button_url }}"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>{{ section.settings.insta_button }}</span>
+          <span class="cstm-insta__arrow" aria-hidden="true">&#8594;</span>
+        </a>
+      {% endif %}
+
+    </div>
+
+    {% comment %} ---------- Slides column ---------- {% endcomment %}
+    <div class="cstm-insta__slider-col">
+      <div
+        class="cstm-insta__swiper swiper is-static"
+        id="InstaSwiper-{{ section.id }}"
+        data-desktop-carousel="{% if section.settings.desktop_carousel and section.blocks.size >= 4 %}true{% else %}false{% endif %}"
+        data-mobile-carousel="{{ section.settings.mobile_carousel }}"
+        data-arrows="{{ section.settings.enable_arrows }}"
+        data-autoplay="{{ section.settings.auto_rotate }}"
+        data-slide-change="{{ section.settings.slide_change }}"
+        data-loop="{{ section.settings.loop_slides }}"
+      >
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide" {{ block.shopify_attributes }}>
+              {% if block.settings.instagram_link != blank %}
+                <a
+                  class="cstm-insta__media"
+                  href="{{ block.settings.instagram_link }}"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {% if block.settings.slide_image != blank %}
+                    <img
+                      src="{{ block.settings.slide_image | image_url: width: 800 }}"
+                      srcset="
+                        {{ block.settings.slide_image | image_url: width: 400 }} 400w,
+                        {{ block.settings.slide_image | image_url: width: 600 }} 600w,
+                        {{ block.settings.slide_image | image_url: width: 800 }} 800w
+                      "
+                      sizes="(max-width: 749px) 50vw, 20vw"
+                      alt="{{ block.settings.slide_image.alt | default: section.settings.insta_heading | escape }}"
+                      width="800"
+                      height="800"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'cstm-insta__placeholder' }}
+                  {% endif %}
+                </a>
+              {% else %}
+                <div class="cstm-insta__media">
+                  {% if block.settings.slide_image != blank %}
+                    <img
+                      src="{{ block.settings.slide_image | image_url: width: 800 }}"
+                      srcset="
+                        {{ block.settings.slide_image | image_url: width: 400 }} 400w,
+                        {{ block.settings.slide_image | image_url: width: 600 }} 600w,
+                        {{ block.settings.slide_image | image_url: width: 800 }} 800w
+                      "
+                      sizes="(max-width: 749px) 50vw, 20vw"
+                      alt="{{ block.settings.slide_image.alt | default: section.settings.insta_heading | escape }}"
+                      width="800"
+                      height="800"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'cstm-insta__placeholder' }}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if section.settings.enable_arrows and carousel_enabled %}
+          <div class="swiper-button-prev" aria-label="Previous slides"></div>
+          <div class="swiper-button-next" aria-label="Next slides"></div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% style %}
+  /* ---------- Section wrapper ---------- */
+  #InstaShowcase-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  /* Desktop: 5 equal parts, text = 1.15, slider = 3.85 (4 slides visible) */
+  #InstaShowcase-{{ section.id }} .cstm-insta__grid {
+    display: grid;
+    grid-template-columns: 1.40fr 3.85fr;
+    align-items: stretch;
+  }
+
+  /* ---------- Text / CTA column ---------- */
+  #InstaShowcase-{{ section.id }} .cstm-insta__content {
+    background-color: {{ section.settings.column_background }};
+    padding: 28px 36px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__icon {
+    display: block;
+    width: {{ section.settings.icon_width }}px;
+    height: {{ section.settings.icon_height }}px;
+    object-fit: contain;
+    margin: 0 0 18px;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__heading {
+    margin: 0 0 12px;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_font_size }}px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__description {
+    color: {{ section.settings.description_color }};
+    font-size: {{ section.settings.description_font_size }}px;
+    line-height: 1.6;
+    margin: 0 0 22px;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__description p {
+    margin: 0 0 6px;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: {{ section.settings.button_color }};
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__button:first-child {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__arrow {
+    transition: transform 0.25s ease;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__button:hover .cstm-insta__arrow {
+    transform: translateX(4px);
+  }
+
+  /* ---------- Slider column ---------- */
+  /* min-width: 0 stops the Swiper track from blowing out the grid column */
+  #InstaShowcase-{{ section.id }} .cstm-insta__slider-col {
+    min-width: 0;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__swiper {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    --swiper-navigation-color: {{ section.settings.arrows_color }};
+    --swiper-navigation-size: 18px;
+  }
+
+  #InstaShowcase-{{ section.id }} .swiper-wrapper {
+    height: 100%;
+  }
+
+  /* Perfect squares: identical widths, strict 1:1 ratio, cover crop */
+  #InstaShowcase-{{ section.id }} .cstm-insta__media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__media img,
+  #InstaShowcase-{{ section.id }} .cstm-insta__media .cstm-insta__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Arrows */
+  #InstaShowcase-{{ section.id }} .swiper-button-prev,
+  #InstaShowcase-{{ section.id }} .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /*background-color: rgba(255, 255, 255, 0.85);*/
+    color: {{ section.settings.arrows_color }};
+  }
+
+  #InstaShowcase-{{ section.id }} .swiper-button-prev:after,
+  #InstaShowcase-{{ section.id }} .swiper-button-next:after {
+    font-weight: 700;
+  }
+
+  /* ---------- Static grid fallback (Swiper not initialized) ---------- */
+  #InstaShowcase-{{ section.id }} .cstm-insta__swiper.is-static .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    transform: none !important;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__swiper.is-static .swiper-slide {
+    width: auto !important;
+  }
+
+  #InstaShowcase-{{ section.id }} .cstm-insta__swiper.is-static .swiper-button-prev,
+  #InstaShowcase-{{ section.id }} .cstm-insta__swiper.is-static .swiper-button-next {
+    display: none;
+  }
+
+  /* ---------- Mobile: stack, text on top, 2 slides visible ---------- */
+  @media screen and (max-width: 749px) {
+    #InstaShowcase-{{ section.id }} .cstm-insta__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #InstaShowcase-{{ section.id }} .cstm-insta__content {
+      padding: 28px 20px;
+    }
+
+    #InstaShowcase-{{ section.id }} .cstm-insta__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+    }
+
+    #InstaShowcase-{{ section.id }} .cstm-insta__description {
+      font-size: {{ section.settings.description_font_size_mobile }}px;
+    }
+
+    #InstaShowcase-{{ section.id }} .cstm-insta__button {
+      font-size: {{ section.settings.button_font_size_mobile }}px;
+    }
+
+    #InstaShowcase-{{ section.id }} .cstm-insta__swiper.is-static .swiper-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+{% endstyle %}
+
+{%- if carousel_enabled -%}
+<script>
+  (function () {
+    var SECTION_ID = 'InstaShowcase-{{ section.id }}';
+
+    function setup() {
+      var root = document.getElementById(SECTION_ID);
+      if (!root) return;
+
+      var sliderEl = root.querySelector('.cstm-insta__swiper');
+      if (!sliderEl || sliderEl.dataset.instaBound === 'true') return;
+      sliderEl.dataset.instaBound = 'true';
+
+      var ds = sliderEl.dataset;
+      var desktopCarousel = ds.desktopCarousel === 'true';
+      var mobileCarousel = ds.mobileCarousel === 'true';
+      var showArrows = ds.arrows === 'true';
+      var autoRotate = ds.autoplay === 'true';
+      var loopSlides = ds.loop === 'true';
+      var delayMs = parseInt(ds.slideChange, 10) * 1000; /* seconds -> ms */
+
+      var swiperInstance = null;
+      var mq = window.matchMedia('(min-width: 750px)');
+
+      function buildConfig() {
+        var config = {
+          slidesPerView: 2,
+          spaceBetween: 8,
+          loop: loopSlides,
+          watchOverflow: true,
+          breakpoints: {
+            750: { slidesPerView: 4 }
+          }
+        };
+        if (autoRotate) {
+          config.autoplay = { delay: delayMs, disableOnInteraction: false };
+        }
+        if (showArrows) {
+          var next = sliderEl.querySelector('.swiper-button-next');
+          var prev = sliderEl.querySelector('.swiper-button-prev');
+          if (next && prev) {
+            config.navigation = { nextEl: next, prevEl: prev };
+          }
+        }
+        return config;
+      }
+
+      function evaluate() {
+        var wantCarousel = mq.matches ? desktopCarousel : mobileCarousel;
+
+        if (wantCarousel && !swiperInstance) {
+          if (typeof Swiper === 'undefined') return;
+          sliderEl.classList.remove('is-static');
+          swiperInstance = new Swiper(sliderEl, buildConfig());
+        } else if (!wantCarousel && swiperInstance) {
+          swiperInstance.destroy(true, true);
+          swiperInstance = null;
+          sliderEl.classList.add('is-static');
+        }
+      }
+
+      /* Swiper bundle is deferred, poll briefly before first init */
+      var tries = 0;
+      (function waitForSwiper() {
+        if (typeof Swiper !== 'undefined') {
+          evaluate();
+        } else if (tries++ < 50) {
+          setTimeout(waitForSwiper, 100);
+        }
+      })();
+
+      if (mq.addEventListener) {
+        mq.addEventListener('change', evaluate);
+      } else {
+        mq.addListener(evaluate);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else {
+      setup();
+    }
+
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.target && e.target.querySelector('#' + SECTION_ID)) setup();
+    });
+  })();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Instagram Showcase",
+  "tag": "section",
+  "class": "cstm-instagram-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_icon",
+      "label": "Custom Icon",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "instagram_icon",
+      "label": "Instagram Icon",
+      "visible_if": "{{ section.settings.custom_icon }}"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#472815",
+      "visible_if": "{{ section.settings.custom_icon == false }}"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "label": "Width",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "icon_height",
+      "label": "Height",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "insta_heading",
+      "label": "Heading",
+      "default": "INSPIRE YOUR HOME"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#472815"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading Font Size",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "label": "Heading Font Size (Mobile)",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Follow @celestehomefashion for ideas, styling tips, and a glimpse into beautiful spaces.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#472815"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "label": "Description Font Size",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_font_size_mobile",
+      "label": "Description Font Size (Mobile)",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "insta_button",
+      "label": "Button",
+      "default": "FOLLOW US ON INSTAGRAM"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#472815"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "label": "Button Font Size (Mobile)",
+      "min": 2,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "column_background",
+      "label": "Text Column Background",
+      "default": "#f5ebe1"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Setting"
+    },
+    {
+      "type": "checkbox",
+      "id": "desktop_carousel",
+      "label": "Desktop Carousel",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_carousel",
+      "label": "Mobile Carousel",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_arrows",
+      "label": "Arrows",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "arrows_color",
+      "label": "Arrows Color",
+      "default": "#472815",
+      "visible_if": "{{ section.settings.enable_arrows }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Auto Rotate",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "slide_change",
+      "label": "Slide Change",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "unit": "sec",
+      "default": 7,
+      "visible_if": "{{ section.settings.auto_rotate }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_slides",
+      "label": "Loop Slides",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_slide",
+      "name": "Image Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Slide Image"
+        },
+        {
+          "type": "url",
+          "id": "instagram_link",
+          "label": "Instagram Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Showcase",
+      "blocks": [
+        { "type": "image_slide" },
+        { "type": "image_slide" },
+        { "type": "image_slide" },
+        { "type": "image_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

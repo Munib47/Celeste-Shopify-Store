@@ -18,7 +18,7 @@
     --dttfw:{{secSt.tfw}};
     --dttlh:{{secSt.tlh}};
 {% endcapture %}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-collection_list" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="clbox cl{{ section.id }} {{secSt.style}} {% unless secSt.section_width %}page-width {% else %}fullwidth{% if secSt.npd %} npd{% endif %}{% endunless %}{% if secSt.hide_mobile %} hide-sm{% endif %}" id="sliderbox-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
     
      {% render 'sec-title' %}

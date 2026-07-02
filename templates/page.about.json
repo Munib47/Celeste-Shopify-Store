@@ -43,13 +43,16 @@
             "image": "shopify://shop_images/Muse_Banner.jpg",
             "imagem": "shopify://shop_images/Muse_Mobile_Banner.jpg",
             "ialign": "left_top",
-            "hd1": "",
-            "pcl": "#000000",
-            "title": "",
-            "tcl": "#000000",
-            "hd3": "",
+            "hd1": "ABOUT CELESTE HOME FASHION",
+            "pcl": "#472815",
+            "divider": true,
+            "dividercl": "#472815",
+            "dividerw": 50,
+            "title": "Live Beautifully",
+            "tcl": "#472815",
+            "hd3": "At Celeste, we believe your home should be a reflection of who you are—effortless, timeless, and uniquely yours.",
             "hideh3": true,
-            "cl": "#000000",
+            "cl": "#472815",
             "btn": "",
             "link": "shopify://collections/new-arrivals-26",
             "btn1window": false,
@@ -60,132 +63,14 @@
             "btn2window": false,
             "btn-style1": "btn1",
             "contwd": 1300,
-            "text-left": false,
-            "txtpos": "f-jce-md f-aic-md",
-            "txtposm": "f-jcc f-aie"
-          }
-        },
-        "image_L9ta3g": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Eclipse_Banner_12e499c2-9760-45e3-a664-5754d0e7350b.jpg",
-            "imagem": "shopify://shop_images/Eclipse_Mobile_Banner.jpg",
-            "ialign": "center_center",
-            "hd1": "",
-            "pcl": "#000000",
-            "title": "",
-            "tcl": "#000000",
-            "hd3": "",
-            "hideh3": true,
-            "cl": "#000000",
-            "btn": "",
-            "link": "shopify://products/windsor-cloud-sectional-sofa",
-            "btn1window": false,
-            "btn-style": "btn1",
-            "display_btn": false,
-            "btn2": "Shop now",
-            "link2": "",
-            "btn2window": false,
-            "btn-style1": "btn1",
-            "contwd": 1200,
             "text-left": true,
             "txtpos": "f-aic-md f-jcs-md",
-            "txtposm": "f-aic f-jcs"
-          }
-        },
-        "image_7zLXEz": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Alara_3.jpg",
-            "imagem": "shopify://shop_images/Alara_3_Mobile_Banner.jpg",
-            "ialign": "center_center",
-            "hd1": "",
-            "pcl": "#000000",
-            "title": "",
-            "tcl": "#000000",
-            "hd3": "",
-            "hideh3": false,
-            "cl": "#000000",
-            "btn": "",
-            "link": "shopify://collections/new-arrivals-26",
-            "btn1window": false,
-            "btn-style": "btn",
-            "display_btn": false,
-            "btn2": "Shop Now",
-            "link2": "shopify://collections",
-            "btn2window": false,
-            "btn-style1": "btn1",
-            "contwd": 1300,
-            "text-left": false,
-            "txtpos": "f-aic-md f-jcs-md",
-            "txtposm": "f-jcc f-aie"
-          }
-        },
-        "image_JJmk6P": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Exclusive--price-drop.jpg",
-            "imagem": "shopify://shop_images/Exclusive--price-drop-1080x1080.jpg",
-            "ialign": "left_top",
-            "hd1": "",
-            "pcl": "#000000",
-            "title": "",
-            "tcl": "#000000",
-            "hd3": "",
-            "hideh3": true,
-            "cl": "#000000",
-            "btn": "",
-            "link": "shopify://collections/ageing-stock",
-            "btn1window": false,
-            "btn-style": "btn",
-            "display_btn": false,
-            "btn2": "Shop now",
-            "link2": "",
-            "btn2window": false,
-            "btn-style1": "btn1",
-            "contwd": 1300,
-            "text-left": false,
-            "txtpos": "f-jce-md f-aic-md",
-            "txtposm": "f-jcc f-aie"
-          }
-        },
-        "video_pAq8xh": {
-          "type": "video",
-          "disabled": true,
-          "settings": {
-            "video_url": "https://youtu.be/cVzt0WZIhAk",
-            "mp4url": "",
-            "mobmp4url": "https://youtu.be/cVzt0WZIhAk",
-            "ovr": "#3d4246",
-            "ovropt": 0,
-            "hd1": "",
-            "pcl": "#000000",
-            "title": "",
-            "tcl": "#000000",
-            "hd3": "",
-            "hideh3": true,
-            "cl": "#000000",
-            "btn": "",
-            "link": "",
-            "display_btn": false,
-            "btn2": "Shop now",
-            "link2": "",
-            "btn-style": "btn1",
-            "btn-size": "btn-md",
-            "contwd": 1200,
-            "text-left": true,
-            "txtpos": "f-aic-md f-jcs-md",
-            "txtposm": "f-aic f-jcs"
+            "txtposm": "f-jcc f-aic"
           }
         }
       },
       "block_order": [
-        "image_aYjeXn",
-        "image_L9ta3g",
-        "image_7zLXEz",
-        "image_JJmk6P",
-        "video_pAq8xh"
+        "image_aYjeXn"
       ],
       "settings": {
         "top-offeset": "none",
@@ -232,13 +117,15 @@
         "speed": 7,
         "arrow": false,
         "arrowc": "#444444",
-        "dot": true,
+        "dot": false,
         "dots": "#000000",
+        "bar": false,
+        "barc": "#FFFFFF",
         "snow_effect": false,
         "snow_style": "style1"
       }
     },
-    "richtext_rCBVpk": {
+    "richtext_zAGFcd": {
       "type": "richtext",
       "name": "Rich Text Block",
       "settings": {
@@ -247,15 +134,15 @@
         "section_cov": false,
         "sec_bg_clr": "#fafafa",
         "max-width": 700,
-        "title": "I AM RICH TEXT BLOCK",
-        "tcl": "#000",
+        "title": "Celeste Home Fashion is more than a furniture store — it is a lifestyle destination for those who value beauty, quality, and thoughtful living.",
+        "tcl": "#472815",
         "tfs": 26,
         "tfsm": 20,
         "tff": "ft1",
         "tfw": "700",
         "tlh": 1.2,
-        "richtxt": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
-        "cl": "#000",
+        "richtxt": "<p>From timeless furniture and elegant décor to refined lighting and accessories, our collections are chosen to inspire, comfort, and elevate everyday living.</p>",
+        "cl": "#472815",
         "fs": 14,
         "fsm": 13,
         "lh": 1.6,
@@ -271,188 +158,96 @@
         "text_clr": "#111"
       }
     },
-    "collection_list_KAcJcz": {
-      "type": "collection-list",
+    "banner_with_text_K64qcm": {
+      "type": "banner-with-text",
       "blocks": {
-        "featured_collection_jbrDEN": {
-          "type": "featured_collection",
+        "row_h4Jp9D": {
+          "type": "row",
           "settings": {
-            "collection": "decor-accessories",
-            "url": "#",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
+            "layout": "left",
+            "title": "Banner With Text",
+            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "",
+            "button_link": "",
+            "text_align": "text-left",
+            "tcl": "#000",
+            "cl": "#000",
+            "bg": "#f5f5f5",
+            "btncl": "#fff",
+            "btnbg": "#000",
+            "btnbd": "#000"
           }
         },
-        "featured_collection_JN9tjk": {
-          "type": "featured_collection",
+        "row_JtUXQ8": {
+          "type": "row",
           "settings": {
-            "collection": "",
-            "url": "",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
+            "layout": "right",
+            "title": "Banner With Text",
+            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "",
+            "button_link": "",
+            "text_align": "text-left",
+            "tcl": "#000",
+            "cl": "#000",
+            "bg": "#f5f5f5",
+            "btncl": "#fff",
+            "btnbg": "#000",
+            "btnbd": "#000"
           }
         },
-        "featured_collection_R7et7e": {
-          "type": "featured_collection",
+        "row_BDz86B": {
+          "type": "row",
           "settings": {
-            "collection": "",
-            "url": "",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
-          }
-        },
-        "featured_collection_ThWFHn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "url": "",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
-          }
-        },
-        "featured_collection_WDcBCA": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "url": "",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
-          }
-        },
-        "featured_collection_FtD8Qh": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "url": "",
-            "collection_name": "",
-            "collection_description": "",
-            "collection_btn": "Shop Now"
+            "layout": "left",
+            "title": "Banner With Text",
+            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "",
+            "button_link": "",
+            "text_align": "text-left",
+            "tcl": "#000",
+            "cl": "#000",
+            "bg": "#f5f5f5",
+            "btncl": "#fff",
+            "btnbg": "#000",
+            "btnbd": "#000"
           }
         }
       },
       "block_order": [
-        "featured_collection_jbrDEN",
-        "featured_collection_JN9tjk",
-        "featured_collection_R7et7e",
-        "featured_collection_ThWFHn",
-        "featured_collection_WDcBCA",
-        "featured_collection_FtD8Qh"
+        "row_h4Jp9D",
+        "row_JtUXQ8",
+        "row_BDz86B"
       ],
-      "name": "Collections List",
+      "name": "Banner With Text",
       "settings": {
-        "title": "Collection list",
-        "subtitle": "Describe your products, collection, content etc...",
         "top-offeset": "default",
         "section_width": true,
-        "npd": false,
         "section_cov": false,
         "sec_bg_clr": "#fafafa",
-        "hide_mobile": false,
-        "enable_carousel": false,
-        "grid-spacing": 15,
-        "grid-spacing-mbl": 5,
-        "grid": 6,
-        "tablet-grid": 3,
-        "mobile-grid": 2,
-        "style": "st1",
-        "textalign": "tc",
-        "leftpadzero": false,
-        "product_count": false,
-        "show_buttons": true,
-        "btn-style": "btn",
-        "btn-size-desk": "btn-sm",
-        "btn-size-mob": "mob-btn-sm",
-        "tfs": 18,
-        "tfsm": 16,
+        "snow_effect": false,
+        "snow_style": "style1",
+        "tfs": 30,
+        "tfsm": 22,
         "tff": "ft1",
-        "tfw": "400",
+        "tfw": "700",
         "tlh": 1.2,
-        "cl": "#fff",
-        "bg": "#000",
-        "opt": 0.9,
-        "bdr": 0,
-        "disable_zoom": false
-      }
-    },
-    "store_features_nfyfYz": {
-      "type": "store-features",
-      "blocks": {
-        "text_block_V9VGcr": {
-          "type": "text_block",
-          "settings": {
-            "icons": "at-truck-l",
-            "title": "FREE SHIPPING",
-            "text": "<p>When you spend $100+</p>",
-            "texturl": ""
-          }
-        },
-        "text_block_VEjfhW": {
-          "type": "text_block",
-          "settings": {
-            "icons": "at-undo-r",
-            "title": "FREE RETURNS",
-            "text": "<p>30-days free return policy.</p>",
-            "texturl": ""
-          }
-        },
-        "text_block_GjX3iq": {
-          "type": "text_block",
-          "settings": {
-            "icons": "at-lock-al",
-            "title": "SECURED PAYMENTS",
-            "text": "<p>We accept all major credit cards.</p>",
-            "texturl": ""
-          }
-        },
-        "text_block_x7NxyT": {
-          "type": "text_block",
-          "settings": {
-            "icons": "at-chat",
-            "title": "24/7 HELP CENTER",
-            "text": "<p>Dedicated 24/7 support</p>",
-            "texturl": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_block_V9VGcr",
-        "text_block_VEjfhW",
-        "text_block_GjX3iq",
-        "text_block_x7NxyT"
-      ],
-      "name": "Store Features",
-      "settings": {
-        "top-offeset": "default",
-        "section_width": false,
-        "section_cov": true,
-        "sec_bg_clr": "#fafafa",
-        "hide_mobile": false,
-        "title": "",
-        "subtitle": "",
-        "style": "style1",
-        "icon-type": "image",
-        "icons_clr": "#333",
-        "isz": 30,
-        "tcl": "#111",
-        "tfs": 14,
-        "tfsm": 12,
-        "tfw": "600",
-        "tlh": 1.2,
-        "cl": "#333",
-        "border_sep": "#eee"
+        "tmb": 15,
+        "tmbm": 10,
+        "fs": 14,
+        "fsm": 12,
+        "fw": "400",
+        "lh": 1.6,
+        "mb": 15,
+        "mbm": 10,
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm"
       }
     }
   },
   "order": [
     "page",
     "slideshow_RMciCG",
-    "richtext_rCBVpk",
-    "collection_list_KAcJcz",
-    "store_features_nfyfYz"
+    "richtext_zAGFcd",
+    "banner_with_text_K64qcm"
   ]
 }

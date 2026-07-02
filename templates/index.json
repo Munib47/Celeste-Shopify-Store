@@ -25,7 +25,7 @@
             "dividerw": 40,
             "title": "Live Beautifully",
             "tcl": "#472815",
-            "hd3": "At Celeste, we believe your home should be a reflection of who you are—effortless, timeless, and uniquely yours.",
+            "hd3": "Timeless furniture. Thoughtful design.\nSpaces that feel like home.",
             "hideh3": false,
             "cl": "#472815",
             "btn": "Explore Collection",
@@ -168,12 +168,12 @@
       "type": "richtext",
       "name": "Rich Text Block",
       "settings": {
-        "top-offeset": "default",
+        "top-offeset": "none",
         "fullwidth": true,
-        "section_cov": false,
-        "sec_bg_clr": "#fafafa",
+        "section_cov": true,
+        "sec_bg_clr": "#e7d8cb",
         "max-width": 700,
-        "title": "Celeste Home Fashion is more than a furniture store — it is a lifestyle destination for those who value beauty, quality, and thoughtful living.",
+        "title": "Curated for the way you live.",
         "tcl": "#472815",
         "tfs": 26,
         "tfsm": 20,
@@ -206,7 +206,7 @@
             "collection": "living",
             "url": "",
             "collection_image": "shopify://shop_images/CPT-07248.jpg",
-            "collection_name": "Living",
+            "collection_name": "LIVING ROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -214,9 +214,10 @@
         "featured_collection_J9M9HM": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "bedroom",
             "url": "",
-            "collection_name": "",
+            "collection_image": "shopify://shop_images/2_248bb115-a7e3-40fc-905d-dfc971da02ba.jpg",
+            "collection_name": "BEDROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -224,9 +225,9 @@
         "featured_collection_8NyKb3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "dining",
             "url": "",
-            "collection_name": "",
+            "collection_name": "DINING ROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -234,9 +235,9 @@
         "featured_collection_BgdLRT": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "decor",
             "url": "",
-            "collection_name": "",
+            "collection_name": "DECOR & ACCENTS",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -244,9 +245,9 @@
         "featured_collection_9GRkke": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "lighting",
             "url": "",
-            "collection_name": "",
+            "collection_name": "LIGHTING",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -254,9 +255,9 @@
         "featured_collection_fhpUxd": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "argos-3-door",
             "url": "",
-            "collection_name": "",
+            "collection_name": "OUTDOOR",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -272,15 +273,15 @@
       ],
       "name": "Collections List",
       "settings": {
-        "title": "Collection list",
-        "subtitle": "Describe your products, collection, content etc...",
-        "top-offeset": "default",
+        "title": "SHOP BY ROOM",
+        "subtitle": "",
+        "top-offeset": "none",
         "section_width": true,
         "npd": false,
         "section_cov": false,
-        "sec_bg_clr": "#fafafa",
+        "sec_bg_clr": "#e9dfd5",
         "hide_mobile": false,
-        "enable_carousel": true,
+        "enable_carousel": false,
         "grid-spacing": 15,
         "grid-spacing-mbl": 5,
         "grid": 6,
@@ -294,22 +295,290 @@
         "btn-style": "btn",
         "btn-size-desk": "btn-sm",
         "btn-size-mob": "mob-btn-sm",
-        "tfs": 18,
-        "tfsm": 16,
+        "tfs": 14,
+        "tfsm": 12,
         "tff": "ft1",
-        "tfw": "400",
+        "tfw": "500",
         "tlh": 1.2,
-        "cl": "#fff",
+        "cl": "#472815",
         "bg": "#000",
         "opt": 0.9,
         "bdr": 0,
-        "disable_zoom": false
+        "disable_zoom": true
+      }
+    },
+    "banner_with_text_q36Kdj": {
+      "type": "banner-with-text",
+      "blocks": {
+        "row_mCygEd": {
+          "type": "row",
+          "settings": {
+            "layout": "left",
+            "title": "Banner With Text",
+            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "button_label": "Shop Now",
+            "button_link": "/",
+            "text_align": "text-left",
+            "tcl": "#000",
+            "cl": "#000",
+            "bg": "#f5f5f5",
+            "btncl": "#fff",
+            "btnbg": "#000",
+            "btnbd": "#000"
+          }
+        }
+      },
+      "block_order": [
+        "row_mCygEd"
+      ],
+      "name": "Banner With Text",
+      "settings": {
+        "top-offeset": "default",
+        "section_width": true,
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "snow_effect": false,
+        "snow_style": "style1",
+        "tfs": 30,
+        "tfsm": 22,
+        "tff": "ft1",
+        "tfw": "700",
+        "tlh": 1.2,
+        "tmb": 15,
+        "tmbm": 10,
+        "fs": 14,
+        "fsm": 12,
+        "fw": "400",
+        "lh": 1.6,
+        "mb": 15,
+        "mbm": 10,
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm"
+      }
+    },
+    "store_features_BK46XR": {
+      "type": "store-features",
+      "blocks": {
+        "text_block_mtFChX": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-truck-l",
+            "title": "TIMELESS DESIGN",
+            "text": "<p>Piece that never go out if style.</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_XBjz8A": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-undo-r",
+            "title": "EXCEPTIONAL QUALITY",
+            "text": "<p>Crafted with care, built to last.</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_rhy36E": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-lock-al",
+            "title": "SECURED PAYMENTS",
+            "text": "<p>We accept all major credit cards.</p>",
+            "texturl": ""
+          }
+        },
+        "text_block_Nxcbre": {
+          "type": "text_block",
+          "settings": {
+            "icons": "at-heart-l",
+            "title": "MADE FOR YOU",
+            "text": "<p>Personolised service, every step of the way.</p>",
+            "texturl": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_mtFChX",
+        "text_block_XBjz8A",
+        "text_block_rhy36E",
+        "text_block_Nxcbre"
+      ],
+      "name": "Store Features",
+      "settings": {
+        "top-offeset": "default",
+        "section_width": false,
+        "section_cov": true,
+        "sec_bg_clr": "#e9dfd5",
+        "hide_mobile": false,
+        "title": "",
+        "subtitle": "",
+        "style": "style1",
+        "icon-type": "image",
+        "icons_clr": "#472815",
+        "isz": 30,
+        "tcl": "#472815",
+        "tfs": 14,
+        "tfsm": 12,
+        "tfw": "600",
+        "tlh": 1.2,
+        "cl": "#472815",
+        "border_sep": "#472815"
+      }
+    },
+    "instagram_showcase_p7XXmd": {
+      "type": "instagram-showcase",
+      "blocks": {
+        "image_slide_YbAQ6b": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Windsor_1_Mobile_Banner_235f8979-a093-4456-8164-8323847b8845.jpg",
+            "instagram_link": ""
+          }
+        },
+        "image_slide_ahkED6": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Alara_1_Mobile_Banner_81ff6e57-e054-44aa-9dde-a794db2a8874.jpg",
+            "instagram_link": ""
+          }
+        },
+        "image_slide_BVmCJp": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Ramadan_Bannner_5_mobile.jpg",
+            "instagram_link": ""
+          }
+        },
+        "image_slide_6rQ8Cc": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Windsor_1_Mobile_Banner_235f8979-a093-4456-8164-8323847b8845.jpg",
+            "instagram_link": ""
+          }
+        },
+        "image_slide_t7AP68": {
+          "type": "image_slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/Nova-Sofa--Mob.jpg",
+            "instagram_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_YbAQ6b",
+        "image_slide_ahkED6",
+        "image_slide_BVmCJp",
+        "image_slide_6rQ8Cc",
+        "image_slide_t7AP68"
+      ],
+      "name": "Instagram Showcase",
+      "settings": {
+        "custom_icon": false,
+        "icon_color": "#472815",
+        "icon_width": 20,
+        "icon_height": 20,
+        "insta_heading": "INSPIRE YOUR HOME",
+        "heading_color": "#472815",
+        "heading_font_size": 18,
+        "heading_font_size_mobile": 16,
+        "description": "<p>Follow @celestehomefashion for ideas, styling tips, and a glimpse into beautiful spaces.</p>",
+        "description_color": "#472815",
+        "description_font_size": 14,
+        "description_font_size_mobile": 16,
+        "insta_button": "FOLLOW US ON INSTAGRAM",
+        "button_url": "#",
+        "button_color": "#b08053",
+        "button_font_size": 12,
+        "button_font_size_mobile": 16,
+        "column_background": "#e7d8cb",
+        "desktop_carousel": true,
+        "mobile_carousel": true,
+        "enable_arrows": true,
+        "arrows_color": "#472815",
+        "auto_rotate": true,
+        "slide_change": 5,
+        "loop_slides": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_store_location_f7P3np": {
+      "type": "custom-store-location",
+      "blocks": {
+        "location_Rk9TRR": {
+          "type": "location",
+          "settings": {
+            "heading": "KARACHI",
+            "heading_color": "#472815",
+            "heading_font_size": 18,
+            "heading_font_size_mobile": 14,
+            "address": "<p>26th Street, DHA</p><p><a href=\"tel:02135838760\">021-35838760</a></p>",
+            "address_color": "#472815",
+            "address_font_size": 18,
+            "address_font_size_mobile": 14,
+            "button_text": "Get Directions",
+            "button_url": "",
+            "button_color": "#b08053",
+            "button_font_size": 14,
+            "button_font_size_mobile": 14
+          }
+        },
+        "location_wM9y9A": {
+          "type": "location",
+          "settings": {
+            "heading": "LAHORE",
+            "heading_color": "#472815",
+            "heading_font_size": 18,
+            "heading_font_size_mobile": 14,
+            "address": "<p>22-L, Gulberg II</p><p><a href=\"tel:04235751182\">042-35751182</a></p>",
+            "address_color": "#472815",
+            "address_font_size": 18,
+            "address_font_size_mobile": 14,
+            "button_text": "Get Directions",
+            "button_url": "",
+            "button_color": "#b08053",
+            "button_font_size": 14,
+            "button_font_size_mobile": 14
+          }
+        }
+      },
+      "block_order": [
+        "location_Rk9TRR",
+        "location_wM9y9A"
+      ],
+      "name": "Store Locations",
+      "settings": {
+        "enable_background_color": true,
+        "background_color": "#e7d8cb",
+        "enable_background_image": false,
+        "heading": "Visit Our Stores",
+        "heading_color": "#472815",
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 20,
+        "divider": true,
+        "divider_color": "#472815",
+        "divider_width": 50,
+        "description": "<p>Experience our collections in person. We'd love to welcome you.</p>",
+        "description_color": "#472815",
+        "description_font_size": 24,
+        "description_font_size_mobile": 18,
+        "button_text": "Find a Store",
+        "button_url": "",
+        "button_text_color": "#472815",
+        "button_background_color": "#ffffff",
+        "button_font_size": 14,
+        "button_font_size_mobile": 12,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "slideshow",
     "richtext_LGKHrU",
-    "collection_list_3PmNHt"
+    "collection_list_3PmNHt",
+    "banner_with_text_q36Kdj",
+    "store_features_BK46XR",
+    "instagram_showcase_p7XXmd",
+    "custom_store_location_f7P3np"
   ]
 }

@@ -485,7 +485,9 @@ s.pr_price { opacity:0.6; margin-right:4px; font-weight:400; }
 .cl-item:hover .img { transform:scale(1.1); }
 .no-zoom .cl-item .img { transform:none; }
 
-.clbox .imgWrap { overflow:hidden; }
+.clbox .imgWrap { overflow:hidden; position:relative; padding-bottom:var(--clratio); }
+.clbox .imgWrap img,
+.clbox .imgWrap .placeholder-svg { position:absolute; top:0; right:0; width:100%; height:100%; object-fit:cover; }
 .clbox .details { color:var(--dtcl); z-index:1; position:relative; padding:15px; width:100%; background-color:var(--dtbg); transition:all 0.3s ease-out; }
 .clbox .details.pad-0 { padding-left:0; padding-right:0; }
 .clbox .counts { font-size:13px; font-weight:400; opacity:0.7; display:block; margin-top:5px; }
@@ -513,6 +515,12 @@ s.pr_price { opacity:0.6; margin-right:4px; font-weight:400; }
 	.clbox.st4 .details { opacity:1; padding:10px 15px; position:relative; left:0; bottom:inherit; transform:translateY(0); background-color:var(--dtbgm); border-radius:0 0 var(--dtbdr) var(--dtbdr);  }
 }
 .clbox.fullwidth div[class^="grid-mr-"] { margin:0; }
+
+.cl-view-all { margin-top:30px; }
+.cl-view-all__link { display:inline-block; color:var(--vacl); font-size:13px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; }
+.cl-view-all__link:hover { opacity:0.8; }
+.cl-view-all__link .arw { display:inline-block; margin-right:6px; transition:transform 0.3s ease-out; }
+.cl-view-all__link:hover .arw { transform:translateX(-4px); }
 
 .cldtl_wrap { position:absolute; top:0; left:0; right:0; bottom:0; padding:20px; }
     
@@ -1908,7 +1916,7 @@ body:not(.template-index) .site-footer { margin-top:20px; }
 }
 .falling-snow.style2:before { background-image: url({{ 'snow-1.png' | asset_url }}), url({{ 'snow-2.png' | asset_url }}), url({{ 'snow-2.png' | asset_url }});
   -ms-animation:snow 10s linear infinite; animation:snow 10s linear infinite; }
-.snow-wrap.falling-snow.style2::before { z-index:111; }
+.snow-wrap.falling-snow.style2::before { z-index:111; }z
 
 .shopify-challenge__container { padding:10% 0; }
 .grecaptcha-badge { display:none !important; }
