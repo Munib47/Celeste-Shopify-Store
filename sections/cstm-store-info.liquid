@@ -250,13 +250,13 @@
                 </span>
 
                 {%- if block.settings.block_heading != blank -%}
-                  <h2 class="cstm-store-info__heading">{{ block.settings.block_heading | escape }}</h2>
+                  <h2 class="cstm-store-info__heading"{% if block.settings.heading_font_family != blank %} style="font-family:var(--font-{{ block.settings.heading_font_family }}) !important"{% endif %}>{{ block.settings.block_heading | escape }}</h2>
                 {%- endif -%}
               </div>
 
               {%- if block.settings.first_store_location != blank or block.settings.second_store_location != blank -%}
                 <div class="cstm-store-info__body">
-                  <div class="cstm-store-info__content cstm-store-info__locations">
+                  <div class="cstm-store-info__content cstm-store-info__locations"{% if block.settings.locations_font_family != blank %} style="font-family:var(--font-{{ block.settings.locations_font_family }}) !important"{% endif %}>
                     {%- if block.settings.first_store_location != blank -%}
                       <address class="cstm-store-info__location">{{ block.settings.first_store_location }}</address>
                     {%- endif -%}
@@ -294,7 +294,7 @@
                 </span>
 
                 {%- if block.settings.explore_heading != blank -%}
-                  <h2 class="cstm-store-info__heading">{{ block.settings.explore_heading | escape }}</h2>
+                  <h2 class="cstm-store-info__heading"{% if block.settings.heading_font_family != blank %} style="font-family:var(--font-{{ block.settings.heading_font_family }}) !important"{% endif %}>{{ block.settings.explore_heading | escape }}</h2>
                 {%- endif -%}
               </div>
 
@@ -307,7 +307,7 @@
                 or block.settings.pintrest_url != blank -%}
                 <div class="cstm-store-info__body">
                   {%- if block.settings.explore_decription != blank -%}
-                    <div class="cstm-store-info__content">{{ block.settings.explore_decription }}</div>
+                    <div class="cstm-store-info__content"{% if block.settings.description_font_family != blank %} style="font-family:var(--font-{{ block.settings.description_font_family }}) !important"{% endif %}>{{ block.settings.explore_decription }}</div>
                   {%- endif -%}
 
                   {%- if block.settings.instagram != blank
@@ -390,13 +390,13 @@
                 </span>
 
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="cstm-store-info__heading">{{ block.settings.heading | escape }}</h2>
+                  <h2 class="cstm-store-info__heading"{% if block.settings.heading_font_family != blank %} style="font-family:var(--font-{{ block.settings.heading_font_family }}) !important"{% endif %}>{{ block.settings.heading | escape }}</h2>
                 {%- endif -%}
               </div>
 
               {%- if block.settings.in_touch_description != blank -%}
                 <div class="cstm-store-info__body">
-                  <address class="cstm-store-info__content cstm-store-info__contact">{{ block.settings.in_touch_description }}</address>
+                  <address class="cstm-store-info__content cstm-store-info__contact"{% if block.settings.description_font_family != blank %} style="font-family:var(--font-{{ block.settings.description_font_family }}) !important"{% endif %}>{{ block.settings.in_touch_description }}</address>
                 </div>
               {%- endif -%}
             </div>
@@ -483,12 +483,36 @@
         { "type": "color", "label": "Heading Color", "id": "block_heading_color", "default": "#3c2a21" },
         { "type": "range", "label": "Heading Font Size", "id": "block_heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
         { "type": "range", "label": "Heading Font Size (Mobile)", "id": "block_heading_font_size_mobile", "default": 12, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Heading Font Family",
+          "id": "heading_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
         { "type": "header", "content": "Store Locations" },
         { "type": "richtext", "label": "Store Location 1", "id": "first_store_location", "default": "<p><strong>Karachi</strong></p><p>26th Street, DHA</p><p>021-36838760</p>" },
         { "type": "richtext", "label": "Store Location 2", "id": "second_store_location", "default": "<p><strong>Lahore</strong></p><p>22-L, Gulberg II</p><p>042-3575182</p>" },
         { "type": "color", "label": "Location Text Color", "id": "location_text_color", "default": "#3c2a21" },
         { "type": "range", "label": "Locations Font Size", "id": "locations_font_size", "default": 14, "min": 10, "max": 40, "step": 1, "unit": "px" },
-        { "type": "range", "label": "Locations Font Size (Mobile)", "id": "locations_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" }
+        { "type": "range", "label": "Locations Font Size (Mobile)", "id": "locations_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Locations Font Family",
+          "id": "locations_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        }
       ]
     },
     {
@@ -503,11 +527,35 @@
         { "type": "color", "label": "Heading Color", "id": "explore_heading_color", "default": "#3c2a21" },
         { "type": "range", "label": "Font Size", "id": "explore_heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
         { "type": "range", "label": "Font Size (Mobile)", "id": "explore_heading_font_size_mobile", "default": 12, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Heading Font Family",
+          "id": "heading_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
         { "type": "header", "content": "Explore Description" },
         { "type": "richtext", "label": "Explore Description", "id": "explore_decription", "default": "<p>celestehomefashion.com</p>" },
         { "type": "color", "label": "Description Color", "id": "explore_description_color", "default": "#3c2a21" },
         { "type": "range", "label": "Font Size", "id": "explore_description_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
         { "type": "range", "label": "Font Size (Mobile)", "id": "explore_description_font_size_mobile", "default": 13, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Description Font Family",
+          "id": "description_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
         { "type": "header", "content": "Social Icons" },
         { "type": "image_picker", "label": "Instagram", "id": "instagram" },
         { "type": "url", "label": "Instagram URL", "id": "instagram_url" },
@@ -530,11 +578,35 @@
         { "type": "color", "label": "Heading Color", "id": "heading_color", "default": "#3c2a21" },
         { "type": "range", "label": "Heading Font Size", "id": "heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
         { "type": "range", "label": "Heading Font Size (Mobile)", "id": "heading_font_size_mobile", "default": 12, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Heading Font Family",
+          "id": "heading_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
         { "type": "header", "content": "Description" },
         { "type": "richtext", "label": "Description", "id": "in_touch_description", "default": "<p>+92 316 7773306</p><p>info@celestehomefashion.com</p>" },
         { "type": "color", "label": "Description Color", "id": "description_color", "default": "#3c2a21" },
         { "type": "range", "label": "Description Font Size", "id": "description_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
-        { "type": "range", "label": "Description Font Size (Mobile)", "id": "description_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" }
+        { "type": "range", "label": "Description Font Size (Mobile)", "id": "description_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        {
+          "type": "select",
+          "label": "Description Font Family",
+          "id": "description_font_family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        }
       ]
     }
   ],
