@@ -20,7 +20,7 @@
     {% comment %} ---------- Intro (section settings) ---------- {% endcomment %}
     <div class="store-locations__intro">
       {% if section.settings.heading != blank %}
-        <h2 class="store-locations__heading">{{ section.settings.heading }}</h2>
+        <h2 class="store-locations__heading"{% if section.settings.heading_font_family != blank %} style="font-family:var(--font-{{ section.settings.heading_font_family }}) !important"{% endif %}>{{ section.settings.heading }}</h2>
       {% endif %}
 
       {% if section.settings.divider %}
@@ -28,11 +28,11 @@
       {% endif %}
 
       {% if section.settings.description != blank %}
-        <div class="store-locations__description">{{ section.settings.description }}</div>
+        <div class="store-locations__description"{% if section.settings.description_font_family != blank %} style="font-family:var(--font-{{ section.settings.description_font_family }}) !important"{% endif %}>{{ section.settings.description }}</div>
       {% endif %}
 
       {% if section.settings.button_text != blank %}
-        <a class="store-locations__button" href="{{ section.settings.button_url | default: '#' }}">
+        <a class="store-locations__button"{% if section.settings.button_font_family != blank %} style="font-family:var(--font-{{ section.settings.button_font_family }}) !important"{% endif %} href="{{ section.settings.button_url | default: '#' }}">
           <span>{{ section.settings.button_text }}</span>
           <span class="store-locations__arrow" aria-hidden="true">&#8594;</span>
         </a>
@@ -351,6 +351,18 @@
       "default": 20
     },
     {
+      "type": "select",
+      "id": "heading_font_family",
+      "label": "Font Family",
+      "default": "uni-neue",
+      "options": [
+        { "label": "Poppins Medium",   "value": "popins-medium" },
+        { "label": "Didot Regular",    "value": "didot"         },
+        { "label": "Montserrat",       "value": "montserrat"    },
+        { "label": "Uni Neue Regular", "value": "uni-neue"      }
+      ]
+    },
+    {
       "type": "header",
       "content": "Divider"
     },
@@ -415,6 +427,18 @@
       "default": 18
     },
     {
+      "type": "select",
+      "id": "description_font_family",
+      "label": "Font Family",
+      "default": "uni-neue",
+      "options": [
+        { "label": "Poppins Medium",   "value": "popins-medium" },
+        { "label": "Didot Regular",    "value": "didot"         },
+        { "label": "Montserrat",       "value": "montserrat"    },
+        { "label": "Uni Neue Regular", "value": "uni-neue"      }
+      ]
+    },
+    {
       "type": "header",
       "content": "Button"
     },
@@ -460,6 +484,18 @@
       "step": 2,
       "unit": "px",
       "default": 12
+    },
+    {
+      "type": "select",
+      "id": "button_font_family",
+      "label": "Font Family",
+      "default": "uni-neue",
+      "options": [
+        { "label": "Poppins Medium",   "value": "popins-medium" },
+        { "label": "Didot Regular",    "value": "didot"         },
+        { "label": "Montserrat",       "value": "montserrat"    },
+        { "label": "Uni Neue Regular", "value": "uni-neue"      }
+      ]
     },
     {
       "type": "header",
@@ -528,6 +564,18 @@
           "default": 14
         },
         {
+          "type": "select",
+          "id": "heading_font_family",
+          "label": "Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
+        {
           "type": "header",
           "content": "Address"
         },
@@ -562,6 +610,18 @@
           "step": 2,
           "unit": "px",
           "default": 14
+        },
+        {
+          "type": "select",
+          "id": "address_font_family",
+          "label": "Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
         },
         {
           "type": "header",
@@ -603,6 +663,18 @@
           "step": 2,
           "unit": "px",
           "default": 14
+        },
+        {
+          "type": "select",
+          "id": "button_font_family",
+          "label": "Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
         }
       ]
     }

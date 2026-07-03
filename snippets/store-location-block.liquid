@@ -30,15 +30,15 @@
   "
 >
   {% if block.settings.heading != blank %}
-    <h3 class="store-location__heading">{{ block.settings.heading }}</h3>
+    <h3 class="store-location__heading"{% if block.settings.heading_font_family != blank %} style="font-family:var(--font-{{ block.settings.heading_font_family }}) !important"{% endif %}>{{ block.settings.heading }}</h3>
   {% endif %}
 
   {% if block.settings.address != blank %}
-    <div class="store-location__address">{{ block.settings.address }}</div>
+    <div class="store-location__address"{% if block.settings.address_font_family != blank %} style="font-family:var(--font-{{ block.settings.address_font_family }}) !important"{% endif %}>{{ block.settings.address }}</div>
   {% endif %}
 
   {% if block.settings.button_text != blank %}
-    <a class="store-location__button" href="{{ block.settings.button_url | default: '#' }}">
+    <a class="store-location__button"{% if block.settings.button_font_family != blank %} style="font-family:var(--font-{{ block.settings.button_font_family }}) !important"{% endif %} href="{{ block.settings.button_url | default: '#' }}">
       <span>{{ block.settings.button_text }}</span>
       <span class="store-location__arrow" aria-hidden="true">&#8594;</span>
     </a>
