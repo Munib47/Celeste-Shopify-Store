@@ -315,6 +315,7 @@
         "blocks": {
           "single_link_W6NBpQ": {
             "type": "single_link",
+            "disabled": true,
             "settings": {
               "title": "HOME",
               "url": "https://celestehomefashion.com/",
@@ -324,7 +325,7 @@
           "b73e62fb-c5c3-4610-af1f-9c1c04de8dcd": {
             "type": "dropdown",
             "settings": {
-              "title": "Collections",
+              "title": "COLLECTIONS",
               "url": "shopify://pages/collections",
               "mm_linklist": "collections"
             }
@@ -332,15 +333,31 @@
           "1553256701490": {
             "type": "dropdown",
             "settings": {
-              "title": "Bedroom",
+              "title": "BEDROOM",
               "url": "https://celestehomefashion.com/collections/bedroom",
               "mm_linklist": "bedroom"
+            }
+          },
+          "dropdown_cDkffk": {
+            "type": "dropdown",
+            "settings": {
+              "title": "ROOM",
+              "url": "https://celestehomefashion.com/collections/living",
+              "mm_linklist": "living"
+            }
+          },
+          "dropdown_brttkM": {
+            "type": "dropdown",
+            "settings": {
+              "title": "DINING",
+              "url": "shopify://collections/dining",
+              "mm_linklist": "dining"
             }
           },
           "7880c6af-612d-4791-bff2-dd0b0307ee6d": {
             "type": "dropdown",
             "settings": {
-              "title": "Decor",
+              "title": "DECOR",
               "url": "shopify://collections/decor",
               "mm_linklist": "decor"
             }
@@ -348,7 +365,7 @@
           "96d19b79-ab9a-455d-a136-380842f7a3ba": {
             "type": "dropdown",
             "settings": {
-              "title": "Sleep Lab",
+              "title": "SLEEP LAB",
               "url": "shopify://collections/sleep-lab",
               "mm_linklist": "sleep-lab"
             }
@@ -356,7 +373,7 @@
           "single_link_9zXNmU": {
             "type": "single_link",
             "settings": {
-              "title": "About Us",
+              "title": "ABOUT US",
               "url": "#",
               "newtab": false
             }
@@ -374,13 +391,15 @@
           "single_link_W6NBpQ",
           "b73e62fb-c5c3-4610-af1f-9c1c04de8dcd",
           "1553256701490",
+          "dropdown_cDkffk",
+          "dropdown_brttkM",
           "7880c6af-612d-4791-bff2-dd0b0307ee6d",
           "96d19b79-ab9a-455d-a136-380842f7a3ba",
           "single_link_9zXNmU",
           "single_link_pYqqMA"
         ],
         "settings": {
-          "nav_item_font_family": "montserrat",
+          "nav_item_font_family": "popins-medium",
           "menuarrow": true,
           "menuAlign": "tc",
           "spnav": false,

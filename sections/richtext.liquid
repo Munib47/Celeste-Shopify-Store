@@ -1,4 +1,11 @@
 {%- assign secSt = section.settings -%}
+<style>
+  .id-{{section.id}} .rt-subhead{margin:0 0 12px;text-transform:uppercase;letter-spacing:2px;line-height:1.2;}
+  .id-{{section.id}} .rt-divider{height:0;border:0;border-top:1px solid;margin-top:0;margin-bottom:18px;}
+  @media only screen and (min-width:768px){
+    .id-{{section.id}} .rt-subhead{font-size:var(--shfs);}
+  }
+</style>
 <div class="content-indent {{ secSt.top-offeset}}">   
  {% if secSt.section_cov %}<div class="section-cover" style="background-color:{{secSt.sec_bg_clr}};">{% endif%} 
   <div class="richtxt id-{{section.id}} wow fadeIn">  		      
@@ -9,7 +16,9 @@
                   data-aspectratio="{{ secSt.image.aspect_ratio }}" data-sizes="auto" alt="{{ secSt.image.alt | escape }}"></p>
       {%- endif -%}
 
-      <div class="page-width {{secSt.txt_align}}" style="max-width:{{secSt.max-width}}px;">                   
+      <div class="page-width {{secSt.txt_align}}" style="max-width:{{secSt.max-width}}px;">
+          {% if secSt.sub_heading_text != blank %}<p class="rt-subhead" style="color:{{secSt.sub_heading_color}};font-size:{{secSt.sub_heading_font_size_mobile}}px;--shfs:{{secSt.sub_heading_font_size}}px;">{{ secSt.sub_heading_text }}</p>{% endif %}
+          {% if secSt.show_divider %}<hr class="rt-divider" style="width:{{secSt.dividerw}}px;border-top-color:{{secSt.divider_color}};{% if secSt.txt_align == 'tc' %}margin-left:auto;margin-right:auto;{% else %}margin-left:0;margin-right:auto;{% endif %}">{% endif %}
           {% if secSt.title != blank %}<h2 class="ttlTxt" style="--tcl:{{secSt.tcl}};--tfs:{{secSt.tfs}}px;--tfsm:{{secSt.tfsm}}px;--tff:var(--{{secSt.tff}});--tfw:{{secSt.tfw}};--tlh:{{secSt.tlh}}{% if secSt.title_font_family != blank %};font-family:var(--font-{{secSt.title_font_family}}) !important{% endif %}">{{ secSt.title}}</h2>{% endif %}
           {% if secSt.richtxt != blank %}<div class="rgTxt mb20" style="--cl:{{secSt.cl}};--fs:{{secSt.fs}}px;--fsm:{{secSt.fsm}}px;--lh:{{secSt.lh}}{% if secSt.details_font_family != blank %};font-family:var(--font-{{secSt.details_font_family}}) !important{% endif %}">{{ secSt.richtxt }}</div>{% endif %}
     
@@ -29,7 +38,7 @@
   {
     "name": "Rich Text Block",   
 	"settings":[	
-	 {
+	    {
             "type": "select",
             "id": "top-offeset",
             "label": "Top OffSet",
@@ -81,7 +90,65 @@
             "type": "image_picker",
             "id": "image",
             "label": "Upload Image"
-          },
+        },
+        {
+            "type": "header",
+            "content": "Sub Heading"
+        },
+        {
+            "type": "text",
+            "id": "sub_heading_text",
+            "label": "Sub Heading",
+            "default": "CELESTE HOME FASHION"
+        },
+        {
+            "type": "color",
+            "id": "sub_heading_color",
+            "label": "Color",
+			"default":"#000"	
+		},
+        {
+            "type": "range",
+            "id": "sub_heading_font_size",
+            "label": "Font Size",
+            "default":26,
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "sub_heading_font_size_mobile",
+            "label": "Font Size (mobile)",
+            "default": 20,
+            "min": 10,
+            "max": 60,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_divider",
+            "label": "Add Divider",
+            "default": false
+        },
+        {
+            "type": "color",
+            "id": "divider_color",
+            "label": "Divider Color",
+			"default":"#000"	
+		},
+        {
+            "type": "range",
+            "id": "dividerw",
+            "label": "Divider Width",
+            "default": 50,
+            "min": 10,
+            "max": 300,
+            "step": 5,
+            "unit": "px"
+        },
 		{
         "type": "text",
         "id": "title",
