@@ -10,14 +10,14 @@
       {%- endif -%}
 
       <div class="page-width {{secSt.txt_align}}" style="max-width:{{secSt.max-width}}px;">                   
-          {% if secSt.title != blank %}<h2 class="ttlTxt" style="--tcl:{{secSt.tcl}};--tfs:{{secSt.tfs}}px;--tfsm:{{secSt.tfsm}}px;--tff:var(--{{secSt.tff}});--tfw:{{secSt.tfw}};--tlh:{{secSt.tlh}}">{{ secSt.title}}</h2>{% endif %}
-          {% if secSt.richtxt != blank %}<div class="rgTxt mb20" style="--cl:{{secSt.cl}};--fs:{{secSt.fs}}px;--fsm:{{secSt.fsm}}px;--lh:{{secSt.lh}}">{{ secSt.richtxt }}</div>{% endif %}
+          {% if secSt.title != blank %}<h2 class="ttlTxt" style="--tcl:{{secSt.tcl}};--tfs:{{secSt.tfs}}px;--tfsm:{{secSt.tfsm}}px;--tff:var(--{{secSt.tff}});--tfw:{{secSt.tfw}};--tlh:{{secSt.tlh}}{% if secSt.title_font_family != blank %};font-family:var(--font-{{secSt.title_font_family}}) !important{% endif %}">{{ secSt.title}}</h2>{% endif %}
+          {% if secSt.richtxt != blank %}<div class="rgTxt mb20" style="--cl:{{secSt.cl}};--fs:{{secSt.fs}}px;--fsm:{{secSt.fsm}}px;--lh:{{secSt.lh}}{% if secSt.details_font_family != blank %};font-family:var(--font-{{secSt.details_font_family}}) !important{% endif %}">{{ secSt.richtxt }}</div>{% endif %}
     
         {% if secSt.btntxt and secSt.btnurl != blank %}                             
-            <a class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}" href="{{secSt.btnurl}}">{{ secSt.btntxt }}</a>
+            <a class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}" href="{{secSt.btnurl}}"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %}>{{ secSt.btntxt }}</a>
         {% endif %}
         {% if secSt.btntxt1 and secSt.btnurl1 != blank %}                             
-            <a class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style2}}" href="{{secSt.btnurl1}}">{{ secSt.btntxt1 }}</a>
+            <a class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style2}}" href="{{secSt.btnurl1}}"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %}>{{ secSt.btntxt1 }}</a>
         {% endif %}
 
       </div>
@@ -172,6 +172,18 @@
             "step": 0.1,
             "info": "Space between text lines. Default is set to 1.3"
         },
+        {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Font Family",
+            "default": "uni-neue",
+            "options": [
+                { "label": "Poppins Medium",   "value": "popins-medium" },
+                { "label": "Didot Regular",    "value": "didot"         },
+                { "label": "Montserrat",       "value": "montserrat"    },
+                { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+        },
 		{
         "type": "richtext",
         "id": "richtxt",
@@ -213,6 +225,18 @@
             "max": 2.0,
             "step": 0.1,
             "info": "Space between text lines. Default is set to 1.3"
+        },
+        {
+            "type": "select",
+            "id": "details_font_family",
+            "label": "Font Family",
+            "default": "uni-neue",
+            "options": [
+                { "label": "Poppins Medium",   "value": "popins-medium" },
+                { "label": "Didot Regular",    "value": "didot"         },
+                { "label": "Montserrat",       "value": "montserrat"    },
+                { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
         },
 	    {
             "type": "text",
@@ -335,6 +359,18 @@
           ]
           },      	
 		{
+        "type": "select",
+        "id": "buttons_font_family",
+        "label": "Font Family",
+        "default": "uni-neue",
+        "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+        },
+        {
         "type": "select",
         "id": "txt_align",
         "label": "Text Alignment",

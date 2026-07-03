@@ -117,26 +117,26 @@
                             <div class="page-width fl h_100 {{ blkSt.txtpos }} {{ blkSt.txtposm }}" style="max-width:{{blkSt.contwd}}px;{{bxStyle}}">
                                 <div class="ss_txt{% if blkSt.text-left %} tl{% else %} tc{% endif %}{% if section.settings.txtanimation %} anim {{ section.settings.anim }}{% endif %}">
                                     {% if blkSt.hd1 != blank %}
-                                        <p class="stxt hd1 {{secSt.pff}}" style="--cl:{{blkSt.pcl}};--fs:{{secSt.pfs}}px;--fsm:{{secSt.pfsm}}px;--fw:{{secSt.pfw}};--lh:{{secSt.plh}};--mb:{{secSt.pmb}}px;--mbm:{{secSt.pmbm}}px">{{ blkSt.hd1 }}</p>
+                                        <p class="stxt hd1 {{secSt.pff}}" style="--cl:{{blkSt.pcl}};--fs:{{secSt.pfs}}px;--fsm:{{secSt.pfsm}}px;--fw:{{secSt.pfw}};--lh:{{secSt.plh}};--mb:{{secSt.pmb}}px;--mbm:{{secSt.pmbm}}px{% if blkSt.pre_heading_font_family != blank %};font-family:var(--font-{{blkSt.pre_heading_font_family}}) !important{% endif %}">{{ blkSt.hd1 }}</p>
                                     {% endif %}
                                     {% if blkSt.title != blank %}
-                                        <h2 class="stxt hd2 {{secSt.bff}}" style="--cl:{{blkSt.tcl}};--fs:{{secSt.bfs}}px;--fsm:{{secSt.bfsm}}px;--fw:{{secSt.bfw}};--lh:{{secSt.blh}};--mb:{{secSt.bmb}}px;--mbm:{{secSt.bmbm}}px">{{blkSt.title}}</h2>
+                                        <h2 class="stxt hd2 {{secSt.bff}}" style="--cl:{{blkSt.tcl}};--fs:{{secSt.bfs}}px;--fsm:{{secSt.bfsm}}px;--fw:{{secSt.bfw}};--lh:{{secSt.blh}};--mb:{{secSt.bmb}}px;--mbm:{{secSt.bmbm}}px{% if blkSt.big_heading_font_family != blank %};font-family:var(--font-{{blkSt.big_heading_font_family}}) !important{% endif %}">{{blkSt.title}}</h2>
                                     {% endif %}
                                     {% if blkSt.divider %}
                                         <hr class="ss_divider" style="--divcl:{{blkSt.dividercl}};--divw:{{blkSt.dividerw}}px;">
                                     {% endif %}
                                     {% if blkSt.hd3 != blank %}
-                                        <div class="stxt hd3 {{secSt.dff}}{% if blkSt.hideh3 %} hide-sm{% endif %}" style="--cl:{{blkSt.cl}};--fs:{{secSt.dfs}}px;--fsm:{{secSt.dfsm}}px;--fw:{{secSt.dfw}};--lh:{{secSt.dlh}};--mb:{{secSt.dmb}}px;--mbm:{{secSt.dmbm}}px">{{ blkSt.hd3 }}</div>
+                                        <div class="stxt hd3 {{secSt.dff}}{% if blkSt.hideh3 %} hide-sm{% endif %}" style="--cl:{{blkSt.cl}};--fs:{{secSt.dfs}}px;--fsm:{{secSt.dfsm}}px;--fw:{{secSt.dfw}};--lh:{{secSt.dlh}};--mb:{{secSt.dmb}}px;--mbm:{{secSt.dmbm}}px{% if blkSt.details_font_family != blank %};font-family:var(--font-{{blkSt.details_font_family}}) !important{% endif %}">{{ blkSt.hd3 }}</div>
                                     {% endif %}
                                     {% if blkSt.display_btn %}
                                         <div class="btnWrap">
-                                            <a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}" href="{{ blkSt.link }}" {% if blkSt.btn1window %} target="_blank" {% endif %} >{{ blkSt.btn }}</a>
-                                            <a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style1}}" href="{{ blkSt.link2 }}" {% if blkSt.btn2window %} target="_blank" {% endif %}>{{ blkSt.btn2 }}</a>
+                                            <a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}" href="{{ blkSt.link }}" {% if blkSt.btn1window %} target="_blank" {% endif %}{% if blkSt.buttons_font_family != blank %} style="font-family:var(--font-{{blkSt.buttons_font_family}}) !important"{% endif %} >{{ blkSt.btn }}</a>
+                                            <a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style1}}" href="{{ blkSt.link2 }}" {% if blkSt.btn2window %} target="_blank" {% endif %}{% if blkSt.buttons_font_family != blank %} style="font-family:var(--font-{{blkSt.buttons_font_family}}) !important"{% endif %}>{{ blkSt.btn2 }}</a>
                                         </div>
                                     {% elsif block.type == 'video' %}
-                                        {% if blkSt.btn != blank %}<div class="btnWrap"><a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}" href="{{ blkSt.link }}">{{blkSt.btn}}</a></div>{% endif %}
+                                        {% if blkSt.btn != blank %}<div class="btnWrap"><a class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}" href="{{ blkSt.link }}"{% if blkSt.buttons_font_family != blank %} style="font-family:var(--font-{{blkSt.buttons_font_family}}) !important"{% endif %}>{{blkSt.btn}}</a></div>{% endif %}
                                     {% else %}
-                                        {% if blkSt.btn != blank %}<div class="btnWrap"><span class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}" >{{blkSt.btn}}</span></div>{% endif %}
+                                        {% if blkSt.btn != blank %}<div class="btnWrap"><span class="btn {{secSt.btn-sizem}} {{secSt.btn-size}} {{blkSt.btn-style}}"{% if blkSt.buttons_font_family != blank %} style="font-family:var(--font-{{blkSt.buttons_font_family}}) !important"{% endif %} >{{blkSt.btn}}</span></div>{% endif %}
                                     {% endif %}            
                                 </div>
                             </div>

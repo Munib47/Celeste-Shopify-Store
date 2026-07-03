@@ -24,7 +24,7 @@
     </div>
     {% if masonary %}<div class="fl cldtl_wrap {{ blkSt.text_pos}}">{% endif %}
      <div class="details{% if secSt.textalign %} {{ secSt.textalign}}{% endif %}{% if secSt.leftpadzero %} pad-0{% endif %} wd90 wd{{ secSt.box-width}}-md {{ blkSt.talign}}{% if secSt.isbox %} bx{% endif %}">
-        <h3 class="clitem-ttl {{secSt.text_size}} {{ secSt.font_weight}}">
+        <h3 class="clitem-ttl {{secSt.text_size}} {{ secSt.font_weight}}"{% if secSt.name_font_family != blank %} style="font-family:var(--font-{{secSt.name_font_family}}) !important"{% endif %}>
           {% if collection.empty? %}
             {% if blkSt.collection_name != blank %}
                {{ blkSt.collection_name }}
@@ -39,7 +39,7 @@
           {% endif %}
         </h3>
         {% if blkSt.collection_description != blank %}
-        	<p> {{ blkSt.collection_description }} </p>                       
+        	<p{% if secSt.description_font_family != blank %} style="font-family:var(--font-{{secSt.description_font_family}}) !important"{% endif %}> {{ blkSt.collection_description }} </p>                       
         {% endif %}   
 
         {% if secSt.product_count %}
@@ -48,7 +48,7 @@
 
         {% if secSt.show_buttons %}
           {% if  blkSt.collection_btn != blank %} 
-         	 <button class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}" type="button">{{blkSt.collection_btn}}</button>
+         	 <button class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %} type="button">{{blkSt.collection_btn}}</button>
           {% endif %}
         {% endif %}                              
     </div>
