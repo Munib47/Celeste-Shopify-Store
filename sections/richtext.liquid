@@ -17,7 +17,7 @@
       {%- endif -%}
 
       <div class="page-width {{secSt.txt_align}}" style="max-width:{{secSt.max-width}}px;">
-          {% if secSt.sub_heading_text != blank %}<p class="rt-subhead" style="color:{{secSt.sub_heading_color}};--shfs:{{secSt.sub_heading_font_size}}px;--shfsm:{{secSt.sub_heading_font_size_mobile}}px;">{{ secSt.sub_heading_text }}</p>{% endif %}
+          {% if secSt.sub_heading_text != blank %}<p class="rt-subhead" style="color:{{secSt.sub_heading_color}};--shfs:{{secSt.sub_heading_font_size}}px;--shfsm:{{secSt.sub_heading_font_size_mobile}}px;{% if secSt.sub_heading_font_family != blank %}font-family:var(--font-{{secSt.sub_heading_font_family}}) !important;{% endif %}">{{ secSt.sub_heading_text }}</p>{% endif %}
           {% if secSt.show_divider %}<hr class="rt-divider" style="width:{{secSt.dividerw}}px;border-top-color:{{secSt.divider_color}};{% if secSt.txt_align == 'tc' %}margin-left:auto;margin-right:auto;{% else %}margin-left:0;margin-right:auto;{% endif %}">{% endif %}
           {% if secSt.title != blank %}<h2 class="ttlTxt" style="--tcl:{{secSt.tcl}};--tfs:{{secSt.tfs}}px;--tfsm:{{secSt.tfsm}}px;--tff:var(--{{secSt.tff}});--tfw:{{secSt.tfw}};--tlh:{{secSt.tlh}}{% if secSt.title_font_family != blank %};font-family:var(--font-{{secSt.title_font_family}}) !important{% endif %}">{{ secSt.title}}</h2>{% endif %}
           {% if secSt.richtxt != blank %}<div class="rgTxt mb20" style="--cl:{{secSt.cl}};--fs:{{secSt.fs}}px;--fsm:{{secSt.fsm}}px;--lh:{{secSt.lh}}{% if secSt.details_font_family != blank %};font-family:var(--font-{{secSt.details_font_family}}) !important{% endif %}">{{ secSt.richtxt }}</div>{% endif %}
@@ -126,6 +126,18 @@
             "max": 60,
             "step": 1,
             "unit": "px"
+        },
+        {
+            "type": "select",
+            "id": "sub_heading_font_family",
+            "label": "Font Family",
+            "default": "uni-neue",
+            "options": [
+                { "label": "Poppins Medium",   "value": "popins-medium" },
+                { "label": "Didot Regular",    "value": "didot"         },
+                { "label": "Montserrat",       "value": "montserrat"    },
+                { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
         },
         {
             "type": "checkbox",
