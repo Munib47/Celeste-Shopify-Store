@@ -4,7 +4,7 @@
   {% if secSt.section_cov %} <div class="section-cover small-pd" style="background-color:{{secSt.sec_bg_clr}};"> {% endif%}
   	<div class="{% unless section.settings.section_width %}page-width{% else %}fullwidth{% endunless %} wow fadeIn">          
   	
-     {% render 'sec-title' %}
+     {% render 'sec-title', title_ff: secSt.title_font_family, subtitle_ff: secSt.subtitle_font_family %}
 
       <ul class="store-info fl f-jcsb sec{{section.id}} {{ secSt.style}}"
            style="--cl:{{secSt.cl}};--tcl:{{secSt.tcl}};--tfs:{{secSt.tfs}}px;--tsm:{{secSt.tfsm}}px;--tff:var(--ft1);--tfw:{{secSt.tfw}};--lh:{{secSt.tlh}};
@@ -19,8 +19,8 @@
                     <i class="at {{ blkSt.icons}}" aria-hidden="true"></i>
                 {% endif %}
             	<div class="text fl1">
-                	{% if blkSt.title %}<h5 class="ttlTxt mb5">{{ blkSt.title }}</h5>{% endif %}
-                	{% if blkSt.text %}<span class="sub-text">{{ blkSt.text }}</span>{% endif %}
+                	{% if blkSt.title %}<h5 class="ttlTxt mb5"{% if blkSt.title_font_family != blank %} style="font-family:var(--font-{{blkSt.title_font_family}}) !important"{% endif %}>{{ blkSt.title }}</h5>{% endif %}
+                	{% if blkSt.text %}<span class="sub-text"{% if blkSt.text_font_family != blank %} style="font-family:var(--font-{{blkSt.text_font_family}}) !important"{% endif %}>{{ blkSt.text }}</span>{% endif %}
             	</div>
             </{% if blkSt.texturl != blank %}a{% else %}div{% endif %}>
           </li>
@@ -94,6 +94,30 @@
           "type": "text",
           "id": "subtitle",
           "label": "Sub Heading"         
+        },
+        {
+          "type": "select",
+          "id": "title_font_family",
+          "label": "Heading Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "subtitle_font_family",
+          "label": "Sub Heading Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
         },
 		{
             "type": "select",
@@ -247,10 +271,34 @@
 
 		  }, 		 
           {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
             "type": "textarea",
             "id": "title",
             "label": "Heading",
             "default": "Add a title or tagline"		   
+          },
+          {
+            "type": "select",
+            "id": "text_font_family",
+            "label": "Text Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
           },
           {
             "type": "richtext",
