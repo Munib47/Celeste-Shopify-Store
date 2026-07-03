@@ -8,7 +8,7 @@
         {% for block in section.blocks %}          
             {% assign blkSt = block.settings %}
 
-        {% capture blockTtl %}{% if blkSt.title != blank %}<p class="h4 mb15">{{ blkSt.title }}</p>{% endif %}{% endcapture %}
+        {% capture blockTtl %}{% if blkSt.title != blank %}<p class="h4 mb15"{% if blkSt.title_font_family != blank %} style="font-family:var(--font-{{blkSt.title_font_family}}) !important"{% endif %}>{{ blkSt.title }}</p>{% endif %}{% endcapture %}
         {%- case block.type -%}
         {% when 'custom' %}
         <div id="nav_menu-{{ block.id }}" class="footer-block__item {{blkSt.width}} custom-block{% if blkSt.txt_align %} tc{% endif %}">
@@ -18,11 +18,11 @@
           <p class="footer-logo"><img class="autoHt lazyload" data-src="{{ blkSt.logo | img_url: 'master' }}" width="{{blkSt.logo-width}}" height="{{ blkSt.logo-width | divided_by: blkSt.logo.aspect_ratio }}" alt="{{ blkSt.logo.alt | default: shop.name }}"></p>
           {% endif %}
 
-          <div class="text custom-text">{{ blkSt.custom-text }}</div>                 
+          <div class="text custom-text"{% if blkSt.text_font_family != blank %} style="font-family:var(--font-{{blkSt.text_font_family}}) !important"{% endif %}>{{ blkSt.custom-text }}</div>                 
           {% if blkSt.show_socials %}
           
           	  {% if blkSt.socials_ttl != blank %}
-              <h3 class="h4">{{ blkSt.socials_ttl }}</h3>
+              <h3 class="h4"{% if blkSt.socials_title_font_family != blank %} style="font-family:var(--font-{{blkSt.socials_title_font_family}}) !important"{% endif %}>{{ blkSt.socials_ttl }}</h3>
               {% endif %} 
           
               {% render 'social-media' %}
@@ -32,7 +32,7 @@
         {% when 'menu' %}
         <div id="nav_menu-{{ block.id }}" class="footer-block__item {{blkSt.width}} footer-links">
           {{blockTtl}}
-          <ul>
+          <ul{% if blkSt.links_font_family != blank %} style="font-family:var(--font-{{blkSt.links_font_family}}) !important"{% endif %}>
             {% for link in linklists[blkSt.menulinks].links %}
             <li><a href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
             {% endfor %}
@@ -47,7 +47,7 @@
           <p><img class="autoHt lazyload" data-src="{{ blkSt.logo | img_url: 'master' }}" width="{{blkSt.logo-width}}" height="{{ blkSt.logo-width | divided_by: blkSt.logo.aspect_ratio }}" alt="{{ blkSt.logo.alt | default: shop.name }}"></p>
           {% endif %}
           
-          <ul class="addressFooter">
+          <ul class="addressFooter"{% if blkSt.contact_font_family != blank %} style="font-family:var(--font-{{blkSt.contact_font_family}}) !important"{% endif %}>
             {% if blkSt.address  != blank  %}
             <li>{% if blkSt.show_icons %} <i class="at at-map-marker-al " aria-hidden="true"></i> {% endif %} {{ blkSt.address }}</li>
             {% endif %}
@@ -60,7 +60,7 @@
           </ul>
           
           {% if blkSt.show_socials %}
-            {% if blkSt.socials_ttl != blank %}<h5 class="h4">{{ blkSt.socials_ttl }}</h5>{% endif %}
+            {% if blkSt.socials_ttl != blank %}<h5 class="h4"{% if blkSt.socials_title_font_family != blank %} style="font-family:var(--font-{{blkSt.socials_title_font_family}}) !important"{% endif %}>{{ blkSt.socials_ttl }}</h5>{% endif %}
             {% render 'social-media' %}
           {% endif %} 
         </div>         			
@@ -70,11 +70,11 @@
           <div class="wrap-newsletter">
             {{blockTtl}}
 
-            {% if blkSt.sub_title %}<p>{{ blkSt.sub_title }}</p>{% endif %}
+            {% if blkSt.sub_title %}<p{% if blkSt.subtitle_font_family != blank %} style="font-family:var(--font-{{blkSt.subtitle_font_family}}) !important"{% endif %}>{{ blkSt.sub_title }}</p>{% endif %}
             {% render 'newsletter-form' , formId: 'footNewslt' %}
             {% if blkSt.show_socials %}
             <div class="socials">
-              {%- if blkSt.socials_ttl != blank -%}<h3 class="h4">{{ blkSt.socials_ttl }}</h3>{%- endif -%}
+              {%- if blkSt.socials_ttl != blank -%}<h3 class="h4"{% if blkSt.socials_title_font_family != blank %} style="font-family:var(--font-{{blkSt.socials_title_font_family}}) !important"{% endif %}>{{ blkSt.socials_ttl }}</h3>{%- endif -%}
               {% render 'social-media' %}
             </div>
             {% endif %}
@@ -120,7 +120,7 @@
                data-count="{{ blkSt.limit }}" data-act="{{ blkSt.act }}" data-ds="{{grid_ds}}" data-tb="{{grid_tb}}" data-mb="{{grid_mb}}">
             {{blockTtl}}
             {% if blkSt.sub_title %}
-            <p>{{ blkSt.sub_title }}</p>
+            <p{% if blkSt.subtitle_font_family != blank %} style="font-family:var(--font-{{blkSt.subtitle_font_family}}) !important"{% endif %}>{{ blkSt.sub_title }}</p>
             {% endif %}
             <div id="instafeed{{section.id}}" class="instafeed im{{ blkSt.images_size }}"></div>   
           </div>
@@ -147,7 +147,7 @@
   <div class="footer-bottom">
     <div class="fl f-aic f-jcsb f-col f-row-md{% unless secSt.section_width %} page-width{% else %} fullwidth{% endunless %}">
         {% if secSt.copyright_text != blank %}
-        <div class="fl1{% if secSt.show_payment %} tc tl-md{% else %} tc{% endif %}">
+        <div class="fl1{% if secSt.show_payment %} tc tl-md{% else %} tc{% endif %}"{% if secSt.copyright_font_family != blank %} style="font-family:var(--font-{{secSt.copyright_font_family}}) !important"{% endif %}>
           {{ secSt.copyright_text }}
           {% if secSt.show_designby %}<span class="designBy">{% if secSt.copyright_text != blank %}<br />{% endif %}Designed by <a href="https://www.adornthemes.com" target="_blank">AdornThemes</a></span>{% endif %}
         </div>
@@ -212,6 +212,18 @@
           "label": "Show Designed by",
           "default": true
         },
+        {
+          "type": "select",
+          "id": "copyright_font_family",
+          "label": "Copyright Font Family",
+          "default": "uni-neue",
+          "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+          ]
+        },
 		{
 			"type":"header",
         	"content":"Payment Options"
@@ -241,6 +253,30 @@
         "type": "menu",
         "name": "Menu",
         "settings": [
+          {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "links_font_family",
+            "label": "Links Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
           {
             "type": "text",
             "id": "title",
@@ -278,6 +314,42 @@
         "name": "Contact Details",
 		"limit": 2,
         "settings": [
+          {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "contact_font_family",
+            "label": "Address / Contact Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "socials_title_font_family",
+            "label": "Socials Title Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
           {
             "type": "text",
             "id": "title",
@@ -360,6 +432,42 @@
         "name": "Custom Block",
         "settings": [
           {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "text_font_family",
+            "label": "Text Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "socials_title_font_family",
+            "label": "Socials Title Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
             "type": "text",
             "id": "title",
             "label": "Title",
@@ -429,6 +537,42 @@
         "name": "Newsletter Signup",
         "limit": 1,
         "settings": [
+          {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "subtitle_font_family",
+            "label": "Text Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "socials_title_font_family",
+            "label": "Socials Title Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
 		  {
 			"type":"checkbox",
 			"id":"newltr_align",
@@ -484,6 +628,30 @@
         "name": "Instagram",
         "limit": 1,
         "settings": [
+          {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "subtitle_font_family",
+            "label": "Text Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
 		  {
 			"type":"paragraph",
 			"content":"Note: Instagram will not work at 2 place at the same time. Either you can display in section or footer"
@@ -571,6 +739,18 @@
         "name": "Social Icons",
         "limit": 1,
         "settings": [
+          {
+            "type": "select",
+            "id": "title_font_family",
+            "label": "Heading Font Family",
+            "default": "uni-neue",
+            "options": [
+              { "label": "Poppins Medium",   "value": "popins-medium" },
+              { "label": "Didot Regular",    "value": "didot"         },
+              { "label": "Montserrat",       "value": "montserrat"    },
+              { "label": "Uni Neue Regular", "value": "uni-neue"      }
+            ]
+          },
           {
             "type": "text",
             "id": "title",
