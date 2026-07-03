@@ -1,3 +1,8 @@
+<style>
+  #siteNav > li > a {
+    font-family: var(--font-{{ section.settings.nav_item_font_family }});
+  }
+</style>
 {%- if section.blocks.size > 0 -%}
 <ul id="siteNav" class="siteNavigation {{ section.settings.menuAlign}}{% if settings.nav_below_logo %}{% unless settings.main_header_fullwidth %} page-width{% endunless %}{% endif %}" role="navigation" data-section-id="site-{{ section.id }}" data-section-type="site-navigation">
     {% for block in section.blocks %}
@@ -498,6 +503,22 @@
     "name": "Main Navigation",
     "class": "hide-sm hide-md",
     "settings": [
+      {
+        "type": "header",
+        "content": "Menu Font Family"
+      },
+      {
+        "type": "select",
+        "id": "nav_item_font_family",
+        "label": "Nav Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
 	{
 		 "type": "paragraph",
 		 "content":"[chekout all styles and how to set](https://www.adornthemes.com/knowledge-base/how-to-use-megamenu-navigation/)."

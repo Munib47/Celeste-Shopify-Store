@@ -68,7 +68,7 @@
   }
 
   #StoreLocations-{{ section.id }} .store-locations__container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
@@ -93,7 +93,7 @@
   /* Divider rendered as a real <hr> under the heading */
   #StoreLocations-{{ section.id }} .store-locations__divider {
     border: 0;
-    border-top: 2px solid {{ section.settings.divider_color }};
+    border-top: 1px solid {{ section.settings.divider_color }};
     width: {{ section.settings.divider_width }}px;
     margin: 0 0 16px;
   }
@@ -135,6 +135,7 @@
   #StoreLocations-{{ section.id }} .store-locations__blocks {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
     row-gap: 30px;
     flex: 1 1 auto;

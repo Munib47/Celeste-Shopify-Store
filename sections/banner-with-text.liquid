@@ -1,6 +1,140 @@
+<style>
+  .cstm-banner_with_text.cstm-img_width .fl1.imgCol {
+    flex-basis: 60%;
+  }
+
+  .cstm-banner_with_text.cstm-img_width .fl1.feature-row__text {
+    flex-basis: 40%;
+  }
+
+  .cstm-banner_with_text .feature-row .btn {
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 0;
+  }
+
+  .cstm-banner_with_text .feature-row .btn:hover {
+    color: #B08053;
+  }
+
+  .cstm-banner_with_text .feature-row .btn .btn_arrow {
+    transition: transform 0.25s ease;
+  }
+
+  .cstm-banner_with_text .feature-row .btn:hover .btn_arrow {
+    transform: translateX(4px);
+  }
+  
+  .cstm-banner_with_text .feature-row .btn span:first-child {
+    text-decoration: underline;
+  }
+
+  .cstm-banner_with_text .subHeadingTxt {
+    color: var(--shcl);
+    font-size: var(--shfs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .cstm-banner_with_text .sub-heading-divider,
+  .cstm-banner_with_text .heading-divider {
+    border: none;
+    border-top: 1px solid;
+    margin: 0 0 15px;
+  }
+
+  .cstm-banner_with_text .row-text.tc .sub-heading-divider,
+  .cstm-banner_with_text .row-text.tc .heading-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cstm-banner_with_text .row-text.tr .sub-heading-divider,
+  .cstm-banner_with_text .row-text.tr .heading-divider {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  /* Icon with Text */
+  .cstm-banner_with_text .icon-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .cstm-banner_with_text .row-text.tc .icon-text-item {
+    text-align: left;
+  }
+
+  .cstm-banner_with_text .icon-text-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .cstm-banner_with_text .icon-text__icon {
+    flex: 0 0 auto;
+    width: 34px;
+    line-height: 0;
+  }
+
+  .cstm-banner_with_text .icon-text__icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .cstm-banner_with_text .icon-text__content {
+    flex: 1 1 auto;
+  }
+
+  .cstm-banner_with_text .icon-text__heading {
+    color: var(--ihcl, #1a1a1a);
+    font-size: var(--ihfs, 18px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 6px;
+  }
+
+  .cstm-banner_with_text .icon-text__desc,
+  .cstm-banner_with_text .icon-text__desc p {
+    color: var(--ihcl, #1a1a1a);
+    font-size: var(--idfs, 14px);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    .cstm-banner_with_text .subHeadingTxt {
+      font-size: var(--shfsm);
+    }
+
+    .cstm-banner_with_text .icon-text-wrapper {
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .cstm-banner_with_text .icon-text__heading {
+      font-size: var(--ihfsm, 16px);
+    }
+
+    .cstm-banner_with_text .icon-text__desc,
+    .cstm-banner_with_text .icon-text__desc p {
+      font-size: var(--idfsm, 14px);
+    }
+  }
+</style>
+
 {%- assign secSt = section.settings -%}
 {%- capture featureRow -%}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-banner_with_text{% if section.settings.enable_custom_width == true %} cstm-img_width{% endif %}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="{% unless secSt.section_width %} page-width{% endunless %}">
 
     {% for block in section.blocks limit: section.blocks.size %}
@@ -12,7 +146,7 @@
       <div class="fl1 imgCol wow{% if blkSt.layout == 'right' %} fadeInRight{% else %} fadeInLeft{% endif %}" data-wow-delay="{{delay_time}}ms">
         {% if blkSt.image != blank %}
           {%- assign img_url = blkSt.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-          <span class="imgWrapper" style="max-width:{{ blkSt.image.width }}px;">
+          <span class="imgWrapper" {% if blkSt.enable_max_width == true %}style="max-width:{{ blkSt.image.width }}px;"{% endif %}>
               <img class="imgFl feature-row__image lazyload" width="{{ blkSt.image.width }}" height="{{ blkSt.image.height }}" loading="lazy"
                   data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900]" data-aspectratio="{{ blkSt.image.aspect_ratio }}" data-sizes="auto" alt="{{ blkSt.image.alt | default : shop.name }}">
           </span>
@@ -26,16 +160,80 @@
         {{ image_layout }}
         <div class="fl1 feature-row__text {{ blkSt.layout }} wow{% if blkSt.layout == 'right' %} fadeInLeft{% else %} fadeInRight{% endif %}" data-wow-delay="{{delay_time}}ms">
           <div class="row-text {{blkSt.text_align}}">
+            {% if blkSt.sub_heading_text != blank %}
+              <p class="subHeadingTxt" style="--shcl:{{blkSt.sub_heading_color}};--shfs:{{blkSt.sub_heading_font_size}}px;--shfsm:{{blkSt.sub_heading_font_size_mobile}}px;">{{ blkSt.sub_heading_text }}</p>
+            {% endif %}
+            {% if blkSt.sub_heading_divider %}
+              <hr class="sub-heading-divider" style="border-top-color:{{blkSt.sub_heading_divider_color}};width:{{blkSt.sub_heading_divider_width}}px;">
+            {% endif %}
             {% if blkSt.title != blank %}
               <h3 class="ttlTxt mb{{secSt.tmbm}} mb{{secSt.tmb}}-md" style="--tcl:{{blkSt.tcl}};--tfs:{{secSt.tfs}}px;--tfsm:{{secSt.tfsm}}px;--tff:var(--{{secSt.tff}});--tfw:{{secSt.tfw}};--tlh:{{secSt.tlh}};">{{ blkSt.title }}</h3>
+            {% endif %}
+            {% if blkSt.heading_divider %}
+              <hr class="heading-divider" style="border-top-color:{{blkSt.heading_divider_color}};width:{{blkSt.heading_divider_width}}px;">
             {% endif %}
             {% if blkSt.text != blank %}
               <div class="rgTxt rte featured-row__subtext mb{{secSt.mbm}} mb{{secSt.mb}}-md" style="--cl:{{blkSt.cl}};--fs:{{secSt.fs}}px;--fsm:{{secSt.fsm}}px;--fw:{{secSt.fw}};--lh:{{secSt.lh}};">
                   {{ blkSt.text }}
               </div>
             {% endif %}
+
+            {%- if blkSt.first_icon != blank or blkSt.first_heading != blank or blkSt.first_description != blank or blkSt.second_icon != blank or blkSt.second_heading != blank or blkSt.second_description != blank or blkSt.third_icon != blank or blkSt.third_heading != blank or blkSt.third_description != blank or blkSt.fourth_icon != blank or blkSt.fourth_heading != blank or blkSt.fourth_description != blank -%}
+              <div class="icon-text-wrapper" style="--ihcl:{{ blkSt.icon_text_color }};--ihfs:{{ blkSt.icon_heading_font_size }}px;--ihfsm:{{ blkSt.icon_heading_font_size_mobile_ }}px;--idfs:{{ blkSt.icon_description_font_size }}px;--idfsm:{{ blkSt.icon_description_font_size_mobile_ }}px;">
+
+                {%- if blkSt.first_icon != blank or blkSt.first_heading != blank or blkSt.first_description != blank -%}
+                  <div class="icon-text-item">
+                    {% if blkSt.first_icon != blank %}
+                      <div class="icon-text__icon"><img src="{{ blkSt.first_icon | img_url: '96x' }}" width="{{ blkSt.first_icon.width }}" height="{{ blkSt.first_icon.height }}" loading="lazy" alt="{{ blkSt.first_heading | default: shop.name }}"></div>
+                    {% endif %}
+                    <div class="icon-text__content">
+                      {% if blkSt.first_heading != blank %}<h4 class="icon-text__heading">{{ blkSt.first_heading }}</h4>{% endif %}
+                      {% if blkSt.first_description != blank %}<div class="icon-text__desc rte">{{ blkSt.first_description }}</div>{% endif %}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if blkSt.second_icon != blank or blkSt.second_heading != blank or blkSt.second_description != blank -%}
+                  <div class="icon-text-item">
+                    {% if blkSt.second_icon != blank %}
+                      <div class="icon-text__icon"><img src="{{ blkSt.second_icon | img_url: '96x' }}" width="{{ blkSt.second_icon.width }}" height="{{ blkSt.second_icon.height }}" loading="lazy" alt="{{ blkSt.second_heading | default: shop.name }}"></div>
+                    {% endif %}
+                    <div class="icon-text__content">
+                      {% if blkSt.second_heading != blank %}<h4 class="icon-text__heading">{{ blkSt.second_heading }}</h4>{% endif %}
+                      {% if blkSt.second_description != blank %}<div class="icon-text__desc rte">{{ blkSt.second_description }}</div>{% endif %}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if blkSt.third_icon != blank or blkSt.third_heading != blank or blkSt.third_description != blank -%}
+                  <div class="icon-text-item">
+                    {% if blkSt.third_icon != blank %}
+                      <div class="icon-text__icon"><img src="{{ blkSt.third_icon | img_url: '96x' }}" width="{{ blkSt.third_icon.width }}" height="{{ blkSt.third_icon.height }}" loading="lazy" alt="{{ blkSt.third_heading | default: shop.name }}"></div>
+                    {% endif %}
+                    <div class="icon-text__content">
+                      {% if blkSt.third_heading != blank %}<h4 class="icon-text__heading">{{ blkSt.third_heading }}</h4>{% endif %}
+                      {% if blkSt.third_description != blank %}<div class="icon-text__desc rte">{{ blkSt.third_description }}</div>{% endif %}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if blkSt.fourth_icon != blank or blkSt.fourth_heading != blank or blkSt.fourth_description != blank -%}
+                  <div class="icon-text-item">
+                    {% if blkSt.fourth_icon != blank %}
+                      <div class="icon-text__icon"><img src="{{ blkSt.fourth_icon | img_url: '96x' }}" width="{{ blkSt.fourth_icon.width }}" height="{{ blkSt.fourth_icon.height }}" loading="lazy" alt="{{ blkSt.fourth_heading | default: shop.name }}"></div>
+                    {% endif %}
+                    <div class="icon-text__content">
+                      {% if blkSt.fourth_heading != blank %}<h4 class="icon-text__heading">{{ blkSt.fourth_heading }}</h4>{% endif %}
+                      {% if blkSt.fourth_description != blank %}<div class="icon-text__desc rte">{{ blkSt.fourth_description }}</div>{% endif %}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+              </div>
+            {%- endif -%}
+
             {% if blkSt.button_label != blank and blkSt.button_link != blank %}
-              <a href="{{ blkSt.button_link }}" class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}}" style="--cl:{{blkSt.btncl}};--bg:{{blkSt.btnbg}};--bd:{{blkSt.btnbd}};">{{ blkSt.button_label }}</a>
+              <a href="{{ blkSt.button_link }}" class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}}" style="--cl:{{blkSt.btncl}};--bg:{{blkSt.btnbg}};--bd:{{blkSt.btnbd}};"><span>{{ blkSt.button_label }}</span><span class="btn_arrow">→</span></a>
             {% endif %}
           </div>
         </div>
@@ -110,7 +308,13 @@
             "label": "Falling From Left"
             }
             ]
-          }, 	  	             
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_custom_width",
+            "label": "Enable Custom Width of Image",
+            "default": false
+          },
 	  {
         "type": "header",
         "content": "Appearance"
@@ -345,6 +549,12 @@
         "type": "row",
         "name": "Block",
         "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_max_width",
+            "label": "Enable Max Width",
+            "default": true
+          },
            {
         "type": "image_picker",
         "id": "image",
@@ -359,7 +569,95 @@
         		{ "value": "left","label":"Left"},
 				{ "value": "right","label":"Right"}
 			]
-      },	  
+      },
+      {
+        "type": "header",
+        "content": "Sub Heading"
+      },
+      {
+        "type": "text",
+        "id": "sub_heading_text",
+        "label": "Sub Heading Text",
+        "default": "FEATURED COLLECTION"
+      },
+      {
+        "type": "color",
+        "id": "sub_heading_color",
+        "label": "Sub Heading Color",
+        "default": "#B08053"
+      },
+      {
+        "type": "range",
+        "label": "Sub Heading Font Size",
+        "id": "sub_heading_font_size",
+        "default": 24,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "label": "Sub Heading Font Size (Mobile)",
+        "id": "sub_heading_font_size_mobile",
+        "default": 16,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Divider"
+      },
+      {
+        "type": "checkbox",
+        "id": "sub_heading_divider",
+        "label": "Sub Heading Divider",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "sub_heading_divider_color",
+        "label": "Sub Heading Divider Color",
+        "default": "#472815",
+        "visible_if": "{{ block.settings.sub_heading_divider }}"
+      },
+      {
+        "type": "range",
+        "id": "sub_heading_divider_width",
+        "label": "Sub Heading Divider Width",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "unit": "px",
+        "default": 50,
+        "visible_if": "{{ block.settings.sub_heading_divider }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "heading_divider",
+        "label": "Heading Divider",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "heading_divider_color",
+        "label": "Heading Divider Color",
+        "default": "#472815",
+        "visible_if": "{{ block.settings.heading_divider }}"
+      },
+      {
+        "type": "range",
+        "id": "heading_divider_width",
+        "label": "Heading Divider Width",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "unit": "px",
+        "default": 50,
+        "visible_if": "{{ block.settings.heading_divider }}"
+      },
       {
         "type": "textarea",
         "id": "title",
@@ -404,6 +702,123 @@
                 "label": "Right"
               }
             ]
+      },
+      {
+        "type": "header",
+        "content": "Icon with Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "first_icon",
+        "label": "First Icon"
+      },
+      {
+        "type": "text",
+        "id": "first_heading",
+        "label": "First Heading",
+        "default": "Enduring Design"
+      },
+      {
+        "type": "richtext",
+        "id": "first_description",
+        "label": "First Description",
+        "default": "<p>We design for longevity, creating pieces that remain relevant, desirable and beautiful beyond seasonal trands.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "second_icon",
+        "label": "Second Icon"
+      },
+      {
+        "type": "text",
+        "id": "second_heading",
+        "label": "Second Heading",
+        "default": "Enduring Design"
+      },
+      {
+        "type": "richtext",
+        "id": "second_description",
+        "label": "Second Description",
+        "default": "<p>We design for longevity, creating pieces that remain relevant, desirable and beautiful beyond seasonal trands.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "third_icon",
+        "label": "Third Icon"
+      },
+      {
+        "type": "text",
+        "id": "third_heading",
+        "label": "Third Heading",
+        "default": "Enduring Design"
+      },
+      {
+        "type": "richtext",
+        "id": "third_description",
+        "label": "Third Description",
+        "default": "<p>We design for longevity, creating pieces that remain relevant, desirable and beautiful beyond seasonal trands.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "fourth_icon",
+        "label": "Fourth Icon"
+      },
+      {
+        "type": "text",
+        "id": "fourth_heading",
+        "label": "Fourth Heading",
+        "default": "Enduring Design"
+      },
+      {
+        "type": "richtext",
+        "id": "fourth_description",
+        "label": "Fourth Description",
+        "default": "<p>We design for longevity, creating pieces that remain relevant, desirable and beautiful beyond seasonal trands.</p>"
+      },
+      {
+        "type": "color",
+        "id": "icon_text_color",
+        "label": "Heading Color"
+      },
+      {
+        "type": "range",
+        "label": "Heading Font Size",
+        "id": "icon_heading_font_size",
+        "default": 18,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "label": "Heading Font Size (Mobile)",
+        "id": "icon_heading_font_size_mobile_",
+        "default": 16,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "label": "Icon Description Font Size",
+        "id": "icon_description_font_size",
+        "default": 18,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "label": "Icon Description Font Size (Mobile)",
+        "id": "icon_description_font_size_mobile_",
+        "default": 16,
+        "min": 2,
+        "max": 50,
+        "step": 2,
+        "unit": "px"
       },
 	 {
         "type": "header",
