@@ -398,6 +398,9 @@
           "1561010286273": {
             "type": "custom",
             "settings": {
+              "title_font_family": "uni-neue",
+              "text_font_family": "uni-neue",
+              "socials_title_font_family": "uni-neue",
               "title": "",
               "logo": "shopify://shop_images/CHF-LOGO-NEW.png",
               "logo-width": 120,
@@ -411,6 +414,8 @@
           "1558678581777": {
             "type": "menu",
             "settings": {
+              "title_font_family": "montserrat",
+              "links_font_family": "montserrat",
               "title": "ABOUT US",
               "menulinks": "footer-menu-1",
               "width": "wd20-md"
@@ -419,6 +424,8 @@
           "1561010652330": {
             "type": "menu",
             "settings": {
+              "title_font_family": "uni-neue",
+              "links_font_family": "uni-neue",
               "title": "CUSTOMER SERVICES",
               "menulinks": "footer-menu-2",
               "width": "wd20-md"
@@ -427,6 +434,8 @@
           "menu_RkRr4U": {
             "type": "menu",
             "settings": {
+              "title_font_family": "uni-neue",
+              "links_font_family": "uni-neue",
               "title": "ABOUT US",
               "menulinks": "footer-menu-1",
               "width": "wd20-md"
@@ -435,6 +444,7 @@
           "socialicons_PUeeMG": {
             "type": "socialicons",
             "settings": {
+              "title_font_family": "uni-neue",
               "title": "FOLLOW US",
               "width": "wd20-md"
             }
@@ -453,6 +463,7 @@
           "snow_style": "style1",
           "copyright_text": "© 2026 Celeste Home Fashion, All Rights Reserved.",
           "show_designby": false,
+          "copyright_font_family": "montserrat",
           "show_payment": false,
           "payment_img_width": "350"
         }

@@ -1,0 +1,547 @@
+{%- comment -%}
+  Store Information Section
+  ----------------------------------------------------------------
+  File: sections/cstm-store-info.liquid
+
+  A three column information bar matching the reference design:
+    1. Store Location : pin icon beside the heading, two store
+       address blocks stacked vertically underneath
+    2. Explore Store  : globe icon beside the heading, website line,
+       then a row of circular social icons
+    3. Get In Touch   : chat icon beside the heading, phone and
+       email lines underneath
+
+  Behaviour:
+    - Icon and heading sit inline on one row, body content is
+      left aligned and indented to line up under the heading text
+    - Thin vertical dividers separate the columns on desktop
+      (990px and up)
+    - Columns stack below 990px and the dividers become horizontal
+    - Mobile font size settings take over below 750px
+    - Every block falls back to a built in SVG icon when no custom
+      icon is enabled or uploaded
+    - Social icons render the uploaded image inside a circle. If a
+      URL is set but no image is uploaded, a built in glyph on a
+      filled circle is shown instead, so the section matches the
+      design out of the box
+    - Per block colors and font sizes are passed down as CSS custom
+      properties, so one set of rules serves all three blocks
+{%- endcomment -%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background-color: {{ section.settings.section_background }};
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_right }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_left }}px;
+    --social-contrast: {{ section.settings.section_background }};
+  }
+
+  .cstm-store-info__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cstm-store-info__grid {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .cstm-store-info__block {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 44px;
+    text-align: left;
+  }
+
+  .cstm-store-info__block:first-child {
+    padding-left: 0;
+  }
+
+  .cstm-store-info__block:last-child {
+    padding-right: 0;
+  }
+
+  .cstm-store-info__block + .cstm-store-info__block {
+    border-left: 1px solid rgba(60, 42, 33, 0.16);
+  }
+
+  .cstm-store-info__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .cstm-store-info__icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: var(--heading-color, #3c2a21);
+  }
+
+  .cstm-store-info__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .cstm-store-info__icon img {
+    max-width: 26px;
+    max-height: 26px;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  .cstm-store-info__heading {
+    margin: 0;
+    color: var(--heading-color, #3c2a21);
+    font-size: var(--heading-size, 14px);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  .cstm-store-info__body {
+    padding-left: 34px; /* icon width 22px + gap 12px, lines body up under the heading */
+  }
+
+  .cstm-store-info__content {
+    color: var(--text-color, #3c2a21);
+    font-size: var(--text-size, 14px);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+
+  .cstm-store-info__content p {
+    margin: 0 0 3px;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .cstm-store-info__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cstm-store-info__content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cstm-store-info__locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cstm-store-info__location,
+  .cstm-store-info__contact {
+    font-style: normal;
+  }
+
+  .cstm-store-info__socials {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .cstm-store-info__social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .cstm-store-info__social:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+  }
+
+  .cstm-store-info__social img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cstm-store-info__social--default {
+    background: var(--heading-color, #3c2a21);
+    color: var(--social-contrast, #e7d8cb);
+  }
+
+  .cstm-store-info__social--default svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .cstm-store-info__empty {
+    margin: 0;
+    text-align: center;
+    color: #3c2a21;
+  }
+
+  @media screen and (max-width: 989px) {
+    .cstm-store-info__grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 26px;
+    }
+
+    .cstm-store-info__block {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .cstm-store-info__block + .cstm-store-info__block {
+      border-left: 0;
+      border-top: 1px solid rgba(60, 42, 33, 0.16);
+      padding-top: 26px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .cstm-store-info__heading {
+      font-size: var(--heading-size-mobile, 12px);
+    }
+
+    .cstm-store-info__content {
+      font-size: var(--text-size-mobile, 13px);
+    }
+  }
+{%- endstyle -%}
+
+<div class="cstm-store-info__inner">
+  {%- if section.blocks.size > 0 -%}
+    <div class="cstm-store-info__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'store_location' -%}
+            <div
+              class="cstm-store-info__block cstm-store-info__block--location"
+              style="--heading-color: {{ block.settings.block_heading_color }}; --heading-size: {{ block.settings.block_heading_font_size }}px; --heading-size-mobile: {{ block.settings.block_heading_font_size_mobile }}px; --text-color: {{ block.settings.location_text_color }}; --text-size: {{ block.settings.locations_font_size }}px; --text-size-mobile: {{ block.settings.locations_font_size_mobile }}px;"
+              {{ block.shopify_attributes }}
+            >
+              <div class="cstm-store-info__head">
+                <span class="cstm-store-info__icon" aria-hidden="true">
+                  {%- if block.settings.show_custom_icon and block.settings.custom_icon != blank -%}
+                    <img
+                      src="{{ block.settings.custom_icon | image_url: width: 80 }}"
+                      alt=""
+                      width="{{ block.settings.custom_icon.width }}"
+                      height="{{ block.settings.custom_icon.height }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                      <path d="M19 10.2c0 4.2-3.5 8-7 11.3-3.5-3.3-7-7.1-7-11.3a7 7 0 0 1 14 0z"/>
+                      <circle cx="12" cy="10" r="2.6"/>
+                    </svg>
+                  {%- endif -%}
+                </span>
+
+                {%- if block.settings.block_heading != blank -%}
+                  <h2 class="cstm-store-info__heading">{{ block.settings.block_heading | escape }}</h2>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.first_store_location != blank or block.settings.second_store_location != blank -%}
+                <div class="cstm-store-info__body">
+                  <div class="cstm-store-info__content cstm-store-info__locations">
+                    {%- if block.settings.first_store_location != blank -%}
+                      <address class="cstm-store-info__location">{{ block.settings.first_store_location }}</address>
+                    {%- endif -%}
+                    {%- if block.settings.second_store_location != blank -%}
+                      <address class="cstm-store-info__location">{{ block.settings.second_store_location }}</address>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+
+          {%- when 'explore_store' -%}
+            <div
+              class="cstm-store-info__block cstm-store-info__block--explore"
+              style="--heading-color: {{ block.settings.explore_heading_color }}; --heading-size: {{ block.settings.explore_heading_font_size }}px; --heading-size-mobile: {{ block.settings.explore_heading_font_size_mobile }}px; --text-color: {{ block.settings.explore_description_color }}; --text-size: {{ block.settings.explore_description_font_size }}px; --text-size-mobile: {{ block.settings.explore_description_font_size_mobile }}px;"
+              {{ block.shopify_attributes }}
+            >
+              <div class="cstm-store-info__head">
+                <span class="cstm-store-info__icon" aria-hidden="true">
+                  {%- if block.settings.show_explore_store_icon and block.settings.cstm_explore_store_icon != blank -%}
+                    <img
+                      src="{{ block.settings.cstm_explore_store_icon | image_url: width: 80 }}"
+                      alt=""
+                      width="{{ block.settings.cstm_explore_store_icon.width }}"
+                      height="{{ block.settings.cstm_explore_store_icon.height }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" focusable="false">
+                      <circle cx="12" cy="12" r="8.6"/>
+                      <path d="M3.4 12h17.2"/>
+                      <ellipse cx="12" cy="12" rx="3.9" ry="8.6"/>
+                    </svg>
+                  {%- endif -%}
+                </span>
+
+                {%- if block.settings.explore_heading != blank -%}
+                  <h2 class="cstm-store-info__heading">{{ block.settings.explore_heading | escape }}</h2>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.explore_decription != blank
+                or block.settings.instagram != blank
+                or block.settings.facebook != blank
+                or block.settings.pintrest != blank
+                or block.settings.instagram_url != blank
+                or block.settings.facebook_url != blank
+                or block.settings.pintrest_url != blank -%}
+                <div class="cstm-store-info__body">
+                  {%- if block.settings.explore_decription != blank -%}
+                    <div class="cstm-store-info__content">{{ block.settings.explore_decription }}</div>
+                  {%- endif -%}
+
+                  {%- if block.settings.instagram != blank
+                    or block.settings.facebook != blank
+                    or block.settings.pintrest != blank
+                    or block.settings.instagram_url != blank
+                    or block.settings.facebook_url != blank
+                    or block.settings.pintrest_url != blank -%}
+                    {%- assign social_keys = 'instagram,facebook,pintrest' | split: ',' -%}
+                    {%- assign social_labels = 'Instagram,Facebook,Pinterest' | split: ',' -%}
+                    <div class="cstm-store-info__socials">
+                      {%- for key in social_keys -%}
+                        {%- assign social_image = block.settings[key] -%}
+                        {%- assign url_key = key | append: '_url' -%}
+                        {%- assign social_url = block.settings[url_key] -%}
+                        {%- assign social_label = social_labels[forloop.index0] -%}
+                        {%- if social_image != blank -%}
+                          {%- if social_url != blank -%}
+                            <a class="cstm-store-info__social" href="{{ social_url }}" target="_blank" rel="noopener" aria-label="{{ social_label }}">
+                              <img src="{{ social_image | image_url: width: 120 }}" alt="" width="{{ social_image.width }}" height="{{ social_image.height }}" loading="lazy">
+                            </a>
+                          {%- else -%}
+                            <span class="cstm-store-info__social">
+                              <img src="{{ social_image | image_url: width: 120 }}" alt="{{ social_label }}" width="{{ social_image.width }}" height="{{ social_image.height }}" loading="lazy">
+                            </span>
+                          {%- endif -%}
+                        {%- elsif social_url != blank -%}
+                          <a class="cstm-store-info__social cstm-store-info__social--default" href="{{ social_url }}" target="_blank" rel="noopener" aria-label="{{ social_label }}">
+                            {%- case key -%}
+                              {%- when 'instagram' -%}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                                  <rect x="4" y="4" width="16" height="16" rx="4.5"/>
+                                  <circle cx="12" cy="12" r="3.5"/>
+                                  <circle cx="16.9" cy="7.1" r="1.1" fill="currentColor" stroke="none"/>
+                                </svg>
+                              {%- when 'facebook' -%}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                                  <path d="M14.8 5.6h-1.4a3.2 3.2 0 0 0-3.2 3.2V19"/>
+                                  <path d="M7.6 11.4h5.2"/>
+                                </svg>
+                              {%- when 'pintrest' -%}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                                  <path d="M9.8 19.6V5.6h3a4.1 4.1 0 0 1 0 8.2H9.8"/>
+                                </svg>
+                            {%- endcase -%}
+                          </a>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+
+          {%- when 'get_in_touch' -%}
+            <div
+              class="cstm-store-info__block cstm-store-info__block--contact"
+              style="--heading-color: {{ block.settings.heading_color }}; --heading-size: {{ block.settings.heading_font_size }}px; --heading-size-mobile: {{ block.settings.heading_font_size_mobile }}px; --text-color: {{ block.settings.description_color }}; --text-size: {{ block.settings.description_font_size }}px; --text-size-mobile: {{ block.settings.description_font_size_mobile }}px;"
+              {{ block.shopify_attributes }}
+            >
+              <div class="cstm-store-info__head">
+                <span class="cstm-store-info__icon" aria-hidden="true">
+                  {%- if block.settings.show_get_touch_custom_icon and block.settings.get_in_touch_icon != blank -%}
+                    <img
+                      src="{{ block.settings.get_in_touch_icon | image_url: width: 80 }}"
+                      alt=""
+                      width="{{ block.settings.get_in_touch_icon.width }}"
+                      height="{{ block.settings.get_in_touch_icon.height }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                      <rect x="3.6" y="4.6" width="16.8" height="12.6" rx="6.3"/>
+                      <path d="M8.8 17.1 6 20.2l.7-3.9"/>
+                      <circle cx="8.4" cy="10.9" r="1" fill="currentColor" stroke="none"/>
+                      <circle cx="12" cy="10.9" r="1" fill="currentColor" stroke="none"/>
+                      <circle cx="15.6" cy="10.9" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
+                  {%- endif -%}
+                </span>
+
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="cstm-store-info__heading">{{ block.settings.heading | escape }}</h2>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.in_touch_description != blank -%}
+                <div class="cstm-store-info__body">
+                  <address class="cstm-store-info__content cstm-store-info__contact">{{ block.settings.in_touch_description }}</address>
+                </div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  {%- elsif request.design_mode -%}
+    <p class="cstm-store-info__empty">Add the Store Location, Explore Store and Get In Touch blocks from the section settings to build this bar.</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Store Information",
+  "tag": "section",
+  "class": "cstm-store-info",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "label": "Section Background",
+      "id": "section_background",
+      "default": "#e7d8cb"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "label": "Padding Top",
+      "id": "padding_top",
+      "default": 36,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "label": "Padding Right",
+      "id": "padding_right",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "label": "Padding Bottom",
+      "id": "padding_bottom",
+      "default": 36,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "label": "Padding Left",
+      "id": "padding_left",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "store_location",
+      "name": "Store Location",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Icon" },
+        { "type": "checkbox", "label": "Custom Icon", "id": "show_custom_icon", "default": false },
+        { "type": "image_picker", "label": "Custom Icon", "id": "custom_icon" },
+        { "type": "header", "content": "Block Heading" },
+        { "type": "text", "label": "Block Heading", "id": "block_heading", "default": "VISIT OUR STORES" },
+        { "type": "color", "label": "Heading Color", "id": "block_heading_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Heading Font Size", "id": "block_heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Heading Font Size (Mobile)", "id": "block_heading_font_size_mobile", "default": 12, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "header", "content": "Store Locations" },
+        { "type": "richtext", "label": "Store Location 1", "id": "first_store_location", "default": "<p><strong>Karachi</strong></p><p>26th Street, DHA</p><p>021-36838760</p>" },
+        { "type": "richtext", "label": "Store Location 2", "id": "second_store_location", "default": "<p><strong>Lahore</strong></p><p>22-L, Gulberg II</p><p>042-3575182</p>" },
+        { "type": "color", "label": "Location Text Color", "id": "location_text_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Locations Font Size", "id": "locations_font_size", "default": 14, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Locations Font Size (Mobile)", "id": "locations_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" }
+      ]
+    },
+    {
+      "type": "explore_store",
+      "name": "Explore Store",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "label": "Custom icon", "id": "show_explore_store_icon", "default": false },
+        { "type": "image_picker", "label": "Custom Icon", "id": "cstm_explore_store_icon" },
+        { "type": "header", "content": "Explore Heading" },
+        { "type": "text", "label": "Heading", "id": "explore_heading", "default": "EXPLORE ONLINE" },
+        { "type": "color", "label": "Heading Color", "id": "explore_heading_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Font Size", "id": "explore_heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Font Size (Mobile)", "id": "explore_heading_font_size_mobile", "default": 12, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        { "type": "header", "content": "Explore Description" },
+        { "type": "richtext", "label": "Explore Description", "id": "explore_decription", "default": "<p>celestehomefashion.com</p>" },
+        { "type": "color", "label": "Description Color", "id": "explore_description_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Font Size", "id": "explore_description_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Font Size (Mobile)", "id": "explore_description_font_size_mobile", "default": 13, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "header", "content": "Social Icons" },
+        { "type": "image_picker", "label": "Instagram", "id": "instagram" },
+        { "type": "url", "label": "Instagram URL", "id": "instagram_url" },
+        { "type": "image_picker", "label": "Facebook", "id": "facebook" },
+        { "type": "url", "label": "Facebook URL", "id": "facebook_url" },
+        { "type": "image_picker", "label": "Pinterest", "id": "pintrest" },
+        { "type": "url", "label": "Pinterest URL", "id": "pintrest_url" }
+      ]
+    },
+    {
+      "type": "get_in_touch",
+      "name": "Get In Touch",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Custom Icon" },
+        { "type": "checkbox", "label": "Custom Icon", "id": "show_get_touch_custom_icon", "default": false },
+        { "type": "image_picker", "label": "Icon", "id": "get_in_touch_icon" },
+        { "type": "header", "content": "Heading" },
+        { "type": "text", "label": "Heading", "id": "heading", "default": "GET IN TOUCH" },
+        { "type": "color", "label": "Heading Color", "id": "heading_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Heading Font Size", "id": "heading_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Heading Font Size (Mobile)", "id": "heading_font_size_mobile", "default": 12, "min": 10, "max": 40, "step": 1, "unit": "px" },
+        { "type": "header", "content": "Description" },
+        { "type": "richtext", "label": "Description", "id": "in_touch_description", "default": "<p>+92 316 7773306</p><p>info@celestehomefashion.com</p>" },
+        { "type": "color", "label": "Description Color", "id": "description_color", "default": "#3c2a21" },
+        { "type": "range", "label": "Description Font Size", "id": "description_font_size", "default": 14, "min": 10, "max": 50, "step": 1, "unit": "px" },
+        { "type": "range", "label": "Description Font Size (Mobile)", "id": "description_font_size_mobile", "default": 13, "min": 10, "max": 40, "step": 1, "unit": "px" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Information"
+    }
+  ]
+}
+{% endschema %}
