@@ -6,6 +6,9 @@
   endif
   assign secSt = section.settings
 -%}
+<style>
+  .content-indent.cl-cover-{{section.id}}{padding-top:{{secSt.padding_top}}px;padding-bottom:{{secSt.padding_bottom}}px;}
+</style>
 {%- capture collectionList -%}
 {%- capture styles -%}
     --dtcl:{{secSt.cl}};
@@ -18,7 +21,7 @@
     --dttfw:{{secSt.tfw}};
     --dttlh:{{secSt.tlh}};
 {% endcapture %}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-collection_list" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-collection_list cl-cover-{{ section.id }}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="clbox cl{{ section.id }} {{secSt.style}} {% unless secSt.section_width %}page-width {% else %}fullwidth{% if secSt.npd %} npd{% endif %}{% endunless %}{% if secSt.hide_mobile %} hide-sm{% endif %}" id="sliderbox-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
     
      {% render 'sec-title', title_ff: secSt.title_font_family, subtitle_ff: secSt.subtitle_font_family %}
@@ -478,6 +481,30 @@
    "id":"disable_zoom",
    "label":"Disable Image Hover Zoom Effect?",
    "default": false
+    },
+    {
+        "type": "header",
+        "content": "Section Spacing"
+    },
+    {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "default": 36
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "default": 36
     }
    ],
    "blocks": [
