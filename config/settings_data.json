@@ -55,11 +55,11 @@
     "field_bd": "#dddddd",
     "btnwt": "400",
     "btn_style": "flat",
-    "color_button_text": "#472815",
-    "color_button": "#E7D8CB",
+    "color_button_text": "#FDDEBA",
+    "color_button": "#AB8153",
     "btn1_bd": "rgba(0,0,0,0)",
-    "color_button_text_hov": "#472815",
-    "color_button_hov": "#E7D8CB",
+    "color_button_text_hov": "#FDDEBA",
+    "color_button_hov": "#AB8153",
     "btn1_bd_hover": "#E7D8CB",
     "color_small_button_text": "#fff",
     "color_small_button": "#F67280",
@@ -443,8 +443,8 @@
           "1561010652330": {
             "type": "menu",
             "settings": {
-              "title_font_family": "uni-neue",
-              "links_font_family": "uni-neue",
+              "title_font_family": "montserrat",
+              "links_font_family": "montserrat",
               "title": "CUSTOMER SERVICES",
               "menulinks": "footer-menu-2",
               "width": "wd20-md"
@@ -453,8 +453,8 @@
           "menu_RkRr4U": {
             "type": "menu",
             "settings": {
-              "title_font_family": "uni-neue",
-              "links_font_family": "uni-neue",
+              "title_font_family": "montserrat",
+              "links_font_family": "montserrat",
               "title": "ABOUT US",
               "menulinks": "footer-menu-1",
               "width": "wd20-md"
@@ -482,7 +482,7 @@
           "snow_style": "style1",
           "copyright_text": "© 2026 Celeste Home Fashion, All Rights Reserved.",
           "show_designby": false,
-          "copyright_font_family": "montserrat",
+          "copyright_font_family": "uni-neue",
           "show_payment": false,
           "payment_img_width": "350"
         }

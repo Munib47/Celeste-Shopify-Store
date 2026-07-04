@@ -1916,12 +1916,13 @@ div.footer-block__item.wd20-md.custom-block {
 {% endcapture %}
 {{ siteCss | strip_newlines | remove: "  " | remove: "	" | replace: "; ",";" | replace: " { ","{" }}
 
-.siteNavigation {
+ul#siteNav {
   padding-top: 12px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
 }
 
 /* @media only screen and (min-width: 1025px) {
