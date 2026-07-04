@@ -1,6 +1,12 @@
+<style>
+  .content-indent.default.cstm-store-features {
+    margin-top: 0;
+  }
+</style>
+
 {%- assign secSt = section.settings -%}
 {%- capture storeFeatures -%}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.hide_mobile %} hide-sm{% endif %}">  
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.hide_mobile %} hide-sm{% endif %} cstm-store-features">  
   {% if secSt.section_cov %} <div class="section-cover small-pd" style="background-color:{{secSt.sec_bg_clr}};"> {% endif%}
   	<div class="{% unless section.settings.section_width %}page-width{% else %}fullwidth{% endunless %} wow fadeIn">          
   	

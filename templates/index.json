@@ -181,7 +181,9 @@
         "btn-size-mob": "mob-btn-sm",
         "buttons_font_family": "uni-neue",
         "txt_align": "tc",
-        "text_clr": "#111"
+        "text_clr": "#111",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collection_list_3PmNHt": {
@@ -300,7 +302,9 @@
         "bg": "#e9dfd5",
         "opt": 0.9,
         "bdr": 0,
-        "disable_zoom": true
+        "disable_zoom": true,
+        "padding_top": 36,
+        "padding_bottom": 0
       }
     },
     "banner_with_text_q36Kdj": {
@@ -443,7 +447,7 @@
         "top-offeset": "default",
         "section_width": false,
         "section_cov": true,
-        "sec_bg_clr": "#F0EAE5",
+        "sec_bg_clr": "#f0eae5",
         "hide_mobile": false,
         "title": "",
         "subtitle": "",
@@ -530,7 +534,7 @@
         "button_font_size": 12,
         "button_font_size_mobile": 16,
         "button_font_family": "uni-neue",
-        "column_background": "#EBDFD6",
+        "column_background": "#ebdfd6",
         "desktop_carousel": true,
         "mobile_carousel": true,
         "enable_arrows": true,
@@ -595,7 +599,7 @@
       "name": "Store Locations",
       "settings": {
         "enable_background_color": true,
-        "background_color": "#E4D4C5",
+        "background_color": "#e4d4c5",
         "enable_background_image": true,
         "background_image": "shopify://shop_images/Gemini_Generated_Image_zedlzjzedlzjzedl.png",
         "background_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zedlzjzedlzjzedl.png",
@@ -615,7 +619,7 @@
         "button_text": "Find a Store",
         "button_url": "",
         "button_text_color": "#472815",
-        "button_background_color": "#F3E8E5",
+        "button_background_color": "#f3e8e5",
         "button_font_size": 14,
         "button_font_size_mobile": 12,
         "button_font_family": "didot",

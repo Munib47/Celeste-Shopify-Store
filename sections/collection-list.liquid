@@ -8,6 +8,10 @@
 -%}
 <style>
   .content-indent.cl-cover-{{section.id}}{padding-top:{{secSt.padding_top}}px;padding-bottom:{{secSt.padding_bottom}}px;}
+
+  .content-indent.cstm-collection_list.cl-cover-{{section.id}} .sec-ttl.tc {
+    padding-top: 0;
+  }
 </style>
 {%- capture collectionList -%}
 {%- capture styles -%}
@@ -481,6 +485,41 @@
    "id":"disable_zoom",
    "label":"Disable Image Hover Zoom Effect?",
    "default": false
+    },
+    {
+      "type": "header",
+      "content": "Main Collection Button"
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "main_button_text",
+      "default": "VIEW ALL COLLECTIONS"
+    },
+    {
+      "type": "color",
+      "label": "Color",
+      "id": "main_button_color"
+    },
+    {
+      "type": "range",
+      "label": "Font Size",
+      "id": "main_button_font_size",
+      "default": 20,
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "label": "Font Size (Mobile)",
+      "id": "main_button_font_size_mobile",
+      "default": 14,
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px"
     },
     {
         "type": "header",
