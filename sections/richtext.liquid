@@ -2,12 +2,13 @@
 <style>
   .id-{{section.id}} .rt-subhead{margin:0 0 12px;font-size:var(--shfsm);text-transform:uppercase;letter-spacing:2px;line-height:1.2;}
   .id-{{section.id}} .rt-divider{height:0;border:0;border-top:1px solid;margin-top:0;margin-bottom:18px;}
+  .section-cover.rt-cover-{{section.id}}{padding-top:{{secSt.padding_top}}px;padding-bottom:{{secSt.padding_bottom}}px;}
   @media only screen and (min-width:768px){
     .id-{{section.id}} .rt-subhead{font-size:var(--shfs);}
   }
 </style>
 <div class="content-indent {{ secSt.top-offeset}}">   
- {% if secSt.section_cov %}<div class="section-cover" style="background-color:{{secSt.sec_bg_clr}};">{% endif%} 
+ {% if secSt.section_cov %}<div class="section-cover rt-cover-{{ section.id }}" style="background-color:{{secSt.sec_bg_clr}};">{% endif%}
   <div class="richtxt id-{{section.id}} wow fadeIn">  		      
     <div class="{% if secSt.fullwidth %}fullwidth{% else %}page-width{%endif%}">
       {% if secSt.image != blank %}        
