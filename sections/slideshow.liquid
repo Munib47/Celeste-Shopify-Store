@@ -7,6 +7,7 @@
     .ss_txt.tc .ss_divider{margin-left:auto;margin-right:auto;}
     .pgbar .flickity-page-dots .dot{border-radius:0;width:20px;height:3px;background-color:var(--bar);}
     .pgbar .flickity-page-dots .dot.is-selected{background-color:var(--bara);}
+    .ss_overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:var(--ovbg);z-index:1;pointer-events:none;}
   </style>
   {% if section.blocks.size > 0 %}
   <div class="slideshow-wrapper{% if section.settings.section_width %} page-width{% endif %}{% if section.settings.snow_effect %} falling-snow{% endif %}{% if section.settings.snow_style == "style2" %} style2{% else %} style1{% endif %}"{% if section.settings.section_width %} style="max-width:{{ section.settings.box-width}}px; margin:0 auto"{% endif %}>
@@ -101,6 +102,9 @@
                                 <div class="ph_bg h_100">{% capture current %}{% cycle 1, 2 %}{% endcapture %}{{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
                             </div>
                         {% endif %}
+                        {% if secSt.isovr and secSt.oopt > 0 %}
+                            <div class="ss_overlay" style="--ovbg:{{ secSt.obg | color_modify: 'alpha', secSt.oopt }};"></div>
+                        {% endif %}
                         {%- capture bxStyle -%}
                             {% if secSt.isbox %}
                                 --bg:{{ secSt.tbg | color_modify: 'alpha', secSt.opt}};--pd:40px;
@@ -113,7 +117,7 @@
                                 --bgm:transparent;--pdm:0;--frcl:transparent;--frmm:none;
                             {% endif %}
                         {%- endcapture -%}
-                        <div class="ss_txt-wrap w_100 h_100" {% if secSt.isbox or secSt.isboxm %} style="--ibg:{{ secSt.obg | color_modify: 'alpha', secSt.oopt }};--brad:{{secSt.brad}}px;"{% endif %} >
+                        <div class="ss_txt-wrap w_100 h_100" {% if secSt.isbox or secSt.isboxm %} style="--brad:{{secSt.brad}}px;"{% endif %} >
                             <div class="page-width fl h_100 {{ blkSt.txtpos }} {{ blkSt.txtposm }}" style="max-width:{{blkSt.contwd}}px;{{bxStyle}}">
                                 <div class="ss_txt{% if blkSt.text-left %} tl{% else %} tc{% endif %}{% if section.settings.txtanimation %} anim {{ section.settings.anim }}{% endif %}">
                                     {% if blkSt.hd1 != blank %}

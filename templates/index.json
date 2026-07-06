@@ -97,7 +97,7 @@
         "box-width": 1500,
         "isovr": true,
         "obg": "#3d4246",
-        "oopt": 1,
+        "oopt": 0.5,
         "pfs": 16,
         "pfsm": 13,
         "pff": "ft1",
