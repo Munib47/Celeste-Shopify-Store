@@ -136,7 +136,7 @@
         "top-offeset": "default",
         "fullwidth": true,
         "section_cov": false,
-        "sec_bg_clr": "#EBDFD3",
+        "sec_bg_clr": "#ebdfd3",
         "max-width": 700,
         "sub_heading_text": "",
         "sub_heading_color": "#000000",
@@ -170,7 +170,9 @@
         "btn-size-mob": "mob-btn-sm",
         "buttons_font_family": "uni-neue",
         "txt_align": "tc",
-        "text_clr": "#111"
+        "text_clr": "#111",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "banner_with_text_K64qcm": {
@@ -180,7 +182,7 @@
           "type": "row",
           "settings": {
             "enable_max_width": true,
-            "image": "shopify://shop_images/Gemini_Generated_Image_hfkm2whfkm2whfkm.png",
+            "image": "shopify://shop_images/1_4d3afea2-1d20-44f5-9746-5b9155c308ab.jpg",
             "layout": "left",
             "sub_heading_text": "OUR MISSION",
             "sub_heading_color": "#472815",
@@ -218,7 +220,7 @@
             "icon_description_font_family": "uni-neue",
             "tcl": "#472815",
             "cl": "#472815",
-            "bg": "#F2E9E2",
+            "bg": "#f2e9e2",
             "btncl": "#fff",
             "btnbg": "#000",
             "btnbd": "#000"
@@ -228,7 +230,7 @@
           "type": "row",
           "settings": {
             "enable_max_width": true,
-            "image": "shopify://shop_images/Gemini_Generated_Image_kvyamtkvyamtkvya.png",
+            "image": "shopify://shop_images/1_e1d1b89c-c973-4bb4-902b-d8caafeaeb70.jpg",
             "layout": "right",
             "sub_heading_text": "OUR VALUES",
             "sub_heading_color": "#472815",
@@ -270,7 +272,7 @@
             "icon_description_font_family": "uni-neue",
             "tcl": "#472815",
             "cl": "#472815",
-            "bg": "#F2E9E2",
+            "bg": "#f2e9e2",
             "btncl": "#fff",
             "btnbg": "#000",
             "btnbd": "#000"
@@ -280,7 +282,7 @@
           "type": "row",
           "settings": {
             "enable_max_width": true,
-            "image": "shopify://shop_images/Gemini_Generated_Image_1tthft1tthft1tth.png",
+            "image": "shopify://shop_images/1_55559584-868e-4423-8c87-24eff893f72e.jpg",
             "layout": "left",
             "sub_heading_text": "OUR PROMISE",
             "sub_heading_color": "#472815",
@@ -318,7 +320,7 @@
             "icon_description_font_family": "uni-neue",
             "tcl": "#472815",
             "cl": "#472815",
-            "bg": "#F2E9E2",
+            "bg": "#f2e9e2",
             "btncl": "#fff",
             "btnbg": "#000",
             "btnbd": "#000"
@@ -335,12 +337,12 @@
         "top-offeset": "default",
         "section_width": true,
         "section_cov": false,
-        "sec_bg_clr": "#F2E9E2",
+        "sec_bg_clr": "#f2e9e2",
         "snow_effect": false,
         "snow_style": "style1",
         "enable_custom_width": false,
-        "tfs": 30,
-        "tfsm": 22,
+        "tfs": 25,
+        "tfsm": 18,
         "tff": "ft1",
         "tfw": "700",
         "tlh": 1.2,
@@ -390,8 +392,11 @@
             "explore_description_font_size": 14,
             "explore_description_font_size_mobile": 13,
             "description_font_family": "montserrat",
+            "instagram": "shopify://shop_images/instagram.svg",
             "instagram_url": "",
+            "facebook": "shopify://shop_images/facebook.svg",
             "facebook_url": "",
+            "pintrest": "shopify://shop_images/pinterest.svg",
             "pintrest_url": ""
           }
         },
@@ -419,7 +424,7 @@
       ],
       "name": "Store Information",
       "settings": {
-        "section_background": "#EADED2",
+        "section_background": "#eaded2",
         "padding_top": 36,
         "padding_right": 0,
         "padding_bottom": 36,

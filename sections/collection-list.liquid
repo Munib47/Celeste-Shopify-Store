@@ -12,6 +12,45 @@
   .content-indent.cstm-collection_list.cl-cover-{{section.id}} .sec-ttl.tc {
     padding-top: 0;
   }
+
+  .cl-cover-{{section.id}} .main-collection-btn-wrap {
+    margin-top: 34px;
+  }
+  .cl-cover-{{section.id}} .main-collection-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--mbcl, inherit) !important;
+    font-size: var(--mbfs, 20px) !important;
+    font-family: var(--mbff, inherit) !important;
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cl-cover-{{section.id}} .main-collection-btn span {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+  }
+  {% comment %} .cl-cover-{{section.id}} .main-collection-btn span:first-child {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  } {% endcomment %}
+  .cl-cover-{{section.id}} .main-collection-btn__arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+  .cl-cover-{{section.id}} .main-collection-btn:hover .main-collection-btn__arrow {
+    transform: translateX(4px);
+  }
+  @media only screen and (max-width: 749px) {
+    .cl-cover-{{section.id}} .main-collection-btn,
+    .cl-cover-{{section.id}} .main-collection-btn span {
+      font-size: var(--mbfsm, 14px) !important;
+    }
+  }
 </style>
 {%- capture collectionList -%}
 {%- capture styles -%}
@@ -41,7 +80,15 @@
              {% render 'collection-grid-item', collection: collection, blkSt: block.settings, secSt: section.settings, collection_image_size: image_size, text_align:{{secSt.txt-align}} %}
           </div>
         {% endfor %}
-      </div>    
+      </div>
+      {% if secSt.main_button_text != blank %}
+        <div class="main-collection-btn-wrap tc">
+          <a class="main-collection-btn" href="{{ secSt.main_button_url | default: '/collections' }}" style="{% if secSt.main_button_color != blank %}--mbcl:{{ secSt.main_button_color }};{% endif %}--mbfs:{{ secSt.main_button_font_size }}px;--mbfsm:{{ secSt.main_button_font_size_mobile }}px;{% if secSt.main_button_font_family != blank %}--mbff:var(--font-{{ secSt.main_button_font_family }});{% endif %}">
+            <span>{{ secSt.main_button_text }}</span>
+            <span class="main-collection-btn__arrow" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      {% endif %}
     {% if section.blocks.size == 0 %}{% include 'no-blocks' %}{% endif %}
   </div>
 </div>
@@ -497,6 +544,12 @@
       "default": "VIEW ALL COLLECTIONS"
     },
     {
+      "type": "url",
+      "label": "Button Link",
+      "id": "main_button_url",
+      "default": "/collections"
+    },
+    {
       "type": "color",
       "label": "Color",
       "id": "main_button_color"
@@ -520,6 +573,18 @@
       "max": 50,
       "step": 2,
       "unit": "px"
+    },
+    {
+      "type": "select",
+      "label": "Font Family",
+      "id": "main_button_font_family",
+      "default": "uni-neue",
+      "options": [
+        { "label": "Poppins Medium",   "value": "popins-medium" },
+        { "label": "Didot Regular",    "value": "didot"         },
+        { "label": "Montserrat",       "value": "montserrat"    },
+        { "label": "Uni Neue Regular", "value": "uni-neue"      }
+      ]
     },
     {
         "type": "header",

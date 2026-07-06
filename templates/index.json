@@ -43,8 +43,8 @@
             "buttons_font_family": "popins-medium",
             "contwd": 1300,
             "text-left": true,
-            "txtpos": "f-aic-md f-jcs-md",
-            "txtposm": "f-jcc f-aic"
+            "txtpos": "f-aie-md f-jcs-md",
+            "txtposm": "f-jcc f-aie"
           }
         },
         "image_CCDQD8": {
@@ -78,8 +78,8 @@
             "buttons_font_family": "popins-medium",
             "contwd": 1300,
             "text-left": true,
-            "txtpos": "f-aic-md f-jcs-md",
-            "txtposm": "f-jcc f-aic"
+            "txtpos": "f-aie-md f-jcs-md",
+            "txtposm": "f-jcc f-aie"
           }
         }
       },
@@ -95,7 +95,7 @@
         "htm": 600,
         "section_width": false,
         "box-width": 1500,
-        "isovr": false,
+        "isovr": true,
         "obg": "#3d4246",
         "oopt": 1,
         "pfs": 16,
@@ -194,7 +194,7 @@
           "settings": {
             "collection": "living",
             "url": "",
-            "collection_image": "shopify://shop_images/living_room.png",
+            "collection_image": "shopify://shop_images/2_9a8e0a08-a1a2-4830-a902-97ba307beb39.jpg",
             "collection_name": "LIVING ROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
@@ -205,7 +205,7 @@
           "settings": {
             "collection": "bedroom",
             "url": "",
-            "collection_image": "shopify://shop_images/bedroom.png",
+            "collection_image": "shopify://shop_images/1_4858d155-98af-44f3-90ec-25856170b91f.jpg",
             "collection_name": "BEDROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
@@ -216,7 +216,7 @@
           "settings": {
             "collection": "dining",
             "url": "",
-            "collection_image": "shopify://shop_images/dining_room.png",
+            "collection_image": "shopify://shop_images/3_ede85363-8182-4614-9dd0-188bf8ef67ab.jpg",
             "collection_name": "DINING ROOM",
             "collection_description": "",
             "collection_btn": "Shop Now"
@@ -303,8 +303,14 @@
         "opt": 0.9,
         "bdr": 0,
         "disable_zoom": true,
+        "main_button_text": "VIEW ALL COLLECTIONS",
+        "main_button_url": "",
+        "main_button_color": "#a68b71",
+        "main_button_font_size": 16,
+        "main_button_font_size_mobile": 14,
+        "main_button_font_family": "montserrat",
         "padding_top": 36,
-        "padding_bottom": 0
+        "padding_bottom": 36
       }
     },
     "banner_with_text_q36Kdj": {
@@ -314,7 +320,7 @@
           "type": "row",
           "settings": {
             "enable_max_width": false,
-            "image": "shopify://shop_images/The_Art_of_Comfort.png",
+            "image": "shopify://shop_images/1_01ef70b5-53a4-4bbd-ac8a-a4030514e8f9.jpg",
             "layout": "left",
             "sub_heading_text": "FEATURED COLLECTION",
             "sub_heading_color": "#472815",
@@ -472,26 +478,27 @@
         "image_slide_YbAQ6b": {
           "type": "image_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Windsor_1_Mobile_Banner_235f8979-a093-4456-8164-8323847b8845.jpg",
+            "slide_image": "shopify://shop_images/1_7f4793a4-46dd-4ee8-b3e7-d0ecb1e77fae.jpg",
             "instagram_link": ""
           }
         },
         "image_slide_ahkED6": {
           "type": "image_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Alara_1_Mobile_Banner_81ff6e57-e054-44aa-9dde-a794db2a8874.jpg",
+            "slide_image": "shopify://shop_images/2_6ad8de1a-7af6-44b6-b3b9-4f059c0861db.jpg",
             "instagram_link": ""
           }
         },
         "image_slide_BVmCJp": {
           "type": "image_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/Ramadan_Bannner_5_mobile.jpg",
+            "slide_image": "shopify://shop_images/3_8f91d9eb-7bcd-4a36-bf65-8d90842976b1.jpg",
             "instagram_link": ""
           }
         },
         "image_slide_6rQ8Cc": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "slide_image": "shopify://shop_images/Windsor_1_Mobile_Banner_235f8979-a093-4456-8164-8323847b8845.jpg",
             "instagram_link": ""
@@ -499,6 +506,7 @@
         },
         "image_slide_t7AP68": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "slide_image": "shopify://shop_images/Nova-Sofa--Mob.jpg",
             "instagram_link": ""
@@ -563,7 +571,7 @@
             "address_font_size_mobile": 14,
             "address_font_family": "uni-neue",
             "button_text": "Get Directions",
-            "button_url": "",
+            "button_url": "https://google.com/maps/dir//26th+Street,+Karachi,+Pakistan/@31.5294481,74.3473152,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3eb33cfd71937ffb:0x1774e66ff3ac980c!2m2!1d67.0659152!2d24.785065?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
             "button_color": "#b08053",
             "button_font_size": 14,
             "button_font_size_mobile": 14,
@@ -584,7 +592,7 @@
             "address_font_size_mobile": 14,
             "address_font_family": "uni-neue",
             "button_text": "Get Directions",
-            "button_url": "",
+            "button_url": "https://www.google.com/maps/dir//31%C2%B031'16.57%22N+74%C2%B021'10.88%22E/@31.5294481,74.3473152,15z/data=!4m6!4m5!1m0!1m3!2m2!1d74.3530222!2d31.5212694?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D",
             "button_color": "#b08053",
             "button_font_size": 14,
             "button_font_size_mobile": 14,
