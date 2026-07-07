@@ -374,7 +374,7 @@
             "type": "single_link",
             "settings": {
               "title": "ABOUT US",
-              "url": "#",
+              "url": "/pages/about",
               "newtab": false
             }
           },
@@ -382,7 +382,7 @@
             "type": "single_link",
             "settings": {
               "title": "OUR STORES",
-              "url": "#",
+              "url": "shopify://pages/store-locator",
               "newtab": false
             }
           }
@@ -399,7 +399,7 @@
           "single_link_pYqqMA"
         ],
         "settings": {
-          "nav_item_font_family": "popins-medium",
+          "nav_item_font_family": "montserrat",
           "menuarrow": true,
           "menuAlign": "tc",
           "spnav": false,
@@ -422,7 +422,7 @@
               "socials_title_font_family": "uni-neue",
               "title": "",
               "logo": "shopify://shop_images/CHF-LOGO-NEW.png",
-              "logo-width": 120,
+              "logo-width": 200,
               "custom-text": "",
               "show_socials": false,
               "socials_ttl": "",
@@ -435,8 +435,8 @@
             "settings": {
               "title_font_family": "montserrat",
               "links_font_family": "montserrat",
-              "title": "ABOUT US",
-              "menulinks": "footer-menu-1",
+              "title": "SHOP",
+              "menulinks": "shop",
               "width": "wd20-md"
             }
           },
@@ -463,7 +463,7 @@
           "socialicons_PUeeMG": {
             "type": "socialicons",
             "settings": {
-              "title_font_family": "uni-neue",
+              "title_font_family": "montserrat",
               "title": "FOLLOW US",
               "width": "wd20-md"
             }

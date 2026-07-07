@@ -15,9 +15,9 @@
         "image_7CUWwQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_buybykbuybykbuyb.png",
-            "imagem": "shopify://shop_images/Gemini_Generated_Image_buybykbuybykbuyb.png",
-            "ialign": "left_top",
+            "image": "shopify://shop_images/Website_Banner_2_jpg.jpg",
+            "imagem": "shopify://shop_images/Website_Banner_2_jpg.jpg",
+            "ialign": "left_center",
             "pre_heading_font_family": "didot",
             "hd1": "",
             "pcl": "#472815",
@@ -44,11 +44,12 @@
             "contwd": 1300,
             "text-left": true,
             "txtpos": "f-aie-md f-jcs-md",
-            "txtposm": "f-jcc f-aie"
+            "txtposm": "f-aie f-jcs"
           }
         },
         "image_CCDQD8": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_p2esjp2esjp2esjp.png",
             "imagem": "shopify://shop_images/Gemini_Generated_Image_p2esjp2esjp2esjp.png",
@@ -97,28 +98,28 @@
         "box-width": 1500,
         "isovr": true,
         "obg": "#3d4246",
-        "oopt": 0.5,
+        "oopt": 0.1,
         "pfs": 16,
         "pfsm": 13,
         "pff": "ft1",
         "pfw": "400",
-        "plh": 1.2,
+        "plh": 1,
         "pmb": 0,
         "pmbm": 0,
-        "bfs": 47,
-        "bfsm": 28,
+        "bfs": 42,
+        "bfsm": 18,
         "bff": "ft2",
         "bfw": "700",
         "blh": 1.1,
         "bmb": 20,
-        "bmbm": 10,
-        "dfs": 16,
+        "bmbm": 5,
+        "dfs": 18,
         "dfsm": 14,
         "dff": "ft1",
         "dfw": "400",
         "dlh": 1.2,
         "dmb": 25,
-        "dmbm": 15,
+        "dmbm": 5,
         "txtanimation": true,
         "anim": "st1",
         "btn-size": "btn-md",
@@ -130,11 +131,11 @@
         "brad": 0,
         "autoplay": false,
         "speed": 7,
-        "arrow": true,
+        "arrow": false,
         "arrowc": "#472815",
         "dot": false,
         "dots": "#ffffff",
-        "bar": true,
+        "bar": false,
         "barc": "#ffffff",
         "snow_effect": false,
         "snow_style": "style1"
@@ -225,10 +226,10 @@
         "featured_collection_BgdLRT": {
           "type": "featured_collection",
           "settings": {
-            "collection": "decor",
+            "collection": "new-decor",
             "url": "",
-            "collection_image": "shopify://shop_images/decor_accents.png",
-            "collection_name": "DECOR & ACCENTS",
+            "collection_image": "shopify://shop_images/Accessories_400x480_d852bc93-e97e-4461-ab8b-d862fd071abc.jpg",
+            "collection_name": "ACCESSORIES",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -236,9 +237,9 @@
         "featured_collection_9GRkke": {
           "type": "featured_collection",
           "settings": {
-            "collection": "lighting",
+            "collection": "table-lamps",
             "url": "",
-            "collection_image": "shopify://shop_images/lighting.png",
+            "collection_image": "shopify://shop_images/Lamp_Chandeller_400x480_bdb0edea-251e-4f08-aaf7-11aea044bad4.jpg",
             "collection_name": "LIGHTING",
             "collection_description": "",
             "collection_btn": "Shop Now"
@@ -247,10 +248,10 @@
         "featured_collection_fhpUxd": {
           "type": "featured_collection",
           "settings": {
-            "collection": "argos-3-door",
+            "collection": "sleep-lab",
             "url": "",
-            "collection_image": "shopify://shop_images/outdoor.png",
-            "collection_name": "OUTDOOR",
+            "collection_image": "shopify://shop_images/Sleep_Lab_400x480_2fa17764-0353-4b3b-bcb6-8ec1cd0b838c.jpg",
+            "collection_name": "SLEEP LAB",
             "collection_description": "",
             "collection_btn": "Shop Now"
           }
@@ -266,7 +267,7 @@
       ],
       "name": "Collections List",
       "settings": {
-        "title": "SHOP BY ROOM",
+        "title": "SHOP BY CATEGORY",
         "subtitle": "",
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
@@ -304,7 +305,7 @@
         "bdr": 0,
         "disable_zoom": true,
         "main_button_text": "VIEW ALL COLLECTIONS",
-        "main_button_url": "",
+        "main_button_url": "https://celestehomefashion.com/pages/collections",
         "main_button_color": "#a68b71",
         "main_button_font_size": 16,
         "main_button_font_size_mobile": 14,
@@ -400,6 +401,7 @@
         "text_block_mtFChX": {
           "type": "text_block",
           "settings": {
+            "image": "shopify://shop_images/Artboard_2_copy_4.png",
             "icons": "at-truck-l",
             "title_font_family": "uni-neue",
             "title": "TIMELESS DESIGN",
@@ -411,6 +413,7 @@
         "text_block_XBjz8A": {
           "type": "text_block",
           "settings": {
+            "image": "shopify://shop_images/Artboard_2_copy.png",
             "icons": "at-undo-r",
             "title_font_family": "uni-neue",
             "title": "EXCEPTIONAL QUALITY",
@@ -422,6 +425,7 @@
         "text_block_rhy36E": {
           "type": "text_block",
           "settings": {
+            "image": "shopify://shop_images/Artboard_2_copy_2.png",
             "icons": "at-lock-al",
             "title_font_family": "uni-neue",
             "title": "THOUGHTFUL LIVING",
@@ -433,6 +437,7 @@
         "text_block_Nxcbre": {
           "type": "text_block",
           "settings": {
+            "image": "shopify://shop_images/Artboard_2_copy_3.png",
             "icons": "at-heart-l",
             "title_font_family": "uni-neue",
             "title": "MADE FOR YOU",
@@ -462,7 +467,7 @@
         "style": "style1",
         "icon-type": "image",
         "icons_clr": "#472815",
-        "isz": 30,
+        "isz": 63,
         "tcl": "#472815",
         "tfs": 14,
         "tfsm": 12,
@@ -537,7 +542,7 @@
         "description_font_size_mobile": 16,
         "description_font_family": "uni-neue",
         "insta_button": "FOLLOW US ON INSTAGRAM",
-        "button_url": "#",
+        "button_url": "https://www.instagram.com/celestehomefashion?igshid=YmM0MjE2YWMzOA%3D%3D",
         "button_color": "#b08053",
         "button_font_size": 12,
         "button_font_size_mobile": 16,
@@ -625,7 +630,7 @@
         "description_font_size_mobile": 18,
         "description_font_family": "uni-neue",
         "button_text": "Find a Store",
-        "button_url": "",
+        "button_url": "shopify://pages/store-locator",
         "button_text_color": "#472815",
         "button_background_color": "#f3e8e5",
         "button_font_size": 14,
