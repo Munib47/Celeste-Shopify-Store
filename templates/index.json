@@ -165,7 +165,7 @@
         "tff": "ft1",
         "tfw": "600",
         "tlh": 1.2,
-        "title_font_family": "didot",
+        "title_font_family": "popins-medium",
         "richtxt": "<p>From timeless furniture and elegant décor to refined lighting and accessories, our collections are chosen to inspire, comfort, and elevate everyday living.</p>",
         "cl": "#472815",
         "fs": 14,
@@ -239,7 +239,7 @@
           "settings": {
             "collection": "table-lamps",
             "url": "",
-            "collection_image": "shopify://shop_images/Lamp_Chandeller_400x480_bdb0edea-251e-4f08-aaf7-11aea044bad4.jpg",
+            "collection_image": "shopify://shop_images/Chandeller_400x480_90b3ccc9-a3c7-4f3f-9fd5-f7f0cbb60e98.jpg",
             "collection_name": "LIGHTING",
             "collection_description": "",
             "collection_btn": "Shop Now"
@@ -321,7 +321,7 @@
           "type": "row",
           "settings": {
             "enable_max_width": false,
-            "image": "shopify://shop_images/1_01ef70b5-53a4-4bbd-ac8a-a4030514e8f9.jpg",
+            "image": "shopify://shop_images/Muse_Bed_900x600_7b4f465d-631b-402a-a120-cb8aa39252bd.jpg",
             "layout": "left",
             "sub_heading_text": "FEATURED COLLECTION",
             "sub_heading_color": "#472815",
@@ -340,7 +340,7 @@
             "text": "<p>Sculptural forms, Soft textures, A collection designed for modern living.</p>",
             "buttons_font_family": "didot",
             "button_label": "Discover Now",
-            "button_link": "/",
+            "button_link": "https://celestehomefashion.com/products/muse-bed",
             "text_align": "text-left",
             "first_heading": "",
             "first_description": "",
@@ -406,7 +406,7 @@
             "title_font_family": "uni-neue",
             "title": "TIMELESS DESIGN",
             "text_font_family": "uni-neue",
-            "text": "<p>Piece that never go out if style.</p>",
+            "text": "<p>Pieces that never go out of style.</p>",
             "texturl": ""
           }
         },
@@ -483,7 +483,7 @@
         "image_slide_YbAQ6b": {
           "type": "image_slide",
           "settings": {
-            "slide_image": "shopify://shop_images/1_7f4793a4-46dd-4ee8-b3e7-d0ecb1e77fae.jpg",
+            "slide_image": "shopify://shop_images/1_jpg_ca476c25-7945-4a6e-9b31-af275a4e44f3.jpg",
             "instagram_link": ""
           }
         },
@@ -611,11 +611,11 @@
       ],
       "name": "Store Locations",
       "settings": {
-        "enable_background_color": true,
+        "enable_background_color": false,
         "background_color": "#e4d4c5",
         "enable_background_image": true,
-        "background_image": "shopify://shop_images/Gemini_Generated_Image_zedlzjzedlzjzedl.png",
-        "background_image_mobile": "shopify://shop_images/Gemini_Generated_Image_zedlzjzedlzjzedl.png",
+        "background_image": "shopify://shop_images/Banner_2000x200_Lamp.jpg",
+        "background_image_mobile": "shopify://shop_images/Banner_2000x200_Lamp.jpg",
         "heading": "Visit Our Stores",
         "heading_color": "#472815",
         "heading_font_size": 36,
@@ -639,6 +639,115 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured_blog_CmBfqj": {
+      "type": "featured-blog",
+      "custom_css": [
+        "a.h4.article__title {line-height: 24px; font-weight: 700; font-size: 22px; color: #706f6f;}",
+        ".sec-ttl .h3 {margin-bottom: 30px; color: #706f6f;}"
+      ],
+      "name": "Blog List",
+      "settings": {
+        "title": "BLOGS",
+        "subtitle": "",
+        "top-offeset": "default",
+        "section_cov": true,
+        "sec_bg_clr": "#fafafa",
+        "blog": "news",
+        "img_ratio": "60",
+        "post_limit": 3,
+        "grid": 3,
+        "tablet-grid": 2,
+        "mobile-grid": 1,
+        "blog_align": "tc",
+        "blog_show_author": false,
+        "blog_show_date": true,
+        "show_comment": true,
+        "show_mini_des": false,
+        "show_read_more": true,
+        "show_view_all": false,
+        "btn-style": "bdr-btn1",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm"
+      }
+    },
+    "collections_banners_zp6KNg": {
+      "type": "collections-banners",
+      "blocks": {
+        "featured_collection_qbznmY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/pages/interior-services",
+            "target_blank": false,
+            "collection_image": "shopify://shop_images/Banner_Image_7a2d3c7e-0f51-4e8c-8449-23d260bfc151.jpg",
+            "collection_name": "Our Projects",
+            "collection_name2": "",
+            "talign": "tr",
+            "text_pos": "f-aie f-jcs",
+            "collection_btn": "",
+            "width": "50"
+          }
+        },
+        "featured_collection_z94jCf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://cdn.shopify.com/s/files/1/0249/2406/1792/files/CHF_Catalogue_f28471e3-f967-4dbe-97fb-5524d947b152.pdf?v=1772529595",
+            "target_blank": true,
+            "collection_image": "shopify://shop_images/651x491_1.jpg",
+            "collection_name": "Catalogue",
+            "collection_name2": "",
+            "talign": "tr",
+            "text_pos": "f-jce f-ais",
+            "collection_btn": "",
+            "width": "50"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_qbznmY",
+        "featured_collection_z94jCf"
+      ],
+      "custom_css": [
+        "h3.clitem-ttl {font-size: 36px; color: #fff;}",
+        ".sec-ttl .h3 {margin-bottom: 20px; color: #706f6f;}"
+      ],
+      "name": "Collections Banners(Masonry)",
+      "settings": {
+        "section_bg": "#fff",
+        "title": "Projects & Catalogue",
+        "subtitle": "",
+        "top-offeset": "default",
+        "section_width": false,
+        "npd": false,
+        "hide_mobile": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid-spacing-col": 2,
+        "box-width": 90,
+        "cl": "#FFFFFF",
+        "isbox": true,
+        "bg": "#111111",
+        "bxopt": 0.5,
+        "bdr": 0,
+        "tfs": 52,
+        "tfsm": 24,
+        "tff": "ft1",
+        "tfw": "600",
+        "tlh": 1.2,
+        "fs": 20,
+        "fsm": 20,
+        "fw": "400",
+        "lh": 1.2,
+        "disable_zoom": false,
+        "show_buttons": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-md",
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
     }
   },
   "order": [
@@ -648,6 +757,8 @@
     "banner_with_text_q36Kdj",
     "store_features_BK46XR",
     "instagram_showcase_p7XXmd",
-    "custom_store_location_f7P3np"
+    "custom_store_location_f7P3np",
+    "featured_blog_CmBfqj",
+    "collections_banners_zp6KNg"
   ]
 }

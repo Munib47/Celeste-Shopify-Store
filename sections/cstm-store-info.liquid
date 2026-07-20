@@ -302,9 +302,13 @@
                 or block.settings.instagram != blank
                 or block.settings.facebook != blank
                 or block.settings.pintrest != blank
+                or block.settings.social_four != blank
+                or block.settings.social_five != blank
                 or block.settings.instagram_url != blank
                 or block.settings.facebook_url != blank
-                or block.settings.pintrest_url != blank -%}
+                or block.settings.pintrest_url != blank
+                or block.settings.social_four_url != blank
+                or block.settings.social_five_url != blank -%}
                 <div class="cstm-store-info__body">
                   {%- if block.settings.explore_decription != blank -%}
                     <div class="cstm-store-info__content"{% if block.settings.description_font_family != blank %} style="font-family:var(--font-{{ block.settings.description_font_family }}) !important"{% endif %}>{{ block.settings.explore_decription }}</div>
@@ -313,11 +317,15 @@
                   {%- if block.settings.instagram != blank
                     or block.settings.facebook != blank
                     or block.settings.pintrest != blank
+                    or block.settings.social_four != blank
+                    or block.settings.social_five != blank
                     or block.settings.instagram_url != blank
                     or block.settings.facebook_url != blank
-                    or block.settings.pintrest_url != blank -%}
-                    {%- assign social_keys = 'instagram,facebook,pintrest' | split: ',' -%}
-                    {%- assign social_labels = 'Instagram,Facebook,Pinterest' | split: ',' -%}
+                    or block.settings.pintrest_url != blank
+                    or block.settings.social_four_url != blank
+                    or block.settings.social_five_url != blank -%}
+                    {%- assign social_keys = 'instagram,facebook,pintrest,social_four,social_five' | split: ',' -%}
+                    {%- assign social_labels = 'Instagram,Facebook,Pinterest,Social link,Social link' | split: ',' -%}
                     <div class="cstm-store-info__socials">
                       {%- for key in social_keys -%}
                         {%- assign social_image = block.settings[key] -%}
@@ -351,6 +359,11 @@
                               {%- when 'pintrest' -%}
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
                                   <path d="M9.8 19.6V5.6h3a4.1 4.1 0 0 1 0 8.2H9.8"/>
+                                </svg>
+                              {%- else -%}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                                  <path d="M10 13.5a3.5 3.5 0 0 0 5 0l2.4-2.4a3.5 3.5 0 0 0-5-5l-1 1"/>
+                                  <path d="M14 10.5a3.5 3.5 0 0 0-5 0L6.6 13a3.5 3.5 0 0 0 5 5l1-1"/>
                                 </svg>
                             {%- endcase -%}
                           </a>
@@ -562,7 +575,11 @@
         { "type": "image_picker", "label": "Facebook", "id": "facebook" },
         { "type": "url", "label": "Facebook URL", "id": "facebook_url" },
         { "type": "image_picker", "label": "Pinterest", "id": "pintrest" },
-        { "type": "url", "label": "Pinterest URL", "id": "pintrest_url" }
+        { "type": "url", "label": "Pinterest URL", "id": "pintrest_url" },
+        { "type": "image_picker", "label": "Other Social Icon 1", "id": "social_four" },
+        { "type": "url", "label": "Other Social Icon 1 URL", "id": "social_four_url" },
+        { "type": "image_picker", "label": "Other Social Icon 2", "id": "social_five" },
+        { "type": "url", "label": "Other Social Icon 2 URL", "id": "social_five_url" }
       ]
     },
     {

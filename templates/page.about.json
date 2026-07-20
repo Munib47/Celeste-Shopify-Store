@@ -53,7 +53,7 @@
             "title": "Live Beautifully",
             "tcl": "#472815",
             "details_font_family": "popins-medium",
-            "hd3": "At Celeste, we believe your home should be a reflection of who you are—effortless, timeless, and uniquely yours.",
+            "hd3": "At Celeste, we believe your home should be a reflection of<br> who you are effortless, timeless, and uniquely yours.",
             "hideh3": false,
             "cl": "#472815",
             "btn": "",
@@ -146,7 +146,7 @@
         "show_divider": false,
         "divider_color": "#000000",
         "dividerw": 50,
-        "title": "Celeste Home Fashion is more than a furniture store — it is a lifestyle destination for those who value beauty, quality, and thoughtful living.",
+        "title": "Celeste Home Fashion is more than a furniture store. It is a lifestyle destination for those who value beauty, quality, and thoughtful living.",
         "tcl": "#472815",
         "tfs": 26,
         "tfsm": 20,
@@ -397,7 +397,10 @@
             "facebook": "shopify://shop_images/FAcebook_c5b1d694-8db6-4c34-aa42-332a5a9cc1fb.svg",
             "facebook_url": "https://www.facebook.com/CelesteHomeFashion?mibextid=ZbWKwL",
             "pintrest": "shopify://shop_images/Linkdin.svg",
-            "pintrest_url": "https://www.linkedin.com/company/celeste-home-fashion/"
+            "pintrest_url": "https://www.linkedin.com/company/celeste-home-fashion/",
+            "social_four": "shopify://shop_images/Youtube.svg",
+            "social_four_url": "https://www.youtube.com/@celestehomefashion5394",
+            "social_five_url": ""
           }
         },
         "get_in_touch_PK9af7": {
@@ -409,7 +412,7 @@
             "heading_font_size": 14,
             "heading_font_size_mobile": 12,
             "heading_font_family": "montserrat",
-            "in_touch_description": "<p>+92 316 7773306</p><p>info@celestehomefashion.com</p>",
+            "in_touch_description": "<p><a href=\"tel:03400243243\" title=\"tel:03400243243\">+923400243243</a></p><p><a href=\"mailto:info@celestehomefashion.com\" title=\"mailto:info@celestehomefashion.com\">info@celestehomefashion.com</a></p>",
             "description_color": "#3c2a21",
             "description_font_size": 14,
             "description_font_size_mobile": 13,
