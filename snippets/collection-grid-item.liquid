@@ -40,7 +40,10 @@
         </h3>
         {% if blkSt.collection_description != blank %}
         	<p{% if secSt.description_font_family != blank %} style="font-family:var(--font-{{secSt.description_font_family}}) !important"{% endif %}> {{ blkSt.collection_description }} </p>                       
-        {% endif %}   
+        {% endif %}
+        {% if blkSt.collection_name2 != blank %}
+        	<p{% if secSt.description_font_family != blank %} style="font-family:var(--font-{{secSt.description_font_family}}) !important"{% endif %}> {{ blkSt.collection_name2 }} </p>
+        {% endif %}
 
         {% if secSt.product_count %}
         	<span class="counts">{{ 'collections.general.items_with_count' | t: count: collection.all_products_count }}</span>

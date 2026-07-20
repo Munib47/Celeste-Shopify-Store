@@ -710,7 +710,6 @@
         "featured_collection_z94jCf"
       ],
       "custom_css": [
-        "h3.clitem-ttl {font-size: 36px; color: #fff;}",
         ".sec-ttl .h3 {margin-bottom: 20px; color: #706f6f;}"
       ],
       "name": "Collections Banners(Masonry)",
@@ -731,7 +730,7 @@
         "bg": "#111111",
         "bxopt": 0.5,
         "bdr": 0,
-        "tfs": 52,
+        "tfs": 36,
         "tfsm": 24,
         "tff": "ft1",
         "tfw": "600",

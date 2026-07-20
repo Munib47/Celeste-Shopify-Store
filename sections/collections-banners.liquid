@@ -21,15 +21,42 @@
     background-color: {{ section.settings.section_bg }};
     padding-bottom: 35px;
     }
-  
+  {%- unless secSt.show_pagination -%}
+  .sec-{{ section.id }} .flickity-page-dots{
+    display: none !important;
+    }
+  {%- endunless -%}
+  .sec-{{ section.id }} .sec-ttl h2,
+  .sec-{{ section.id }} .sec-ttl h3{
+    font-size: {{ secSt.ttl_fsm }}px;
+    }
+  .sec-{{ section.id }} .sec-ttl p{
+    font-size: {{ secSt.subttl_fsm }}px;
+    }
+  .sec-{{ section.id }} .details .btn{
+    font-size: {{ secSt.btn_fsm }}px;
+    }
+  @media only screen and (min-width:768px){
+  .sec-{{ section.id }} .sec-ttl h2,
+  .sec-{{ section.id }} .sec-ttl h3{
+    font-size: {{ secSt.ttl_fs }}px;
+    }
+  .sec-{{ section.id }} .sec-ttl p{
+    font-size: {{ secSt.subttl_fs }}px;
+    }
+  .sec-{{ section.id }} .details .btn{
+    font-size: {{ secSt.btn_fs }}px;
+    }
+  }
+
 </style>
 <div class="content-indent{% if secSt.hide_mobile %} hide-sm{% endif %} {{ secSt.top-offeset}} sec-{{ section.id }}" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
-  <div class="clbnrs sec-{{ section.id}}{% unless secSt.section_width %} page-width{% else %} fullwidth{% if secSt.npd %} npd{% endif %}{% endunless %}{% if secSt.snow_effect %} falling-snow{% endif %}{% if secSt.snow_style == "style2" %} style2{% else %} style1{% endif %}" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="masonary">
+  <div class="clbnrs sec-{{ section.id}}{% unless secSt.section_width %} page-width{% else %} fullwidth{% if secSt.npd %} npd{% endif %}{% endunless %}{% if secSt.snow_effect %} falling-snow{% endif %}{% if secSt.snow_style == "style2" %} style2{% else %} style1{% endif %}" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="masonary" style="{{styles}}">
 
-      {% render 'sec-title' %}
+      {% render 'sec-title', title_ff: secSt.title_font_family, subtitle_ff: secSt.subtitle_font_family %}
 
      
-        <div class="slidebanner grid w-{{ section.settings.grid-spacing-col }}" data-flickity='{ "cellAlign":"left","groupCells":true,"wrapAround":false,"prevNextButtons": false,"pageDots":true{%- if secSt.autoplay -%},"autoPlay":{{secSt.speed | times: 1000}}{% endif %},"rightToLeft": false }'>
+        <div class="slidebanner grid w-{{ section.settings.grid-spacing-col }}" data-flickity='{ "cellAlign":"left","groupCells":true,"wrapAround":false,"prevNextButtons": false,"pageDots":{% if secSt.show_pagination %}true{% else %}false{% endif %}{%- if secSt.autoplay -%},"autoPlay":{{secSt.speed | times: 1000}}{% endif %},"rightToLeft": false }'>
         {% for block in section.blocks limit: section.blocks.size %}      
         	{% case block.settings.width %}
               {% when '20' %}{%- assign image_size = '150,350,550,750' -%}
@@ -80,6 +107,70 @@
         "label": "Sub Heading",
         "default": "Describe your products, collection, content etc..."
       }, 	  	             	 
+      {
+        "type": "range",
+        "id": "ttl_fs",
+        "label": "Heading Font Size",
+        "default": 48,
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ttl_fsm",
+        "label": "Heading Font Size(mobile)",
+        "default": 40,
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "subttl_fs",
+        "label": "Sub Heading Font Size",
+        "default": 22,
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "subttl_fsm",
+        "label": "Sub Heading Font Size(mobile)",
+        "default": 16,
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "title_font_family",
+        "label": "Heading Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "subtitle_font_family",
+        "label": "Sub Heading Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
      {
 		 "type": "paragraph",
 		 "content":"[Preview possible grid style](https://www.adornthemes.com/different-collection-banner-style/)"
@@ -121,6 +212,13 @@
         "info": "Remove left/right padding when fullwidth",
 		"default": false
 	  },		            
+	 {
+		"type":"checkbox",
+		"id":"show_pagination",
+		"label":"Show Pagination?",
+        "info": "Show/hide the slider dots below the banners",
+		"default": true
+	  },
  	 {
            "type": "checkbox",
            "id": "hide_mobile",
@@ -290,6 +388,18 @@
         "step": 0.1,
         "info": "Space between text lines. Default is set to 1.3"
     },
+    {
+        "type": "select",
+        "id": "name_font_family",
+        "label": "Collection Name Font Family",
+        "default": "uni-neue",
+        "options": [
+            { "label": "Poppins Medium",   "value": "popins-medium" },
+            { "label": "Didot Regular",    "value": "didot"         },
+            { "label": "Montserrat",       "value": "montserrat"    },
+            { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+    },
 	  {
         "type": "paragraph",
         "content": "Description Text ==="
@@ -432,6 +542,38 @@
           }	
           ]
           },      
+      {
+        "type": "range",
+        "id": "btn_fs",
+        "label": "Button Font Size",
+        "default": 14,
+        "min": 8,
+        "max": 40,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "btn_fsm",
+        "label": "Button Font Size(mobile)",
+        "default": 13,
+        "min": 8,
+        "max": 40,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "id": "buttons_font_family",
+        "label": "Button Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
 		{
 		"type":"checkbox",
 		"id":"snow_effect",
