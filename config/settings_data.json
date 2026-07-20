@@ -373,16 +373,24 @@
           "single_link_9zXNmU": {
             "type": "single_link",
             "settings": {
-              "title": "ABOUT US",
-              "url": "/pages/about",
+              "title": "ACCESORRIES",
+              "url": "shopify://collections/independence-sale-accessories",
               "newtab": false
             }
           },
           "single_link_pYqqMA": {
             "type": "single_link",
             "settings": {
-              "title": "OUR STORES",
-              "url": "shopify://pages/store-locator",
+              "title": "SALE",
+              "url": "shopify://collections/ageing-stock",
+              "newtab": false
+            }
+          },
+          "single_link_HBjCwn": {
+            "type": "single_link",
+            "settings": {
+              "title": "NEW ARRIVALS - 26",
+              "url": "shopify://collections/new-arrivals-26",
               "newtab": false
             }
           }
@@ -396,7 +404,8 @@
           "7880c6af-612d-4791-bff2-dd0b0307ee6d",
           "96d19b79-ab9a-455d-a136-380842f7a3ba",
           "single_link_9zXNmU",
-          "single_link_pYqqMA"
+          "single_link_pYqqMA",
+          "single_link_HBjCwn"
         ],
         "settings": {
           "nav_item_font_family": "montserrat",

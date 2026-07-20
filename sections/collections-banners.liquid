@@ -17,9 +17,10 @@
     
 {% endcapture %}
 <style>
-  .sec-{{ section.id }}{
-    background-color: {{ section.settings.section_bg }};
-    padding-bottom: 35px;
+  .content-indent.sec-{{ section.id }}{
+    background-color: {{ secSt.section_bg }};
+    padding-top: {{ secSt.pt }}px;
+    padding-bottom: {{ secSt.pb }}px;
     }
   {%- unless secSt.show_pagination -%}
   .sec-{{ section.id }} .flickity-page-dots{
@@ -28,24 +29,52 @@
   {%- endunless -%}
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{
-    font-size: {{ secSt.ttl_fsm }}px;
+    font-size: {{ secSt.ttl_fsm }}px !important;
+    {%- if secSt.ttl_cl != blank %}color: {{ secSt.ttl_cl }} !important;{% endif -%}
     }
   .sec-{{ section.id }} .sec-ttl p{
-    font-size: {{ secSt.subttl_fsm }}px;
+    font-size: {{ secSt.subttl_fsm }}px !important;
+    {%- if secSt.subttl_cl != blank %}color: {{ secSt.subttl_cl }} !important;{% endif -%}
     }
+  .sec-{{ section.id }} .clitem-ttl{
+    font-size: var(--dttfsm) !important;
+    {%- if secSt.name_cl != blank %}color: {{ secSt.name_cl }} !important;{% endif -%}
+    }
+  .sec-{{ section.id }} .details{
+    font-size: var(--dtfsm) !important;
+    }
+  {%- if secSt.desc_cl != blank -%}
+  .sec-{{ section.id }} .details p{
+    color: {{ secSt.desc_cl }} !important;
+    }
+  {%- endif -%}
   .sec-{{ section.id }} .details .btn{
-    font-size: {{ secSt.btn_fsm }}px;
+    font-size: {{ secSt.btn_fsm }}px !important;
     }
+  {%- if secSt.btn_cl != blank or secSt.btn_bg != blank -%}
+  .sec-{{ section.id }} .details .btn:not(:hover):not(:focus){
+    {%- if secSt.btn_cl != blank %}color: {{ secSt.btn_cl }} !important;{% endif -%}
+    {%- if secSt.btn_bg != blank %}background-color: {{ secSt.btn_bg }} !important; border-color: {{ secSt.btn_bg }} !important;{% endif -%}
+    }
+  {%- endif -%}
   @media only screen and (min-width:768px){
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{
-    font-size: {{ secSt.ttl_fs }}px;
+    font-size: {{ secSt.ttl_fs }}px !important;
     }
   .sec-{{ section.id }} .sec-ttl p{
-    font-size: {{ secSt.subttl_fs }}px;
+    font-size: {{ secSt.subttl_fs }}px !important;
     }
   .sec-{{ section.id }} .details .btn{
-    font-size: {{ secSt.btn_fs }}px;
+    font-size: {{ secSt.btn_fs }}px !important;
+    }
+  }
+  @media only screen and (min-width:1024px){
+  .sec-{{ section.id }} .clitem-ttl{
+    font-size: var(--dttfs) !important;
+    }
+  .sec-{{ section.id }} .details{
+    font-size: var(--dtfs) !important;
     }
   }
 
@@ -128,6 +157,12 @@
         "unit": "px"
       },
       {
+        "type": "color",
+        "id": "ttl_cl",
+        "label": "Heading Color",
+        "info": "Leave empty to use the theme default heading color."
+      },
+      {
         "type": "range",
         "id": "subttl_fs",
         "label": "Sub Heading Font Size",
@@ -146,6 +181,12 @@
         "max": 100,
         "step": 1,
         "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "subttl_cl",
+        "label": "Sub Heading Color",
+        "info": "Leave empty to use the theme default heading color."
       },
       {
         "type": "select",
@@ -389,6 +430,12 @@
         "info": "Space between text lines. Default is set to 1.3"
     },
     {
+        "type": "color",
+        "id": "name_cl",
+        "label": "Collection Name Color",
+        "info": "Leave empty to use the 'Text' color above."
+    },
+    {
         "type": "select",
         "id": "name_font_family",
         "label": "Collection Name Font Family",
@@ -452,6 +499,12 @@
             }
         ]
     }, 	
+    {
+        "type": "color",
+        "id": "desc_cl",
+        "label": "Detail Text Color",
+        "info": "Leave empty to use the 'Text' color above."
+    },
     {
         "type": "range",
         "id": "lh",
@@ -563,6 +616,18 @@
         "unit": "px"
       },
       {
+        "type": "color",
+        "id": "btn_cl",
+        "label": "Button Text Color",
+        "info": "Leave empty to use the theme button color. Hover colors stay as per theme."
+      },
+      {
+        "type": "color",
+        "id": "btn_bg",
+        "label": "Button Background Color",
+        "info": "Leave empty to use the theme button color."
+      },
+      {
         "type": "select",
         "id": "buttons_font_family",
         "label": "Button Font Family",
@@ -596,7 +661,32 @@
             "label": "Falling From Left"
             }
             ]
-          }	
+          },
+      {
+        "type": "paragraph",
+        "content": "Spacing==="
+      },
+      {
+        "type": "range",
+        "id": "pt",
+        "label": "Padding Top",
+        "default": 0,
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "info": "Space inside the section, above the heading. This is separate from 'Top OffSet' above, which sets the gap between sections."
+      },
+      {
+        "type": "range",
+        "id": "pb",
+        "label": "Padding Bottom",
+        "default": 35,
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px"
+      }
     ],
     "blocks": [
       {

@@ -395,6 +395,142 @@
         "btn-size-mob": "mob-btn-sm"
       }
     },
+    "featured_blog_CmBfqj": {
+      "type": "featured-blog",
+      "custom_css": [
+        "a.h4.article__title {line-height: 24px; font-weight: 700; font-size: 22px; color: #706f6f;}",
+        ".sec-ttl .h3 {margin-bottom: 30px; color: #706f6f;}"
+      ],
+      "name": "Blog List",
+      "settings": {
+        "section_cov": true,
+        "sec_bg_clr": "#e9dfd5",
+        "title": "BLOGS",
+        "subtitle": "",
+        "title_font_family": "popins-medium",
+        "subtitle_font_family": "popins-medium",
+        "heading_color": "#A68B71",
+        "subheading_color": "",
+        "heading_size": 0,
+        "heading_size_mobile": 0,
+        "subheading_size": 0,
+        "subheading_size_mobile": 0,
+        "show_top_margin": false,
+        "top-offeset": "default",
+        "blog": "news",
+        "img_ratio": "60",
+        "post_limit": 3,
+        "grid": 3,
+        "tablet-grid": 2,
+        "mobile-grid": 1,
+        "show_pagination": false,
+        "blog_align": "tc",
+        "article_title_font_family": "popins-medium",
+        "meta_font_family": "didot",
+        "excerpt_font_family": "didot",
+        "buttons_font_family": "didot",
+        "blog_show_author": false,
+        "blog_show_date": true,
+        "show_comment": true,
+        "show_mini_des": false,
+        "show_read_more": true,
+        "show_view_all": false,
+        "btn-style": "bdr-btn1",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collections_banners_zp6KNg": {
+      "type": "collections-banners",
+      "blocks": {
+        "featured_collection_qbznmY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://celestehomefashion.com/pages/interior-services",
+            "target_blank": false,
+            "collection_image": "shopify://shop_images/Banner_Image_7a2d3c7e-0f51-4e8c-8449-23d260bfc151.jpg",
+            "collection_name": "Our Projects",
+            "collection_name2": "",
+            "talign": "tr",
+            "text_pos": "f-aie f-jcs",
+            "collection_btn": "",
+            "width": "50"
+          }
+        },
+        "featured_collection_z94jCf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "url": "https://cdn.shopify.com/s/files/1/0249/2406/1792/files/CHF_Catalogue_f28471e3-f967-4dbe-97fb-5524d947b152.pdf?v=1772529595",
+            "target_blank": true,
+            "collection_image": "shopify://shop_images/651x491_1.jpg",
+            "collection_name": "Catalogue",
+            "collection_name2": "",
+            "talign": "tr",
+            "text_pos": "f-jce f-ais",
+            "collection_btn": "",
+            "width": "50"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_qbznmY",
+        "featured_collection_z94jCf"
+      ],
+      "custom_css": [
+        "h3.clitem-ttl {font-size: 36px; color: #fff;}",
+        ".sec-ttl .h3 {margin-bottom: 20px; color: #706f6f;}"
+      ],
+      "name": "Collections Banners(Masonry)",
+      "settings": {
+        "section_bg": "#e9dfd5",
+        "title": "Projects & Catalogue",
+        "subtitle": "",
+        "ttl_fs": 30,
+        "ttl_fsm": 22,
+        "subttl_fs": 15,
+        "subttl_fsm": 13,
+        "title_font_family": "popins-medium",
+        "subtitle_font_family": "popins-medium",
+        "top-offeset": "default",
+        "section_width": false,
+        "npd": false,
+        "show_pagination": false,
+        "hide_mobile": false,
+        "grid-spacing": 15,
+        "grid-spacing-mbl": 5,
+        "grid-spacing-col": 2,
+        "box-width": 90,
+        "cl": "#ffffff",
+        "isbox": false,
+        "bg": "#111111",
+        "bxopt": 0.5,
+        "bdr": 0,
+        "tfs": 52,
+        "tfsm": 24,
+        "tff": "ft1",
+        "tfw": "600",
+        "tlh": 1.2,
+        "name_font_family": "uni-neue",
+        "fs": 20,
+        "fsm": 20,
+        "fw": "400",
+        "lh": 1.2,
+        "disable_zoom": false,
+        "show_buttons": false,
+        "btn-style": "btn",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-md",
+        "btn_fs": 14,
+        "btn_fsm": 12,
+        "buttons_font_family": "uni-neue",
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
     "store_features_BK46XR": {
       "type": "store-features",
       "blocks": {
@@ -453,6 +589,7 @@
         "text_block_rhy36E",
         "text_block_Nxcbre"
       ],
+      "disabled": true,
       "name": "Store Features",
       "settings": {
         "top-offeset": "default",
@@ -525,6 +662,7 @@
         "image_slide_6rQ8Cc",
         "image_slide_t7AP68"
       ],
+      "disabled": true,
       "name": "Instagram Showcase",
       "settings": {
         "custom_icon": false,
@@ -639,114 +777,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "featured_blog_CmBfqj": {
-      "type": "featured-blog",
-      "custom_css": [
-        "a.h4.article__title {line-height: 24px; font-weight: 700; font-size: 22px; color: #706f6f;}",
-        ".sec-ttl .h3 {margin-bottom: 30px; color: #706f6f;}"
-      ],
-      "name": "Blog List",
-      "settings": {
-        "title": "BLOGS",
-        "subtitle": "",
-        "top-offeset": "default",
-        "section_cov": true,
-        "sec_bg_clr": "#fafafa",
-        "blog": "news",
-        "img_ratio": "60",
-        "post_limit": 3,
-        "grid": 3,
-        "tablet-grid": 2,
-        "mobile-grid": 1,
-        "blog_align": "tc",
-        "blog_show_author": false,
-        "blog_show_date": true,
-        "show_comment": true,
-        "show_mini_des": false,
-        "show_read_more": true,
-        "show_view_all": false,
-        "btn-style": "bdr-btn1",
-        "btn-size-desk": "btn-sm",
-        "btn-size-mob": "mob-btn-sm"
-      }
-    },
-    "collections_banners_zp6KNg": {
-      "type": "collections-banners",
-      "blocks": {
-        "featured_collection_qbznmY": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "url": "https://celestehomefashion.com/pages/interior-services",
-            "target_blank": false,
-            "collection_image": "shopify://shop_images/Banner_Image_7a2d3c7e-0f51-4e8c-8449-23d260bfc151.jpg",
-            "collection_name": "Our Projects",
-            "collection_name2": "",
-            "talign": "tr",
-            "text_pos": "f-aie f-jcs",
-            "collection_btn": "",
-            "width": "50"
-          }
-        },
-        "featured_collection_z94jCf": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "url": "https://cdn.shopify.com/s/files/1/0249/2406/1792/files/CHF_Catalogue_f28471e3-f967-4dbe-97fb-5524d947b152.pdf?v=1772529595",
-            "target_blank": true,
-            "collection_image": "shopify://shop_images/651x491_1.jpg",
-            "collection_name": "Catalogue",
-            "collection_name2": "",
-            "talign": "tr",
-            "text_pos": "f-jce f-ais",
-            "collection_btn": "",
-            "width": "50"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_qbznmY",
-        "featured_collection_z94jCf"
-      ],
-      "custom_css": [
-        ".sec-ttl .h3 {margin-bottom: 20px; color: #706f6f;}"
-      ],
-      "name": "Collections Banners(Masonry)",
-      "settings": {
-        "section_bg": "#fff",
-        "title": "Projects & Catalogue",
-        "subtitle": "",
-        "top-offeset": "default",
-        "section_width": false,
-        "npd": false,
-        "hide_mobile": false,
-        "grid-spacing": 15,
-        "grid-spacing-mbl": 5,
-        "grid-spacing-col": 2,
-        "box-width": 90,
-        "cl": "#FFFFFF",
-        "isbox": true,
-        "bg": "#111111",
-        "bxopt": 0.5,
-        "bdr": 0,
-        "tfs": 36,
-        "tfsm": 24,
-        "tff": "ft1",
-        "tfw": "600",
-        "tlh": 1.2,
-        "fs": 20,
-        "fsm": 20,
-        "fw": "400",
-        "lh": 1.2,
-        "disable_zoom": false,
-        "show_buttons": false,
-        "btn-style": "btn",
-        "btn-size-desk": "btn-md",
-        "btn-size-mob": "mob-btn-md",
-        "snow_effect": false,
-        "snow_style": "style1"
-      }
     }
   },
   "order": [
@@ -754,10 +784,10 @@
     "richtext_LGKHrU",
     "collection_list_3PmNHt",
     "banner_with_text_q36Kdj",
+    "featured_blog_CmBfqj",
+    "collections_banners_zp6KNg",
     "store_features_BK46XR",
     "instagram_showcase_p7XXmd",
-    "custom_store_location_f7P3np",
-    "featured_blog_CmBfqj",
-    "collections_banners_zp6KNg"
+    "custom_store_location_f7P3np"
   ]
 }
