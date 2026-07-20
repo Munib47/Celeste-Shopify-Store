@@ -3,7 +3,7 @@
 <div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="page-width latest-blog wow fadeIn" id="blogSlider-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
 
-    {% render 'sec-title' %}
+    {% render 'sec-title', title_ff: secSt.title_font_family, subtitle_ff: secSt.subtitle_font_family %}
 
     {% case secSt.grid %}
     	{% when 2 %}
@@ -30,13 +30,13 @@
                     <div class="article__grid-image mb15">{% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
                     <div class="article__grid-meta">
                       <div class="wrap-blog-inner {{ secSt.blog_align }}">
-                        <h4 class="article__title"><a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a></h4>
-                        {% if secSt.blog_show_author %}<span class="article__author">{{ 'homepage.onboarding.blog_author' | t }}</span>{% endif %}
-                        {% if secSt.show_mini_des %}	<div class="rte article__grid-excerpt">{{ 'homepage.onboarding.blog_excerpt' | t }}</div> {% endif %}
+                        <h4 class="article__title"{% if secSt.article_title_font_family != blank %} style="font-family:var(--font-{{secSt.article_title_font_family}}) !important"{% endif %}><a href="#">{{ 'homepage.onboarding.blog_title' | t }}</a></h4>
+                        {% if secSt.blog_show_author %}<span class="article__author"{% if secSt.meta_font_family != blank %} style="font-family:var(--font-{{secSt.meta_font_family}}) !important"{% endif %}>{{ 'homepage.onboarding.blog_author' | t }}</span>{% endif %}
+                        {% if secSt.show_mini_des %}	<div class="rte article__grid-excerpt"{% if secSt.excerpt_font_family != blank %} style="font-family:var(--font-{{secSt.excerpt_font_family}}) !important"{% endif %}>{{ 'homepage.onboarding.blog_excerpt' | t }}</div> {% endif %}
 
                         {% if secSt.show_read_more %}
                         <ul class="list--inline article__meta-buttons">
-                          <li><a href="{{ article.url }}" class="btn btn2">{{ 'blogs.article.read_more' | t }}</a></li>
+                          <li><a href="{{ article.url }}" class="btn btn2"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %}>{{ 'blogs.article.read_more' | t }}</a></li>
                         </ul>
                         {% endif %}
                       </div>
@@ -49,7 +49,7 @@
     </div>
 
     {% if secSt.show_view_all %}
-    <div class="tc"><a href="{{ blog.url }}" class="btn">{{ 'blogs.article.view_all' | t }}</a></div>
+    <div class="tc"><a href="{{ blog.url }}" class="btn"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %}>{{ 'blogs.article.view_all' | t }}</a></div>
     {% endif %}
   </div>
 </div>
@@ -71,6 +71,30 @@
         "id": "subtitle",
         "label": "Sub Heading",
         "default": "Describe your products, collection, content etc..."
+      },
+      {
+        "type": "select",
+        "id": "title_font_family",
+        "label": "Heading Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "subtitle_font_family",
+        "label": "Sub Heading Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
       },
 	  {
         "type": "paragraph",
@@ -195,6 +219,58 @@
           }         
         ]
       },	
+      {
+        "type": "paragraph",
+        "content": "Post Fonts ==="
+      },
+      {
+        "type": "select",
+        "id": "article_title_font_family",
+        "label": "Post Title Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "meta_font_family",
+        "label": "Date / Author Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "excerpt_font_family",
+        "label": "Short Content Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "buttons_font_family",
+        "label": "Button Font Family",
+        "default": "uni-neue",
+        "options": [
+          { "label": "Poppins Medium",   "value": "popins-medium" },
+          { "label": "Didot Regular",    "value": "didot"         },
+          { "label": "Montserrat",       "value": "montserrat"    },
+          { "label": "Uni Neue Regular", "value": "uni-neue"      }
+        ]
+      },
       {
         "type": "checkbox",
         "id": "blog_show_author",

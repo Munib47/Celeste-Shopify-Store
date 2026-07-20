@@ -4,16 +4,16 @@
      data-bgset="{% render 'prgrid-img', image: article.image, sizes: sizes %}" data-sizes="auto" data-parent-fit="contain" style="padding-bottom:{{ 1 | divided_by: collection_image.aspect_ratio | times: 100}}%;"></a>
   {% endif %}
   <div class="article__grid-meta {{ secSt.blog_align }}{% if article.image %} article__grid-meta--has-image{% endif %}">
-     {% if secSt.blog_show_date %}<p class="article__date">{{ article.published_at | time_tag: format: 'date' }}</p>{% endif %}  
-    <a class="h4 article__title" href="{{ article.url }}">{{ article.title }}</a>
-      <ul class="publish-detail">
+     {% if secSt.blog_show_date %}<p class="article__date"{% if secSt.meta_font_family != blank %} style="font-family:var(--font-{{secSt.meta_font_family}}) !important"{% endif %}>{{ article.published_at | time_tag: format: 'date' }}</p>{% endif %}
+    <a class="h4 article__title" href="{{ article.url }}"{% if secSt.article_title_font_family != blank %} style="font-family:var(--font-{{secSt.article_title_font_family}}) !important"{% endif %}>{{ article.title }}</a>
+      <ul class="publish-detail"{% if secSt.meta_font_family != blank %} style="font-family:var(--font-{{secSt.meta_font_family}}) !important"{% endif %}>
        
         {% if secSt.blog_show_author %}<li class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</li>{% endif %}
         {% if secSt.show_comment and blog.comments_enabled? and article.comments_count > 0 %}<li><i class="at at-comments-l" aria-hidden="true"></i><a href="{{ article.url }}#comments">{{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}</a></li>{% endif %}
       </ul>
       {% if secSt.show_mini_des %}
-      <div class="rte article__grid-excerpt">{% if article.excerpt.size > 0 %}{{ article.excerpt }}{% else %}{{ article.content | strip_html | truncate: 150 }}{% endif %}</div>
+      <div class="rte article__grid-excerpt"{% if secSt.excerpt_font_family != blank %} style="font-family:var(--font-{{secSt.excerpt_font_family}}) !important"{% endif %}>{% if article.excerpt.size > 0 %}{{ article.excerpt }}{% else %}{{ article.content | strip_html | truncate: 150 }}{% endif %}</div>
       {% endif %}
-      {% if secSt.show_read_more %}<a href="{{ article.url }}" class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}">{{ 'blogs.article.read_more' | t }}</a>{% endif %}
+      {% if secSt.show_read_more %}<a href="{{ article.url }}" class="btn {{secSt.btn-size-mob}} {{secSt.btn-size-desk}} {{secSt.btn-style}}"{% if secSt.buttons_font_family != blank %} style="font-family:var(--font-{{secSt.buttons_font_family}}) !important"{% endif %}>{{ 'blogs.article.read_more' | t }}</a>{% endif %}
   </div>
 </div>
