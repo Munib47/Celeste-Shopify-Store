@@ -1,5 +1,5 @@
 {%- assign secSt = section.settings -%}
-{%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 or secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 or secSt.heading_color != blank or secSt.subheading_color != blank or secSt.date_color != blank or secSt.blog_title_color != blank or secSt.read_more_color != blank or secSt.padding_top > 0 or secSt.padding_bottom > 0 -%}
+{%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 or secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 or secSt.heading_color != blank or secSt.subheading_color != blank or secSt.date_color != blank or secSt.blog_title_color != blank or secSt.read_more_color != blank or secSt.padding_top > 0 or secSt.padding_bottom > 0 or secSt.title_padding_top >= 0 or secSt.title_padding_bottom >= 0 or secSt.heading_margin_bottom >= 0 -%}
   {%- comment -%} Fall back to the theme-wide sizes so setting one breakpoint never changes the other. {%- endcomment -%}
   {%- if secSt.heading_size > 0 -%}{%- assign hd_desk = secSt.heading_size -%}{%- else -%}{%- assign hd_desk = settings.section_heading_1_size -%}{%- endif -%}
   {%- if secSt.heading_size_mobile > 0 -%}{%- assign hd_mob = secSt.heading_size_mobile -%}{%- else -%}{%- assign hd_mob = settings.section_heading_1_size | times: 0.85 | floor -%}{%- endif -%}
@@ -10,6 +10,16 @@
     {%- endif -%}
     {%- if secSt.padding_bottom > 0 -%}
       #shopify-section-{{ section.id }} .content-indent { padding-bottom:{{ secSt.padding_bottom }}px; }
+    {%- endif -%}
+    {%- comment -%} -1 means "leave the theme value alone", so 0 stays usable as a real value. {%- endcomment -%}
+    {%- if secSt.title_padding_top >= 0 -%}
+      #shopify-section-{{ section.id }} .sec-ttl { padding-top:{{ secSt.title_padding_top }}px; }
+    {%- endif -%}
+    {%- if secSt.title_padding_bottom >= 0 -%}
+      #shopify-section-{{ section.id }} .sec-ttl { padding-bottom:{{ secSt.title_padding_bottom }}px; }
+    {%- endif -%}
+    {%- if secSt.heading_margin_bottom >= 0 -%}
+      #shopify-section-{{ section.id }} .sec-ttl .h3.h3 { margin-bottom:{{ secSt.heading_margin_bottom }}px; }
     {%- endif -%}
     {%- comment -%} .h3.h3 / doubled classes outrank this section's scoped custom_css, which also targets these elements. {%- endcomment -%}
     {%- if secSt.heading_color != blank -%}
@@ -523,8 +533,8 @@
         "label": "Padding Top",
         "default": 0,
         "min": 0,
-        "max": 150,
-        "step": 5,
+        "max": 120,
+        "step": 4,
         "unit": "px",
         "info": "0 = use the theme default (50px desktop / 25px mobile)"
       },
@@ -534,10 +544,43 @@
         "label": "Padding Bottom",
         "default": 0,
         "min": 0,
-        "max": 150,
-        "step": 5,
+        "max": 120,
+        "step": 4,
         "unit": "px",
         "info": "0 = use the theme default (50px desktop / 25px mobile)"
+      },
+      {
+        "type": "range",
+        "id": "title_padding_top",
+        "label": "Heading Area Padding Top",
+        "default": -1,
+        "min": -1,
+        "max": 99,
+        "step": 1,
+        "unit": "px",
+        "info": "-1 = use the theme default (35px desktop / 0 mobile). 0 removes it."
+      },
+      {
+        "type": "range",
+        "id": "title_padding_bottom",
+        "label": "Heading Area Padding Bottom",
+        "default": -1,
+        "min": -1,
+        "max": 99,
+        "step": 1,
+        "unit": "px",
+        "info": "-1 = use the theme default (35px desktop / 20px mobile). 0 removes it."
+      },
+      {
+        "type": "range",
+        "id": "heading_margin_bottom",
+        "label": "Heading Margin Bottom",
+        "default": -1,
+        "min": -1,
+        "max": 99,
+        "step": 1,
+        "unit": "px",
+        "info": "Space between the heading and sub heading. -1 = leave as-is (currently 30px from this section's custom CSS). 0 removes it."
       }
     ],
     "presets": [

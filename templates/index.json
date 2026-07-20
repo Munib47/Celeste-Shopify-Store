@@ -409,8 +409,8 @@
         "subtitle": "",
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
-        "heading_color": "#A68B71",
-        "subheading_color": "",
+        "heading_color": "#472815",
+        "subheading_color": "#472815",
         "heading_size": 0,
         "heading_size_mobile": 0,
         "subheading_size": 0,
@@ -429,6 +429,9 @@
         "meta_font_family": "didot",
         "excerpt_font_family": "didot",
         "buttons_font_family": "didot",
+        "blog_title_color": "#472815",
+        "date_color": "#a68b71",
+        "read_more_color": "#a68b71",
         "blog_show_author": false,
         "blog_show_date": true,
         "show_comment": true,
@@ -438,8 +441,8 @@
         "btn-style": "bdr-btn1",
         "btn-size-desk": "btn-sm",
         "btn-size-mob": "mob-btn-sm",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "collections_banners_zp6KNg": {
@@ -481,23 +484,24 @@
         "featured_collection_z94jCf"
       ],
       "custom_css": [
-        "h3.clitem-ttl {font-size: 36px; color: #fff;}",
-        ".sec-ttl .h3 {margin-bottom: 20px; color: #706f6f;}"
+        "/* h3.clitem-ttl {font-size: 36px; color: #fff;} */.sec-ttl .h3 {margin-bottom: 20px; /* color: #706f6f; */}"
       ],
       "name": "Collections Banners(Masonry)",
       "settings": {
         "section_bg": "#e9dfd5",
         "title": "Projects & Catalogue",
         "subtitle": "",
-        "ttl_fs": 30,
+        "ttl_fs": 42,
         "ttl_fsm": 22,
+        "ttl_cl": "#472815",
         "subttl_fs": 15,
         "subttl_fsm": 13,
+        "subttl_cl": "#a68b71",
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
         "top-offeset": "default",
         "section_width": false,
-        "npd": false,
+        "npd": true,
         "show_pagination": false,
         "hide_mobile": false,
         "grid-spacing": 15,
@@ -514,10 +518,12 @@
         "tff": "ft1",
         "tfw": "600",
         "tlh": 1.2,
+        "name_cl": "#472815",
         "name_font_family": "uni-neue",
         "fs": 20,
         "fsm": 20,
         "fw": "400",
+        "desc_cl": "#472815",
         "lh": 1.2,
         "disable_zoom": false,
         "show_buttons": false,
@@ -526,9 +532,14 @@
         "btn-size-mob": "mob-btn-md",
         "btn_fs": 14,
         "btn_fsm": 12,
+        "btn_cl": "",
+        "btn_bg": "",
         "buttons_font_family": "uni-neue",
         "snow_effect": false,
-        "snow_style": "style1"
+        "snow_style": "style1",
+        "mt": false,
+        "pt": 0,
+        "pb": 35
       }
     },
     "store_features_BK46XR": {

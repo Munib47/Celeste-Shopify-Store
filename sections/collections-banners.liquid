@@ -22,11 +22,23 @@
     padding-top: {{ secSt.pt }}px;
     padding-bottom: {{ secSt.pb }}px;
     }
+  {%- unless secSt.mt -%}
+  .content-indent.sec-{{ section.id }}{
+    margin-top: 0 !important;
+    }
+  {%- endunless -%}
   {%- unless secSt.show_pagination -%}
   .sec-{{ section.id }} .flickity-page-dots{
     display: none !important;
     }
   {%- endunless -%}
+  .sec-{{ section.id }} .sec-ttl{
+    padding-top: {{ secSt.ttl_ptm }}px !important;
+    padding-bottom: {{ secSt.ttl_pbm }}px !important;
+    }
+  .sec-{{ section.id }} .sec-ttl .h3{
+    margin-bottom: {{ secSt.ttl_mb }}px !important;
+    }
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{
     font-size: {{ secSt.ttl_fsm }}px !important;
@@ -58,6 +70,10 @@
     }
   {%- endif -%}
   @media only screen and (min-width:768px){
+  .sec-{{ section.id }} .sec-ttl{
+    padding-top: {{ secSt.ttl_pt }}px !important;
+    padding-bottom: {{ secSt.ttl_pb }}px !important;
+    }
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{
     font-size: {{ secSt.ttl_fs }}px !important;
@@ -187,6 +203,58 @@
         "id": "subttl_cl",
         "label": "Sub Heading Color",
         "info": "Leave empty to use the theme default heading color."
+      },
+      {
+        "type": "range",
+        "id": "ttl_pt",
+        "label": "Heading Area Padding Top",
+        "default": 35,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "info": "Space above/below the whole heading block (heading + sub heading)."
+      },
+      {
+        "type": "range",
+        "id": "ttl_ptm",
+        "label": "Heading Area Padding Top(mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ttl_pb",
+        "label": "Heading Area Padding Bottom",
+        "default": 35,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ttl_pbm",
+        "label": "Heading Area Padding Bottom(mobile)",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "ttl_mb",
+        "label": "Heading Margin Bottom",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "px",
+        "info": "Gap between the heading and the sub heading below it."
       },
       {
         "type": "select",
@@ -667,13 +735,20 @@
         "content": "Spacing==="
       },
       {
+        "type": "checkbox",
+        "id": "mt",
+        "label": "Add Margin Top?",
+        "default": true,
+        "info": "Uncheck to remove the gap above this section. When checked, the gap is set by 'Top OffSet' above."
+      },
+      {
         "type": "range",
         "id": "pt",
         "label": "Padding Top",
         "default": 0,
         "min": 0,
-        "max": 150,
-        "step": 5,
+        "max": 120,
+        "step": 4,
         "unit": "px",
         "info": "Space inside the section, above the heading. This is separate from 'Top OffSet' above, which sets the gap between sections."
       },
@@ -681,10 +756,10 @@
         "type": "range",
         "id": "pb",
         "label": "Padding Bottom",
-        "default": 35,
+        "default": 36,
         "min": 0,
-        "max": 150,
-        "step": 5,
+        "max": 120,
+        "step": 4,
         "unit": "px"
       }
     ],
