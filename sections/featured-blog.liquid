@@ -20,7 +20,7 @@
 
     {%- assign blog = blogs[secSt.blog] -%}
 
-    <div class="grid rwcols-{{secSt.mobile-grid}} rwcols-md-{{secSt.tablet-grid}} rwcols-lg-{{secSt.grid}} grid--blog carousel arwOut" data-flickity='{ "cellAlign":"left","groupCells":true,"wrapAround":true,"prevNextButtons": false,"pageDots":true{%- if secSt.autoplay -%},"autoPlay":{{secSt.speed | times: 1000}}{% endif %}{%- if settings.rtl -%},"rightToLeft": true{%- endif -%} }'>
+    <div class="grid rwcols-{{secSt.mobile-grid}} rwcols-md-{{secSt.tablet-grid}} rwcols-lg-{{secSt.grid}} grid--blog carousel arwOut" data-flickity='{ "cellAlign":"left","groupCells":true,"wrapAround":true,"prevNextButtons": false,"pageDots":{% if secSt.show_pagination %}true{% else %}false{% endif %}{%- if secSt.autoplay -%},"autoPlay":{{secSt.speed | times: 1000}}{% endif %}{%- if settings.rtl -%},"rightToLeft": true{%- endif -%} }'>
       {% for article in blog.articles limit: secSt.post_limit %}
       	    <div class="gitem listb-{{ forloop.index }}">{% render 'blog-card-grid', blog:blog, article:article, secSt:secSt, sizes: image_size %}</div>
        {% else %}
@@ -59,7 +59,24 @@
   {
     "name": "Blog Posts",
     "class": "index-section",
-    "settings": [	
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Background ==="
+      },
+      {
+        "type": "checkbox",
+        "id": "section_cov",
+        "label": "Add Background?",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "sec_bg_clr",
+        "label": "Background",
+        "default": "#fafafa",
+        "info": "select light color"
+      },
       {
         "type": "textarea",
         "id": "title",
@@ -120,19 +137,6 @@
               }
 			]
         }, 
-		{
-            "type": "checkbox",
-            "id": "section_cov",
-            "label": "Add Background?",
-            "default": true
-        },
-		 {
-            "type": "color",
-            "id": "sec_bg_clr",
-            "label": "Background",
-			"default":"#fafafa"	,
-			"info":"select light color"
-		 },	 
 		{
         "type": "paragraph",
         "content": "Blogs ==="
@@ -202,7 +206,13 @@
         "min": 1,
         "max": 3,
         "step": 1       
-      } , 
+      } ,
+	  {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "label": "Show Pagination?",
+        "default": true
+      },
 	  {
         "type": "select",
         "id": "blog_align",
