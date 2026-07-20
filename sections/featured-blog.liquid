@@ -1,19 +1,43 @@
 {%- assign secSt = section.settings -%}
-{%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 or secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 -%}
+{%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 or secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 or secSt.heading_color != blank or secSt.subheading_color != blank or secSt.date_color != blank or secSt.blog_title_color != blank or secSt.read_more_color != blank or secSt.padding_top > 0 or secSt.padding_bottom > 0 -%}
   {%- comment -%} Fall back to the theme-wide sizes so setting one breakpoint never changes the other. {%- endcomment -%}
   {%- if secSt.heading_size > 0 -%}{%- assign hd_desk = secSt.heading_size -%}{%- else -%}{%- assign hd_desk = settings.section_heading_1_size -%}{%- endif -%}
   {%- if secSt.heading_size_mobile > 0 -%}{%- assign hd_mob = secSt.heading_size_mobile -%}{%- else -%}{%- assign hd_mob = settings.section_heading_1_size | times: 0.85 | floor -%}{%- endif -%}
   {%- if secSt.subheading_size > 0 -%}{%- assign sub_desk = secSt.subheading_size -%}{%- else -%}{%- assign sub_desk = settings.section_heading_2_size -%}{%- endif -%}
   <style>
+    {%- if secSt.padding_top > 0 -%}
+      #shopify-section-{{ section.id }} .content-indent { padding-top:{{ secSt.padding_top }}px; }
+    {%- endif -%}
+    {%- if secSt.padding_bottom > 0 -%}
+      #shopify-section-{{ section.id }} .content-indent { padding-bottom:{{ secSt.padding_bottom }}px; }
+    {%- endif -%}
+    {%- comment -%} .h3.h3 / doubled classes outrank this section's scoped custom_css, which also targets these elements. {%- endcomment -%}
+    {%- if secSt.heading_color != blank -%}
+      #shopify-section-{{ section.id }} .sec-ttl .h3.h3 { color:{{ secSt.heading_color }}; }
+    {%- endif -%}
+    {%- if secSt.date_color != blank -%}
+      #shopify-section-{{ section.id }} .article__date.article__date { color:{{ secSt.date_color }}; }
+    {%- endif -%}
+    {%- if secSt.blog_title_color != blank -%}
+      #shopify-section-{{ section.id }} a.article__title.article__title.article__title,
+      #shopify-section-{{ section.id }} .article__title.article__title a { color:{{ secSt.blog_title_color }}; }
+    {%- endif -%}
+    {%- comment -%} border-color follows the text: the bdr-btn1 underline is a hardcoded border-bottom, not text-decoration. {%- endcomment -%}
+    {%- if secSt.read_more_color != blank -%}
+      #shopify-section-{{ section.id }} a.btn.btn { color:{{ secSt.read_more_color }}; border-color:currentColor; text-decoration-color:currentColor; }
+    {%- endif -%}
+    {%- if secSt.subheading_color != blank -%}
+      #shopify-section-{{ section.id }} .sec-ttl p { color:{{ secSt.subheading_color }}; }
+    {%- endif -%}
     {%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 -%}
-      #shopify-section-{{ section.id }} .sec-ttl .h3 { font-size:{{ hd_mob }}px; }
+      #shopify-section-{{ section.id }} .sec-ttl .h3.h3 { font-size:{{ hd_mob }}px; }
     {%- endif -%}
     {%- if secSt.subheading_size_mobile > 0 -%}
       #shopify-section-{{ section.id }} .sec-ttl p { font-size:{{ secSt.subheading_size_mobile }}px; }
     {%- endif -%}
     @media only screen and (min-width:768px) {
       {%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 -%}
-        #shopify-section-{{ section.id }} .sec-ttl .h3 { font-size:{{ hd_desk }}px; }
+        #shopify-section-{{ section.id }} .sec-ttl .h3.h3 { font-size:{{ hd_desk }}px; }
       {%- endif -%}
       {%- if secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 -%}
         #shopify-section-{{ section.id }} .sec-ttl p { font-size:{{ sub_desk }}px; }
@@ -135,6 +159,18 @@
           { "label": "Montserrat",       "value": "montserrat"    },
           { "label": "Uni Neue Regular", "value": "uni-neue"      }
         ]
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "info": "Leave empty to use the theme's Headings color"
+      },
+      {
+        "type": "color",
+        "id": "subheading_color",
+        "label": "Sub Heading Color",
+        "info": "Leave empty to use the theme's Headings color"
       },
       {
         "type": "range",
@@ -356,6 +392,24 @@
         ]
       },
       {
+        "type": "color",
+        "id": "blog_title_color",
+        "label": "Post Title Color",
+        "info": "Leave empty to use the theme default"
+      },
+      {
+        "type": "color",
+        "id": "date_color",
+        "label": "Date Color",
+        "info": "Leave empty to use the theme default"
+      },
+      {
+        "type": "color",
+        "id": "read_more_color",
+        "label": "Read More Button Text Color",
+        "info": "Leave empty to use the theme default"
+      },
+      {
         "type": "checkbox",
         "id": "blog_show_author",
         "label": "Show Author?",		
@@ -458,7 +512,33 @@
           "value": "mob-btn-lg"
           }	
           ]
-          }  
+          },
+      {
+        "type": "paragraph",
+        "content": "Spacing ==="
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "default": 0,
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "info": "0 = use the theme default (50px desktop / 25px mobile)"
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "default": 0,
+        "min": 0,
+        "max": 150,
+        "step": 5,
+        "unit": "px",
+        "info": "0 = use the theme default (50px desktop / 25px mobile)"
+      }
     ],
     "presets": [
       {
