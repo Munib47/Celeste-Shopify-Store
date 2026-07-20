@@ -1,6 +1,29 @@
+{%- assign secSt = section.settings -%}
+{%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 or secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 -%}
+  {%- comment -%} Fall back to the theme-wide sizes so setting one breakpoint never changes the other. {%- endcomment -%}
+  {%- if secSt.heading_size > 0 -%}{%- assign hd_desk = secSt.heading_size -%}{%- else -%}{%- assign hd_desk = settings.section_heading_1_size -%}{%- endif -%}
+  {%- if secSt.heading_size_mobile > 0 -%}{%- assign hd_mob = secSt.heading_size_mobile -%}{%- else -%}{%- assign hd_mob = settings.section_heading_1_size | times: 0.85 | floor -%}{%- endif -%}
+  {%- if secSt.subheading_size > 0 -%}{%- assign sub_desk = secSt.subheading_size -%}{%- else -%}{%- assign sub_desk = settings.section_heading_2_size -%}{%- endif -%}
+  <style>
+    {%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 -%}
+      #shopify-section-{{ section.id }} .sec-ttl .h3 { font-size:{{ hd_mob }}px; }
+    {%- endif -%}
+    {%- if secSt.subheading_size_mobile > 0 -%}
+      #shopify-section-{{ section.id }} .sec-ttl p { font-size:{{ secSt.subheading_size_mobile }}px; }
+    {%- endif -%}
+    @media only screen and (min-width:768px) {
+      {%- if secSt.heading_size > 0 or secSt.heading_size_mobile > 0 -%}
+        #shopify-section-{{ section.id }} .sec-ttl .h3 { font-size:{{ hd_desk }}px; }
+      {%- endif -%}
+      {%- if secSt.subheading_size > 0 or secSt.subheading_size_mobile > 0 -%}
+        #shopify-section-{{ section.id }} .sec-ttl p { font-size:{{ sub_desk }}px; }
+      {%- endif -%}
+    }
+  </style>
+{%- endif -%}
 {%- capture featuredBlog -%}
 {% assign secSt = section.settings %}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+<div class="content-indent {% if secSt.show_top_margin %}{{ secSt.top-offeset }}{% else %}none{% endif %}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="page-width latest-blog wow fadeIn" id="blogSlider-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
 
     {% render 'sec-title', title_ff: secSt.title_font_family, subtitle_ff: secSt.subtitle_font_family %}
@@ -113,10 +136,61 @@
           { "label": "Uni Neue Regular", "value": "uni-neue"      }
         ]
       },
+      {
+        "type": "range",
+        "id": "heading_size",
+        "label": "Heading Size: Desktop",
+        "default": 0,
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "info": "0 = use the theme default size"
+      },
+      {
+        "type": "range",
+        "id": "heading_size_mobile",
+        "label": "Heading Size: Mobile",
+        "default": 0,
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "unit": "px",
+        "info": "0 = use the theme default size"
+      },
+      {
+        "type": "range",
+        "id": "subheading_size",
+        "label": "Sub Heading Size: Desktop",
+        "default": 0,
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "info": "0 = use the theme default size"
+      },
+      {
+        "type": "range",
+        "id": "subheading_size_mobile",
+        "label": "Sub Heading Size: Mobile",
+        "default": 0,
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "px",
+        "info": "0 = use the theme default size"
+      },
 	  {
         "type": "paragraph",
         "content": "Section==="
       },
+	  {
+            "type": "checkbox",
+            "id": "show_top_margin",
+            "label": "Add Top Margin?",
+            "default": true,
+            "info": "Uncheck to remove the top margin. When checked, the Top OffSet below controls the amount."
+        },
 	  {
             "type": "select",
             "id": "top-offeset",
