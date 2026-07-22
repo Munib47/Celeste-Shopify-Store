@@ -19,8 +19,8 @@
 <style>
   .content-indent.sec-{{ section.id }}{
     background-color: {{ secSt.section_bg }};
-    padding-top: {{ secSt.pt }}px;
-    padding-bottom: {{ secSt.pb }}px;
+    padding-top: {{ secSt.pt | default: 0 }}px;
+    padding-bottom: {{ secSt.pb | default: 36 }}px;
     }
   {%- unless secSt.mt -%}
   .content-indent.sec-{{ section.id }}{
@@ -33,11 +33,11 @@
     }
   {%- endunless -%}
   .sec-{{ section.id }} .sec-ttl{
-    padding-top: {{ secSt.ttl_ptm }}px !important;
-    padding-bottom: {{ secSt.ttl_pbm }}px !important;
+    padding-top: {{ secSt.ttl_ptm | default: 0 }}px !important;
+    padding-bottom: {{ secSt.ttl_pbm | default: 20 }}px !important;
     }
   .sec-{{ section.id }} .sec-ttl .h3{
-    margin-bottom: {{ secSt.ttl_mb }}px !important;
+    margin-bottom: {{ secSt.ttl_mb | default: 0 }}px !important;
     }
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{
@@ -71,8 +71,8 @@
   {%- endif -%}
   @media only screen and (min-width:768px){
   .sec-{{ section.id }} .sec-ttl{
-    padding-top: {{ secSt.ttl_pt }}px !important;
-    padding-bottom: {{ secSt.ttl_pb }}px !important;
+    padding-top: {{ secSt.ttl_pt | default: 35 }}px !important;
+    padding-bottom: {{ secSt.ttl_pb | default: 35 }}px !important;
     }
   .sec-{{ section.id }} .sec-ttl h2,
   .sec-{{ section.id }} .sec-ttl h3{

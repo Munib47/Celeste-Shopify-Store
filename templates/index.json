@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Website_Banner_2_jpg.jpg",
-            "imagem": "shopify://shop_images/Website_Banner_2_jpg.jpg",
+            "imagem": "shopify://shop_images/Mobile_Banner__jpg.jpg",
             "ialign": "left_center",
             "pre_heading_font_family": "didot",
             "hd1": "",
@@ -399,20 +399,20 @@
       "type": "featured-blog",
       "custom_css": [
         "a.h4.article__title {line-height: 24px; font-weight: 700; font-size: 22px; color: #706f6f;}",
-        ".sec-ttl .h3 {margin-bottom: 30px; color: #706f6f;}"
+        ".sec-ttl .h3 {color: #706f6f;}"
       ],
       "name": "Blog List",
       "settings": {
         "section_cov": true,
-        "sec_bg_clr": "#e9dfd5",
+        "sec_bg_clr": "#E9DFD5",
         "title": "BLOGS",
         "subtitle": "",
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
         "heading_color": "#472815",
         "subheading_color": "#472815",
-        "heading_size": 0,
-        "heading_size_mobile": 0,
+        "heading_size": 42,
+        "heading_size_mobile": 12,
         "subheading_size": 0,
         "subheading_size_mobile": 0,
         "show_top_margin": false,
@@ -423,7 +423,7 @@
         "grid": 3,
         "tablet-grid": 2,
         "mobile-grid": 1,
-        "show_pagination": false,
+        "show_pagination": true,
         "blog_align": "tc",
         "article_title_font_family": "popins-medium",
         "meta_font_family": "didot",
@@ -442,7 +442,10 @@
         "btn-size-desk": "btn-sm",
         "btn-size-mob": "mob-btn-sm",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 4,
+        "title_padding_top": 10,
+        "title_padding_bottom": 10,
+        "heading_margin_bottom": 0
       }
     },
     "collections_banners_zp6KNg": {
@@ -484,7 +487,7 @@
         "featured_collection_z94jCf"
       ],
       "custom_css": [
-        "/* h3.clitem-ttl {font-size: 36px; color: #fff;} */.sec-ttl .h3 {margin-bottom: 20px; /* color: #706f6f; */}"
+        "/* h3.clitem-ttl {font-size: 36px; color: #fff;} */"
       ],
       "name": "Collections Banners(Masonry)",
       "settings": {
@@ -497,6 +500,11 @@
         "subttl_fs": 15,
         "subttl_fsm": 13,
         "subttl_cl": "#a68b71",
+        "ttl_pt": 0,
+        "ttl_ptm": 0,
+        "ttl_pb": 10,
+        "ttl_pbm": 10,
+        "ttl_mb": 0,
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
         "top-offeset": "default",
@@ -504,7 +512,7 @@
         "npd": true,
         "show_pagination": false,
         "hide_mobile": false,
-        "grid-spacing": 15,
+        "grid-spacing": 10,
         "grid-spacing-mbl": 5,
         "grid-spacing-col": 2,
         "box-width": 90,
@@ -538,8 +546,8 @@
         "snow_effect": false,
         "snow_style": "style1",
         "mt": false,
-        "pt": 0,
-        "pb": 35
+        "pt": 12,
+        "pb": 12
       }
     },
     "store_features_BK46XR": {
