@@ -71,6 +71,12 @@
     {%- endif -%}
   </style>
 {%- endif -%}
+<style>
+  @media only screen and (max-width:767px){
+    #shopify-section-{{ section.id }} .sec-ttl{padding:0 !important;margin:0 !important;}
+    #shopify-section-{{ section.id }} .sec-ttl .h3.h3{padding:0 0 30px !important;margin:0 !important;}
+  }
+</style>
 {%- capture featuredBlog -%}
 {% assign secSt = section.settings %}
 <div class="content-indent {% if secSt.show_top_margin %}{{ secSt.top-offeset }}{% else %}none{% endif %}{% if secSt.section_cov %} section-cover{% endif%}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>

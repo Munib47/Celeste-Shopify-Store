@@ -100,6 +100,16 @@
     font-size: var(--dtfs) !important;
     }
   }
+  @media only screen and (max-width:767px){
+  #shopify-section-{{ section.id }} .sec-ttl{
+    padding: 0 !important;
+    margin: 0 !important;
+    }
+  #shopify-section-{{ section.id }} .sec-ttl .h3.h3{
+    padding: 0 0 30px !important;
+    margin: 0 !important;
+    }
+  }
 
 </style>
 <div class="content-indent{% if secSt.hide_mobile %} hide-sm{% endif %} {{ secSt.top-offeset}} sec-{{ section.id }}" id="{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="carousel">
