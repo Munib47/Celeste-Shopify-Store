@@ -184,7 +184,9 @@
         "txt_align": "tc",
         "text_clr": "#111",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
       }
     },
     "collection_list_3PmNHt": {
@@ -311,7 +313,9 @@
         "main_button_font_size_mobile": 14,
         "main_button_font_family": "montserrat",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
       }
     },
     "banner_with_text_q36Kdj": {
@@ -392,7 +396,11 @@
         "mb": 15,
         "mbm": 10,
         "btn-size-desk": "btn-md",
-        "btn-size-mob": "mob-btn-sm"
+        "btn-size-mob": "mob-btn-sm",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
       }
     },
     "featured_blog_CmBfqj": {
@@ -443,8 +451,8 @@
         "btn-size-mob": "mob-btn-sm",
         "padding_top": 36,
         "padding_bottom": 36,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
         "title_padding_top": 0,
         "title_padding_bottom": 20,
         "heading_margin_bottom": 0
@@ -505,7 +513,7 @@
         "ttl_pt": 0,
         "ttl_ptm": 0,
         "ttl_pb": 10,
-        "ttl_pbm": 10,
+        "ttl_pbm": 20,
         "ttl_mb": 0,
         "title_font_family": "popins-medium",
         "subtitle_font_family": "popins-medium",
@@ -549,7 +557,9 @@
         "snow_style": "style1",
         "mt": false,
         "pt": 12,
-        "pb": 12
+        "pb": 12,
+        "pt_mobile": 30,
+        "pb_mobile": 30
       }
     },
     "store_features_BK46XR": {
@@ -796,7 +806,9 @@
         "button_font_size_mobile": 12,
         "button_font_family": "didot",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
       }
     }
   },

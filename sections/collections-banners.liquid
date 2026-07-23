@@ -22,6 +22,12 @@
     padding-top: {{ secSt.pt | default: 0 }}px;
     padding-bottom: {{ secSt.pb | default: 36 }}px;
     }
+  @media only screen and (max-width:767px){
+  .content-indent.sec-{{ section.id }}{
+    padding-top: {{ secSt.pt_mobile | default: 30 }}px;
+    padding-bottom: {{ secSt.pb_mobile | default: 30 }}px;
+    }
+  }
   {%- unless secSt.mt -%}
   .content-indent.sec-{{ section.id }}{
     margin-top: 0 !important;
@@ -745,7 +751,7 @@
       {
         "type": "range",
         "id": "pt",
-        "label": "Padding Top",
+        "label": "Padding Top (Desktop)",
         "default": 0,
         "min": 0,
         "max": 120,
@@ -756,11 +762,31 @@
       {
         "type": "range",
         "id": "pb",
-        "label": "Padding Bottom",
+        "label": "Padding Bottom (Desktop)",
         "default": 36,
         "min": 0,
         "max": 120,
         "step": 4,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "pt_mobile",
+        "label": "Padding Top (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 120,
+        "step": 2,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "pb_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "default": 30,
+        "min": 0,
+        "max": 120,
+        "step": 2,
         "unit": "px"
       }
     ],

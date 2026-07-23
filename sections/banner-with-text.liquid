@@ -134,11 +134,16 @@
       font-size: var(--idfsm, 14px);
     }
   }
+
+  .bwt-pad-{{ section.id }}{padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;}
+  @media (max-width:767px){
+    .bwt-pad-{{ section.id }}{padding-top:{{ section.settings.padding_top_mobile }}px;padding-bottom:{{ section.settings.padding_bottom_mobile }}px;}
+  }
 </style>
 
 {%- assign secSt = section.settings -%}
 {%- capture featureRow -%}
-<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-banner_with_text{% if section.settings.enable_custom_width == true %} cstm-img_width{% endif %}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
+<div class="content-indent {{ secSt.top-offeset}}{% if secSt.section_cov %} section-cover{% endif%} cstm-banner_with_text bwt-pad-{{ section.id }}{% if section.settings.enable_custom_width == true %} cstm-img_width{% endif %}" {% if secSt.section_cov %}style="background-color:{{secSt.sec_bg_clr}};"{% endif%}>
   <div class="{% unless secSt.section_width %} page-width{% endunless %}">
 
     {% for block in section.blocks limit: section.blocks.size %}
@@ -544,8 +549,52 @@
               {
               "label": "Large",
               "value": "mob-btn-lg"
-              }	
+              }
           ]
+        },
+        {
+          "type": "header",
+          "content": "Section Spacing"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top (Desktop)",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom (Desktop)",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding Top (Mobile)",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding Bottom (Mobile)",
+          "min": 0,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "default": 30
         }
     ],
 	 "blocks": [

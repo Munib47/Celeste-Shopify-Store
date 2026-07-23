@@ -8,6 +8,10 @@
 -%}
 <style>
   .content-indent.cl-cover-{{section.id}}{padding-top:{{secSt.padding_top}}px;padding-bottom:{{secSt.padding_bottom}}px;}
+  @media only screen and (max-width:767px){
+    .content-indent.cl-cover-{{section.id}}{padding-top:{{secSt.padding_top_mobile}}px;padding-bottom:{{secSt.padding_bottom_mobile}}px;}
+    .cl-cover-{{section.id}} .sec-ttl{padding-top:0;padding-bottom:20px;}
+  }
 
   .content-indent.cstm-collection_list.cl-cover-{{section.id}} .sec-ttl.tc {
     padding-top: 0;
@@ -593,9 +597,9 @@
     {
         "type": "range",
         "id": "padding_top",
-        "label": "Padding Top",
+        "label": "Padding Top (Desktop)",
         "min": 0,
-        "max": 50,
+        "max": 100,
         "step": 2,
         "unit": "px",
         "default": 36
@@ -603,12 +607,32 @@
     {
         "type": "range",
         "id": "padding_bottom",
-        "label": "Padding Bottom",
+        "label": "Padding Bottom (Desktop)",
         "min": 0,
-        "max": 50,
+        "max": 100,
         "step": 2,
         "unit": "px",
         "default": 36
+    },
+    {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding Top (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "default": 30
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "px",
+        "default": 30
     }
    ],
    "blocks": [
